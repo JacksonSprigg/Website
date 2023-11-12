@@ -1,0 +1,267 @@
+/* Themes */
+[data-theme="light"] {
+
+    /* Nav, background and text */
+    --background-color: #f8f9fa; 
+    --text-color: #495057; 
+    --nav-background-color: #dee2e6a0; 
+    --hover-background-color: #e0e0e0; 
+    --link-colour: #84dcc6;
+
+    /* Theme toggle */
+    --slider-bg-color: #5f5f5f; 
+}
+
+[data-theme="dark"] {
+
+    /* Nav, background and text */
+    --background-color: #343434; 
+    --text-color: #e0e0e0; 
+    --nav-background-color: #3434348b; 
+    --hover-background-color: #333333; 
+    --link-colour: #84dcc6;
+
+    /* Theme Toggle */
+    --slider-bg-color: #f8f9fa;
+}
+
+
+/* Set up some basic styling */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.5;
+    margin: 0;
+    padding-top: 55px;
+}
+
+header, main, footer {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+}
+
+nav {
+    width: 100%;
+    position: fixed; 
+    top: 0;
+    background-color: var(--nav-background-color);
+    display: flex;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    z-index: 1000;
+    font-family: 'Helvetica', sans-serif;
+
+}
+
+nav div {
+    display: inline-block; 
+}
+
+nav a {
+    display: inline-block;
+    padding: 15px 10px;
+    color: var(--text-color);
+    font-size: 1em;
+    text-decoration: none;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+p a {
+    color: var(--link-colour); /* Default color of the link text */
+    text-decoration: none; 
+    font-style: italic;
+}
+
+p a:hover {
+    text-decoration: underline; /* Optional: removes the underline from links */
+}
+
+.home-link {
+    margin-right: auto; /* Pushes everything else to the right */
+}
+
+.spacer {
+    flex-grow: 1; /* Takes up available space */
+}
+
+.separator {
+    margin: 0 15px; /* Adjust spacing around separator */
+}
+
+.home-icon {
+    width: 30px; /* Adjust icon size as needed */
+    height: 30px;
+    margin-right: 40px;
+}
+
+
+
+/* Theme Toggle */
+.theme-toggle-wrapper {
+    display: inline-block;
+    position: relative;
+    margin-left: auto; 
+    margin-right: 40px;
+    padding-left: 10px;
+    width: 35px; /* Reduced from 60px */
+    height: 26px; /* Reduced from 34px */
+}
+
+.theme-toggle {
+    position: absolute;
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+}
+
+.theme-toggle input {
+    display: none;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--slider-bg-color);
+    transition: .4s;
+    border-radius: 30px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 19px; /* Reduced from 26px */
+    width: 19px; /* Reduced from 26px */
+    left: 5px; /* Adjusted for new size */
+    bottom: 3.5px; /* Adjusted for new size */
+    background-color: var(--text-color);
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: var(--slider-bg-color);
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px var(--slider-box-shadow-color);
+}
+
+input:checked + .slider:before {
+    background-color: var(--text-color);
+    transform: translateX(16px); /* Adjusted for new size */
+}
+
+.slider.round {
+    border-radius: 50px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+.hero {
+    position: relative;
+    background-image: url('blackhole.jpg'); /* Replace with your image path */
+    background-size: cover;
+    background-position: center;
+    height: 45vh; /* This makes the section take the full height of the viewport */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff; /* Adjust color to make the text stand out from the background image */
+}
+
+.hero-content blockquote {
+    font-size: 1.7em; /* Make the quote large */
+    font-family: 'Georgia', serif; /* Example: elegant, serif font */
+    max-width: 100%; /* Limit the width of the quote to maintain readability */
+    margin: auto;
+    position: relative;
+    z-index: 2; /* Ensure the text appears above any background overlay if you choose to add one */
+}
+
+/* Add a semi-transparent overlay to ensure text readability if needed */
+.hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.221); /* Dark overlay; adjust the opacity as needed */
+    z-index: 1;
+}
+
+.hero-content a {
+    color: var(--link-colour); /* Color of your hyperlinks on hover */
+    text-decoration: none; /* Remove underline from links */
+}
+
+.hero-content a:hover,
+.hero-content a:focus {
+    text-decoration: underline; 
+}
+
+.content {
+    margin-top: 20px; 
+    padding: 20px;
+}
+
+.content-inner {
+    max-width: 450px; 
+    margin: 0 auto; 
+    text-align: left; 
+}
+
+/* Icons */
+.social-icons {
+    text-align: center; /* Center the icons container */
+    padding: 20px;
+    margin-top: 20px; /* Adjust spacing as needed */
+}
+
+.icons-container a {
+    margin: 0 10px; /* Space out the icons */
+    display: inline-block; /* Align icons in a row */
+}
+
+.icons-container img {
+    width: 40px; /* Adjust the size of your icons */
+    height: auto;
+    vertical-align: middle; /* Aligns image nicely with text, if any */
+}
+
+footer {
+    background-color: var(--background-color);
+    color:var(--text-color);
+    text-align: left;
+    padding: 10px 10px;
+    font-size: 0.7em;
+}
+
+footer a {
+    color: var(--link-colour)
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    nav li {
+        display: block;
+        margin: 0;
+    }
+
+    main {
+        flex-direction: column;
+    }
+}
