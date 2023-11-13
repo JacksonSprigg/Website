@@ -171,7 +171,7 @@ input:checked + .slider:before {
 
 .hero {
     position: relative;
-    background-image: url('blackhole.jpg'); /* Replace with your image path */
+    background-image: url('media/blackhole.jpg'); /* Replace with your image path */
     background-size: cover;
     background-position: center;
     height: 45vh; /* This makes the section take the full height of the viewport */
@@ -224,6 +224,13 @@ input:checked + .slider:before {
     text-align: left; 
 }
 
+.thin-hr {
+    border: 0.5px solid var(--text-color); /* Thin line with a light grey color */
+    margin: 15px auto; /* Space above and below the line */
+    width: 30%; /* Adjust the width as needed */
+    display: block; /* Ensuring the element is a block-level element */
+}
+
 /* Icons */
 .social-icons {
     text-align: center; /* Center the icons container */
@@ -241,6 +248,50 @@ input:checked + .slider:before {
     height: auto;
     vertical-align: middle; /* Aligns image nicely with text, if any */
 }
+
+/* Projects */
+.image-container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.project-figure {
+    margin: 0 px; /* Adds spacing between the figures */
+}
+
+.project-image {
+    width: 300px; /* Makes the image fill the container */
+    height: auto; /* Keeps the aspect ratio of the image */
+    transition: transform 0.4s ease; /* Smooth transition for scaling */
+}
+
+.project-image:hover {
+    transform: scale(1.4); /* Increase size by 10% on hover */
+}
+
+.project p {
+    font-size: 14px; /* Adjust this value to your preference */
+}
+
+.project ol {
+    font-size: 14px; /* Adjust this value to your preference */
+}
+
+.project ul {
+    font-size: 14px; /* Adjust this value to your preference */
+}
+
+.project dl {
+    font-size: 14px; /* Adjust this value to your preference */
+}
+
+figcaption {
+    margin-top: 8px;
+    font-style: italic;
+    font-size: 0.75em;
+    text-align: center;
+}
+
 
 footer {
     background-color: var(--background-color);
@@ -263,5 +314,12 @@ footer a {
 
     main {
         flex-direction: column;
+    }
+
+    .image-container {
+        flex-direction: column;
+    }
+    .project-image {
+        max-width: 100%;
     }
 }
