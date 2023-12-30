@@ -174,12 +174,12 @@ input:checked + .slider:before {
     background-image: url('media/blackhole.jpg'); /* Replace with your image path */
     background-size: cover;
     background-position: center;
-    height: 37.5vh; /* This makes the section take the full height of the viewport */
+    height: 37.5vh; 
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    color: #fff; /* Adjust color to make the text stand out from the background image */
+    color: #fff; 
 }
 
 .hero-content blockquote {
