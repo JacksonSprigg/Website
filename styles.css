@@ -242,12 +242,12 @@ input:checked + .slider:before {
 }
 
 .content-writing {
-    margin-top: 0px; 
-    padding: 0px;
+    margin-top: 20px; 
+    padding: 20px;
 }
 
 .content-inner-writing {
-    max-width: 500px; 
+    max-width: 450px; 
     margin: 0 auto; 
     text-align: left; 
 }
