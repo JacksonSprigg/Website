@@ -82,6 +82,24 @@ p a:hover {
     text-decoration: underline; /* Optional: removes the underline from links */
 }
 
+h3 a {
+    color: var(--link-colour); /* Use the same custom property for color */
+    text-decoration: none; /* Removes underline by default */
+}
+
+h3 a:hover {
+    text-decoration: underline; /* Adds underline on hover, matching p a:hover */
+}
+
+h2 a {
+    color: var(--link-colour); /* Use the same custom property for color */
+    text-decoration: none; /* Removes underline by default */
+}
+
+h2 a:hover {
+    text-decoration: underline; /* Adds underline on hover, matching p a:hover */
+}
+
 .home-link {
     margin-right: auto; /* Pushes everything else to the right */
 }
@@ -99,7 +117,6 @@ p a:hover {
     height: 30px;
     margin-right: 40px;
 }
-
 
 
 /* Theme Toggle */
@@ -220,6 +237,17 @@ input:checked + .slider:before {
 
 .content-inner {
     max-width: 450px; 
+    margin: 0 auto; 
+    text-align: left; 
+}
+
+.content-writing {
+    margin-top: 0px; 
+    padding: 0px;
+}
+
+.content-inner-writing {
+    max-width: 500px; 
     margin: 0 auto; 
     text-align: left; 
 }
