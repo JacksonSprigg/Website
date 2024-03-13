@@ -247,7 +247,7 @@ input:checked + .slider:before {
 }
 
 .content-inner-writing {
-    max-width: 450px; 
+    max-width: 500px; 
     margin: 0 auto; 
     text-align: left; 
 }
