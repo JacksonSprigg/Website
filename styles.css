@@ -31,6 +31,10 @@
 
 
 /* UNIVERSAL */
+html, body {
+    overflow-x: hidden;
+  }
+  
 body {
     font-family: 'Arial', sans-serif;
     background-color: var(--background-color);
@@ -39,6 +43,7 @@ body {
     margin: 0;
     padding-top: 55px;
     overflow-x: hidden;
+    position: relative
 }
 
 header, main, footer {
