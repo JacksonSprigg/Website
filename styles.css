@@ -3,10 +3,10 @@
 
     /* Nav, background and text */
     --background-color: #f8f9fa; 
-    --text-color: #495057; 
+    --text-color: #212529; 
     --nav-background-color: #dee2e6a0; 
     --hover-background-color: #e0e0e0; 
-    --link-colour: #84dcc6;
+    --link-colour: #ff9eb8;
 
     /* Theme toggle */
     --slider-bg-color: #5f5f5f; 
@@ -15,20 +15,20 @@
 [data-theme="dark"] {
 
     /* Nav, background and text */
-    --background-color: #343434; 
-    --text-color: #e0e0e0; 
-    --nav-background-color: #3434348b; 
+    --background-color: #212529; /*old#343434*/
+    --text-color: #fff; 
+    --nav-background-color: #212529; 
     --hover-background-color: #333333; 
-    --link-colour: #84dcc6;
+    --link-colour: #f7a8b8;
 
     /* Theme Toggle */
-    --slider-bg-color: #f8f9fa;
+    --slider-bg-color: #b9b9b9;
 }
 
 
-/* Set up some basic styling */
+/* UNIVERSAL */
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Arial', sans-serif;
     background-color: var(--background-color);
     color: var(--text-color);
     line-height: 1.5;
@@ -42,18 +42,50 @@ header, main, footer {
     width: 100%;
 }
 
+p a {
+    color: var(--link-colour);
+    text-decoration: none; 
+    font-style: italic;
+}
+
+p a:hover {
+    opacity: 0.7;
+}
+
+figcaption {
+    margin-top: 8px;
+    font-style: italic;
+    font-size: 0.75em;
+    text-align: center;
+}
+
+
+footer {
+    background-color: var(--background-color);
+    color:var(--text-color);
+    text-align: left;
+    padding: 10px 10px;
+    font-size: 0.7em;
+}
+
+footer a {
+    color: var(--link-colour);
+    text-decoration: none;
+}
+
+footer a:hover {
+    opacity: 0.7;
+}
+
+/* NAV BAR */
 nav {
     width: 100%;
     position: fixed; 
     top: 0;
     background-color: var(--nav-background-color);
     display: flex;
-    align-items: center;
-    padding: 0;
-    margin: 0;
-    z-index: 1000;
-    font-family: 'Helvetica', sans-serif;
-
+    align-items: center; /* Center objects with text */
+    z-index: 100; /* Make sure nav bar is always at the front */
 }
 
 nav div {
@@ -69,35 +101,7 @@ nav a {
 }
 
 nav a:hover {
-    text-decoration: underline;
-}
-
-p a {
-    color: var(--link-colour); /* Default color of the link text */
-    text-decoration: none; 
-    font-style: italic;
-}
-
-p a:hover {
-    text-decoration: underline; /* Optional: removes the underline from links */
-}
-
-h3 a {
-    color: var(--link-colour); /* Use the same custom property for color */
-    text-decoration: none; /* Removes underline by default */
-}
-
-h3 a:hover {
-    text-decoration: underline; /* Adds underline on hover, matching p a:hover */
-}
-
-h2 a {
-    color: var(--link-colour); /* Use the same custom property for color */
-    text-decoration: none; /* Removes underline by default */
-}
-
-h2 a:hover {
-    text-decoration: underline; /* Adds underline on hover, matching p a:hover */
+    opacity: 0.7;
 }
 
 .home-link {
@@ -119,7 +123,7 @@ h2 a:hover {
 }
 
 
-/* Theme Toggle */
+/* Theme Toggler */
 .theme-toggle-wrapper {
     display: inline-block;
     position: relative;
@@ -186,6 +190,7 @@ input:checked + .slider:before {
     border-radius: 50%;
 }
 
+/* LANDING HERO */
 .hero {
     position: relative;
     background-image: url('media/blackhole.jpg'); /* Replace with your image path */
@@ -196,7 +201,7 @@ input:checked + .slider:before {
     align-items: center;
     justify-content: center;
     text-align: center;
-    color: #fff; 
+    color: var(--text-color); 
 }
 
 .hero-content blockquote {
@@ -205,7 +210,7 @@ input:checked + .slider:before {
     max-width: 100%; /* Limit the width of the quote to maintain readability */
     margin: auto;
     position: relative;
-    z-index: 2; /* Ensure the text appears above any background overlay if you choose to add one */
+    z-index: 5; /* Ensure the text appears above any background overlay*/
 }
 
 /* Add a semi-transparent overlay to ensure text readability if needed */
@@ -225,18 +230,19 @@ input:checked + .slider:before {
     text-decoration: none; /* Remove underline from links */
 }
 
-.hero-content a:hover,
-.hero-content a:focus {
-    text-decoration: underline; 
+.hero-content a:hover {
+    opacity: 0.7;
 }
 
+
+/* Main writing */
 .content {
     margin-top: 20px; 
     padding: 20px;
 }
 
 .content-inner {
-    max-width: 450px; 
+    max-width: 550px; 
     margin: 0 auto; 
     text-align: left; 
 }
@@ -246,24 +252,11 @@ input:checked + .slider:before {
     padding: 20px;
 }
 
-.content-inner-writing {
-    max-width: 500px; 
-    margin: 0 auto; 
-    text-align: left; 
-}
-
-.thin-hr {
-    border: 0.5px solid var(--text-color); /* Thin line with a light grey color */
-    margin: 15px auto; /* Space above and below the line */
-    width: 30%; /* Adjust the width as needed */
-    display: block; /* Ensuring the element is a block-level element */
-}
 
 /* Icons */
 .social-icons {
     text-align: center; /* Center the icons container */
-    padding: 20px;
-    margin-top: 20px; /* Adjust spacing as needed */
+    padding: 10px;
 }
 
 .icons-container a {
@@ -271,11 +264,27 @@ input:checked + .slider:before {
     display: inline-block; /* Align icons in a row */
 }
 
-.icons-container img {
+.icons-container svg {
+    color: var(--text-color);
     width: 40px; /* Adjust the size of your icons */
     height: auto;
     vertical-align: middle; /* Aligns image nicely with text, if any */
+    transition: transform 0.3s ease; /* Smooth transition for hover effect */
 }
+
+.icons-container svg:hover {
+    transform: translateY(-3px); /* Move the icon up slightly on hover */
+    opacity: 0.7; /* Slightly fade the icon to indicate interactivity */
+}
+
+.thin-hr {
+    border: 0.5px solid var(--text-color); /* Thin line with a light grey color */
+    margin: 15px auto; /* Space above and below the line */
+    width: 400px; /* Adjust the width as needed */
+    display: block; /* Ensuring the element is a block-level element */
+}
+
+
 
 /* Projects */
 .image-container {
@@ -327,24 +336,90 @@ input:checked + .slider:before {
     font-size: 16px; /* Adjust this value to your preference */
 }
 
-figcaption {
-    margin-top: 8px;
-    font-style: italic;
-    font-size: 0.75em;
-    text-align: center;
+.heading-with-lines {
+    text-align: center; /* Center the heading */
+   /* font-family: 'Your preferred font', sans-serif; /* Use your desired font */
+}
+
+.heading-with-lines span {
+    position: relative;
+    display: inline-block;
+    padding: 0 20px; /* Adjusts the spacing around the text */
+}
+
+.heading-with-lines span:before,
+.heading-with-lines span:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 3px; /* Adjust the thickness of the line */
+    width: 50px; /* Adjust the length of the line */
+    background-color: var(--text-color); /* The color of the line */
+}
+
+.heading-with-lines span:before {
+    left: -40px; /* Adjust distance from the text */
+}
+
+.heading-with-lines span:after {
+    right: -40px; /* Adjust distance from the text */
 }
 
 
-footer {
-    background-color: var(--background-color);
-    color:var(--text-color);
-    text-align: left;
-    padding: 10px 10px;
-    font-size: 0.7em;
+/* LISTS */
+
+.list-outer-container {
+    position: relative; /* Ensures proper positioning for child elements */
+    width: 100%; /* Adjust width as needed */
+    max-width: 800px; /* Example maximum width */
+    max-height: 10000px; /* Example maximum width */
+    margin: 0 auto; /* Center the container horizontally */
+    padding: 20px; /* Example padding */
+    overflow: hidden;
 }
 
-footer a {
-    color: var(--link-colour)
+.list-item-content {
+    background-color: #343a40; /* Light grey background */
+    border-radius: 0px; /* Rounded corners */
+    padding: 20px; /* Padding around the content */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    max-width: 500px;
+  }
+  
+  /* Styles for the project title */
+  .list-item-title a{
+    color: var(--link-colour);
+    font-size: 18px; /* Larger font size for titles */
+    display: block; /* or 'inline-block' if you prefer */
+    margin-bottom: 20px; /* Adjust this value as needed */
+    font-weight: bold; /* Make the title bold */
+    text-decoration: none;
+  }
+
+  .list-item-title a:hover{
+    opacity: 0.7;
+  }
+
+  .list-item-description {
+    font-size: 14px; /* Standard font size for descriptions */
+    color: var(--text-color); /* Medium grey for the description text */
+    line-height: 1.7; /* Space between lines */
+  }
+
+  /* Styles for the overlapping image */
+.overlapping-image {
+    position: absolute; /* Absolute position with respect to the relative container */
+    top: 0; /* Align to the top of the container */
+    left: 460px; /* Align to the left of the container */
+    z-index: -1; /* Place it behind the content */
+}
+
+/* You might need to adjust the dimensions of the image */
+.overlapping-image img {
+    width: 100%; /* Full width of the container, adjust as necessary */
+    height: auto; /* Maintain aspect ratio */
+    max-height: 100%; /* Ensure image height fits container height */
 }
 
 /* Responsive design for smaller screens */
