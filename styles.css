@@ -17,7 +17,7 @@
     /* Nav, background and text */
     --background-color: #212529; /*old#343434*/
     --text-color: #fff; 
-    --nav-background-color: #212529; 
+    --nav-background-color: #343a40; 
     --hover-background-color: #333333; 
     --link-colour: #f7a8b8;
 
@@ -256,17 +256,17 @@ input:checked + .slider:before {
 /* Icons */
 .social-icons {
     text-align: center; /* Center the icons container */
-    padding: 10px;
+    padding: 5px;
 }
 
 .icons-container a {
-    margin: 0 10px; /* Space out the icons */
+    margin: 0 5px; /* Space out the icons */
     display: inline-block; /* Align icons in a row */
 }
 
 .icons-container svg {
     color: var(--text-color);
-    width: 40px; /* Adjust the size of your icons */
+    width: 35px; /* Adjust the size of your icons */
     height: auto;
     vertical-align: middle; /* Aligns image nicely with text, if any */
     transition: transform 0.3s ease; /* Smooth transition for hover effect */
@@ -280,7 +280,7 @@ input:checked + .slider:before {
 .thin-hr {
     border: 0.5px solid var(--text-color); /* Thin line with a light grey color */
     margin: 15px auto; /* Space above and below the line */
-    width: 400px; /* Adjust the width as needed */
+    width: 350px; /* Adjust the width as needed */
     display: block; /* Ensuring the element is a block-level element */
 }
 
