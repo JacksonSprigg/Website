@@ -42,15 +42,13 @@ body {
     line-height: 1.5;
     margin: 0;
     padding-top: 55px;
-    overflow-x: hidden;
     position: relative
 }
 
 header, main, footer {
     display: block;
-    margin: 0 auto;
+    margin: auto;
     width: 100%;
-    overflow-x: hidden;
 }
 
 p a {
@@ -213,7 +211,6 @@ input:checked + .slider:before {
     justify-content: center;
     text-align: center;
     width: 100%;
-    overflow-x: hidden;
     color: #fff; 
 }
 
@@ -252,7 +249,6 @@ input:checked + .slider:before {
 .content {
     margin-top: 20px; 
     padding: 20px;
-    overflow-x: hidden;
 }
 
 .content-inner {
@@ -271,7 +267,6 @@ input:checked + .slider:before {
 .social-icons {
     text-align: center; /* Center the icons container */
     padding: 5px;
-    overflow-x: hidden;
 }
 
 .icons-container a {
@@ -353,7 +348,6 @@ input:checked + .slider:before {
 
 .heading-with-lines {
     text-align: center; /* Center the heading */
-   /* font-family: 'Your preferred font', sans-serif; /* Use your desired font */
 }
 
 .heading-with-lines span {
@@ -453,12 +447,21 @@ input:checked + .slider:before {
         position: relative
       }
 
+    .image-container {
+        flex-direction: column; /* Stack images vertically on small screens */
+    }
+    figure {
+        margin: 10px; /* Adds margin around each figure */
+        flex-basis: calc(50% - 20px); /* Subtract double the margin to maintain spacing */
+        text-align: center; /* Center-align the caption */
+    }
+
     .list-outer-container {
         position: relative; /* Ensures proper positioning for child elements */
         width: 100%; /* Adjust width as needed */
         max-width: 450px; /* Container width */
         height: 300px; /* Reduced maximum height if needed, or adjust based on content */
-        margin: 0 auto; /* Center the container horizontally */
+        margin: 20px 20px; /* Center the container horizontally */
         padding: 20px; /* Padding around content */
         overflow: hidden; /* Hide overflow */
     }
