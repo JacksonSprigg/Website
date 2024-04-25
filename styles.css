@@ -206,6 +206,7 @@ input:checked + .slider:before {
     align-items: center;
     justify-content: center;
     text-align: center;
+    width: 100vw; /* Set width to 100% of viewport width */
     color: #fff; 
 }
 
