@@ -440,22 +440,6 @@ input:checked + .slider:before {
 
 /* Responsive design for smaller screens */
 @media (max-width: 768px) {
-    nav li {
-        display: block;
-        margin: 0px;
-    }
-
-    main {
-        flex-direction: column;
-        overflow-x: hidden;
-    }
-
-    .image-container {
-        flex-direction: column;
-    }
-    .project-image {
-        max-width: 100%;
-    }
 
     .list-outer-container {
         position: relative; /* Ensures proper positioning for child elements */
