@@ -206,7 +206,8 @@ input:checked + .slider:before {
     align-items: center;
     justify-content: center;
     text-align: center;
-    width: 100vw; /* Set width to 100% of viewport width */
+    width: 100%;
+    overflow-x: hidden;
     color: #fff; 
 }
 
@@ -245,6 +246,7 @@ input:checked + .slider:before {
 .content {
     margin-top: 20px; 
     padding: 20px;
+    overflow-x: hidden;
 }
 
 .content-inner {
@@ -263,6 +265,7 @@ input:checked + .slider:before {
 .social-icons {
     text-align: center; /* Center the icons container */
     padding: 5px;
+    overflow-x: hidden;
 }
 
 .icons-container a {
