@@ -34,7 +34,7 @@
 html, body {
     overflow-x: hidden;
   }
-  
+
 body {
     font-family: 'Arial', sans-serif;
     background-color: var(--background-color);
@@ -445,6 +445,13 @@ input:checked + .slider:before {
 
 /* Responsive design for smaller screens */
 @media (max-width: 768px) {
+
+    html, body {
+        overflow-x: hidden;
+      }
+      body {
+        position: relative
+      }
 
     .list-outer-container {
         position: relative; /* Ensures proper positioning for child elements */
