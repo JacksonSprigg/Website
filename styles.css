@@ -4,9 +4,11 @@
     /* Nav, background and text */
     --background-color: #f8f9fa; 
     --text-color: #212529; 
-    --nav-background-color: #dee2e6a0; 
+    --nav-background-color: #dee2e699;
     --hover-background-color: #e0e0e0; 
     --link-colour: #ff9eb8;
+
+    --contrast: #e9ecefd0;
 
     /* Theme toggle */
     --slider-bg-color: #5f5f5f; 
@@ -17,9 +19,11 @@
     /* Nav, background and text */
     --background-color: #212529; /*old#343434*/
     --text-color: #fff; 
-    --nav-background-color: #343a40; 
+    --nav-background-color: #343a4090; 
     --hover-background-color: #333333; 
     --link-colour: #f7a8b8;
+
+    --contrast: #343a40d6;
 
     /* Theme Toggle */
     --slider-bg-color: #b9b9b9;
@@ -201,7 +205,7 @@ input:checked + .slider:before {
     align-items: center;
     justify-content: center;
     text-align: center;
-    color: var(--text-color); 
+    color: #fff; 
 }
 
 .hero-content blockquote {
@@ -372,18 +376,17 @@ input:checked + .slider:before {
 .list-outer-container {
     position: relative; /* Ensures proper positioning for child elements */
     width: 100%; /* Adjust width as needed */
-    max-width: 800px; /* Example maximum width */
-    max-height: 10000px; /* Example maximum width */
+    max-width: 800px; /* Container width */
+    height: 300px; /* Reduced maximum height if needed, or adjust based on content */
     margin: 0 auto; /* Center the container horizontally */
-    padding: 20px; /* Example padding */
-    overflow: hidden;
+    padding: 20px; /* Padding around content */
+    overflow: hidden; /* Hide overflow */
 }
 
 .list-item-content {
-    background-color: #343a40; /* Light grey background */
-    border-radius: 0px; /* Rounded corners */
+    background-color: var(--contrast); /* Light grey background */
+    border-radius: 3px; /* Rounded corners */
     padding: 20px; /* Padding around the content */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
     max-width: 500px;
   }
   
@@ -409,17 +412,18 @@ input:checked + .slider:before {
 
   /* Styles for the overlapping image */
 .overlapping-image {
-    position: absolute; /* Absolute position with respect to the relative container */
-    top: 0; /* Align to the top of the container */
-    left: 460px; /* Align to the left of the container */
-    z-index: -1; /* Place it behind the content */
+    position: absolute; /* Absolute positioning */
+    top: 0; /* Top edge alignment */
+    left: 50%; /* Center the image horizontally */
+    transform: translateX(5%); /* Align center of the image with the left position */
+    z-index: -1; /* Behind the content */
 }
 
 /* You might need to adjust the dimensions of the image */
 .overlapping-image img {
-    width: 100%; /* Full width of the container, adjust as necessary */
-    height: auto; /* Maintain aspect ratio */
-    max-height: 100%; /* Ensure image height fits container height */
+    width: 100%; /* Make image fill the width */
+    height: 100%; /* Make image fill the height */
+    object-fit: cover; /* Cover the area, crop as necessary without distorting aspect ratio */
 }
 
 /* Responsive design for smaller screens */
