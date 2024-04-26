@@ -9,6 +9,7 @@
     --link-colour: #ff9eb8;
 
     --contrast: #e9ecefd0;
+    --contrast-small-screen: #e9ecefd0;
 
     /* Theme toggle */
     --slider-bg-color: #5f5f5f; 
@@ -24,6 +25,7 @@
     --link-colour: #f7a8b8;
 
     --contrast: #343a40d6;
+    --contrast-small-screen: #000000c6;
 
     /* Theme Toggle */
     --slider-bg-color: #b9b9b9;
@@ -40,8 +42,9 @@ body {
     background-color: var(--background-color);
     color: var(--text-color);
     line-height: 1.5;
-    margin: 0;
+    margin: 0px;
     padding-top: 55px;
+    padding-right: 0px;
     position: relative
 }
 
@@ -257,12 +260,6 @@ input:checked + .slider:before {
     text-align: left; 
 }
 
-.content-writing {
-    margin-top: 20px; 
-    padding: 20px;
-}
-
-
 /* Icons */
 .social-icons {
     text-align: center; /* Center the icons container */
@@ -380,11 +377,12 @@ input:checked + .slider:before {
 
 .list-outer-container {
     position: relative; /* Ensures proper positioning for child elements */
-    width: 100%; /* Adjust width as needed */
+    width: 90%; /* Adjust width as needed */
     max-width: 800px; /* Container width */
     height: 300px; /* Reduced maximum height if needed, or adjust based on content */
-    margin: 0 auto; /* Center the container horizontally */
-    padding: 20px; /* Padding around content */
+    margin: 0 auto;
+    padding-left: 0px; /* Padding around content */
+    padding-right: 0px; /* Padding around content */
     overflow: hidden; /* Hide overflow */
 }
 
@@ -401,6 +399,8 @@ input:checked + .slider:before {
     font-size: 18px; /* Larger font size for titles */
     display: block; /* or 'inline-block' if you prefer */
     margin-bottom: 20px; /* Adjust this value as needed */
+    padding: 20px; /* Padding around the content */
+
     font-weight: bold; /* Make the title bold */
     text-decoration: none;
   }
@@ -419,8 +419,7 @@ input:checked + .slider:before {
 .overlapping-image {
     position: absolute; /* Absolute positioning */
     top: 0; /* Top edge alignment */
-    left: 50%; /* Center the image horizontally */
-    transform: translateX(5%); /* Align center of the image with the left position */
+    left: 55%; /* Center the image horizontally */
     z-index: -1; /* Behind the content */
 }
 
@@ -431,10 +430,8 @@ input:checked + .slider:before {
     object-fit: cover;
 }
 
-/* Hover effect for .overlapping-image img */
-.overlapping-image img:hover {
-    transform: scale(1.05); /* Scales the image up to 105% of its original size on hover */
-    cursor: pointer; /* Changes the cursor to indicate the image is clickable */
+.special-margin {
+    margin-top: -80px; /* Apply margin on larger screens */
 }
 
 /* Responsive design for smaller screens */
@@ -444,7 +441,7 @@ input:checked + .slider:before {
         overflow-x: hidden;
       }
       body {
-        position: relative
+        position: relative;
       }
 
     .image-container {
@@ -456,42 +453,52 @@ input:checked + .slider:before {
         text-align: center; /* Center-align the caption */
     }
 
+    .special-margin {
+        margin-top: 0; /* Remove margin for smaller screens */
+    }
+
     .list-outer-container {
         position: relative; /* Ensures proper positioning for child elements */
-        width: 100%; /* Adjust width as needed */
+        width: 85%; /* Adjust width as needed */
         max-width: 450px; /* Container width */
-        height: 300px; /* Reduced maximum height if needed, or adjust based on content */
-        margin: 20px 20px; /* Center the container horizontally */
-        padding: 20px; /* Padding around content */
+        height: 370px; /* Reduced maximum height if needed, or adjust based on content */
+        margin: 0 auto;
         overflow: hidden; /* Hide overflow */
     }
 
-      /* Styles for the overlapping image */
+    .list-item {
+        position: relative; /* Set position relative to contain absolute children */
+        max-width: 500px; /* Set a max width for the container */
+    }
+    
     .overlapping-image {
         position: absolute; /* Absolute positioning */
-        width: 100%; /* Adjust width as needed */
-        top: 0; /* Top edge alignment */
-        left: 50%; /* Center the image horizontally */
-        transform: translateX(-50%); /* Align center of the image with the left position */
-        z-index: -1; /* Behind the content */
+        width: 100%; /* Take the full width of the parent */
+        height: 100%; /* Take the full height of the parent */
+        top: 0; /* Align to the top of the parent */
+        left: 0; /* Align to the left of the parent */
+        z-index: -1; /* Place it behind the content */
+        background-size: cover; /* Cover the entire area */
     }
-
-      /* Styles for the project title */
-    .list-item-title a{
-        background-color: var(--contrast); /* Light grey background */
+    
+    .list-item-title a {
+        background-color: var(--contrast-small-screen); /* Light grey background */
         color: var(--link-colour);
         font-size: 18px; /* Larger font size for titles */
-        display: block; /* or 'inline-block' if you prefer */
-        margin-bottom: 20px; /* Adjust this value as needed */
-        font-weight: bold; /* Make the title bold */
-        text-decoration: none;
-    }
+        display: block; /* Block display to take full available width */
+        font-weight: bold; /* Bold font for title */
+        text-decoration: none; /* No underline */
+        padding: 30px; /* Padding around the content */
+        margin-bottom: 0px; 
 
+    }
+    
     .list-item-content {
-        background-color: var(--contrast); /* Light grey background */
+        height: 100%; /* Take the full height of the parent */
+        background-color: var(--contrast-small-screen); /* Light grey background */
         border-radius: 3px; /* Rounded corners */
-        padding: 20px; /* Padding around the content */
-        max-width: 500px;
-      }
+        padding: 30px; /* Padding around the content */
+    }
+    
 }
 
