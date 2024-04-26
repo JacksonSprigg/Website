@@ -258,12 +258,20 @@ input:checked + .slider:before {
     max-width: 550px; 
     margin: 0 auto; 
     text-align: left; 
+
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
 }
 
 /* Icons */
 .social-icons {
     text-align: center; /* Center the icons container */
     padding: 5px;
+
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
 }
 
 .icons-container a {
@@ -291,6 +299,16 @@ input:checked + .slider:before {
     display: block; /* Ensuring the element is a block-level element */
 }
 
+
+.content-inner.active{
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.social-icons.active{
+    opacity: 1;
+    transform: translateY(0);
+}
 
 
 /* Projects */
@@ -384,6 +402,15 @@ input:checked + .slider:before {
     padding-left: 0px; /* Padding around content */
     padding-right: 0px; /* Padding around content */
     overflow: hidden; /* Hide overflow */
+
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.list-outer-container.active {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .list-item-content {
