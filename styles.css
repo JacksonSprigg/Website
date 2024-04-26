@@ -397,7 +397,6 @@ input:checked + .slider:before {
     color: var(--link-colour);
     font-size: 18px; /* Larger font size for titles */
     display: block; /* or 'inline-block' if you prefer */
-    margin-bottom: 20px; /* Adjust this value as needed */
     padding: 20px; /* Padding around the content */
 
     font-weight: bold; /* Make the title bold */
@@ -433,6 +432,10 @@ input:checked + .slider:before {
     margin-top: -80px; /* Apply margin on larger screens */
 }
 
+.special-margin-2 {
+    margin-top: -20px; /* Apply margin on larger screens */
+}
+
 /* Responsive design for smaller screens */
 @media (max-width: 768px) {
 
@@ -454,6 +457,9 @@ input:checked + .slider:before {
 
     .special-margin {
         margin-top: 0; /* Remove margin for smaller screens */
+    }
+    .special-margin-2 {
+        margin-top: 0px; /* Remove margin for smaller screens */
     }
 
     .list-outer-container {
