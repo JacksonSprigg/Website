@@ -32,3 +32,24 @@ function applySavedTheme() {
 
 // Call applySavedTheme on page load
 document.addEventListener('DOMContentLoaded', applySavedTheme);
+
+// scroll-animations.js
+document.addEventListener("DOMContentLoaded", function() {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+            } else {
+                entry.target.classList.remove('active');
+            }
+        });
+    }, {
+        threshold: 0.25// This value can be adjusted based on when you want the animation to trigger
+    });
+
+    const targets = document.querySelectorAll('.list-outer-container, .content-inner, .social-icons');
+    targets.forEach(target => {
+        observer.observe(target);
+    });
+});
+
