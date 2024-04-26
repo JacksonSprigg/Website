@@ -37,6 +37,11 @@ html, body {
     overflow-x: hidden;
   }
 
+.preload * {
+pointer-events: none;
+opacity: 0;
+}
+
 body {
     font-family: 'Arial', sans-serif;
     background-color: var(--background-color);

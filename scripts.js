@@ -52,3 +52,33 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
+//Image loader
+document.addEventListener("DOMContentLoaded", function() {
+    var images = document.images,
+        totalImages = images.length,
+        imagesLoaded = 0;
+  
+    // Check if there are images on the page
+    if (totalImages > 0) {
+      var imageLoaded = function() {
+        imagesLoaded++;
+        if (imagesLoaded === totalImages) {
+          document.body.classList.remove("preload");
+        }
+      };
+  
+      for (var i = 0; i < totalImages; i++) {
+        if (images[i].complete) {
+          imageLoaded();
+        } else {
+          images[i].addEventListener('load', imageLoaded);
+          images[i].addEventListener('error', imageLoaded); // handle broken images
+        }
+      }
+    } else {
+      // If there are no images, remove the preload class immediately
+      document.body.classList.remove("preload");
+    }
+  });
+  
+
