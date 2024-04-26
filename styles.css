@@ -360,16 +360,16 @@ input:checked + .slider:before {
     top: 50%;
     transform: translateY(-50%);
     height: 3px; /* Adjust the thickness of the line */
-    width: 50px; /* Adjust the length of the line */
+    width: 30px; /* Adjust the length of the line */
     background-color: var(--text-color); /* The color of the line */
 }
 
 .heading-with-lines span:before {
-    left: -40px; /* Adjust distance from the text */
+    left: -20px; /* Adjust distance from the text */
 }
 
 .heading-with-lines span:after {
-    right: -40px; /* Adjust distance from the text */
+    right: -20px; /* Adjust distance from the text */
 }
 
 
@@ -411,6 +411,7 @@ input:checked + .slider:before {
     font-size: 14px; /* Standard font size for descriptions */
     color: var(--text-color); /* Medium grey for the description text */
     line-height: 1.7; /* Space between lines */
+    font-family: 'Arial', sans-serif;
   }
 
   /* Styles for the overlapping image */
@@ -464,7 +465,6 @@ input:checked + .slider:before {
 
     .list-outer-container {
         position: relative; /* Ensures proper positioning for child elements */
-        width: 85%; /* Adjust width as needed */
         max-width: 450px; /* Container width */
         height: 370px; /* Reduced maximum height if needed, or adjust based on content */
         margin: 0 auto;
@@ -503,6 +503,7 @@ input:checked + .slider:before {
         background-color: var(--contrast-small-screen); /* Light grey background */
         padding: 30px; /* Padding around the content */
         padding-top: 0px; /* Padding around the content */
+        font-weight: bold; /* Make the title bold */
     }
     
 }
