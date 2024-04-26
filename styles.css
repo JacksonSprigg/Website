@@ -433,7 +433,7 @@ input:checked + .slider:before {
 }
 
 .special-margin-2 {
-    margin-top: -20px; /* Apply margin on larger screens */
+    margin-top: -35px; /* Apply margin on larger screens */
 }
 
 /* Responsive design for smaller screens */
