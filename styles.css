@@ -435,16 +435,40 @@ input:checked + .slider:before {
     text-decoration: none;
   }
 
+  /*
   .list-item-title a:hover{
     opacity: 0.7;
   }
+  */
+
+  .list-outer-container:hover {
+    transform: scale(1.05); /* Increase the size by 10% (adjust as needed) */
+    opacity: 0.9;
+    transition: transform 0.4s ease-out; /* Faster hover transition */
+    cursor: pointer; /* Change cursor to pointer when hovering over */
+}
+
+.list-outer-container:not(:hover) {
+    transform: scale(1); /* Return to original size */
+    transition: transform 0.3s ease-out; /* Faster return transition */
+}
 
   .list-item-description {
     font-size: 14px; /* Standard font size for descriptions */
     color: var(--text-color); /* Medium grey for the description text */
-    line-height: 1.7; /* Space between lines */
+    line-height: 1.6; /* Space between lines */
     font-family: 'Arial', sans-serif;
   }
+
+  .list-item-details{
+    font-size: 12px; /* Standard font size for descriptions */
+    color: var(--text-color); /* Medium grey for the description text */
+    line-height: 1.7; /* Space between lines */
+    font-family: 'Arial', sans-serif;
+    margin-top: 20px;
+    text-decoration: italic;
+  }
+  
 
   /* Styles for the overlapping image */
 .overlapping-image {
@@ -537,6 +561,13 @@ input:checked + .slider:before {
         padding-top: 0px; /* Padding around the content */
         font-weight: bold; /* Make the title bold */
     }
+
+    .list-item-details{
+         /* Positioning */
+        position: absolute;
+        bottom: 20px;
+        left: 35px;
+      }
     
 }
 
