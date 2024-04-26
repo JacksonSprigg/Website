@@ -80,5 +80,10 @@ document.addEventListener("DOMContentLoaded", function() {
       document.body.classList.remove("preload");
     }
   });
+
+  // Clickable container
+function navigateToURL(url) {
+    window.location.href = url;
+}
   
 
