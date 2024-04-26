@@ -388,7 +388,6 @@ input:checked + .slider:before {
 
 .list-item-content {
     background-color: var(--contrast); /* Light grey background */
-    border-radius: 3px; /* Rounded corners */
     padding: 20px; /* Padding around the content */
     max-width: 500px;
   }
@@ -496,8 +495,8 @@ input:checked + .slider:before {
     .list-item-content {
         height: 100%; /* Take the full height of the parent */
         background-color: var(--contrast-small-screen); /* Light grey background */
-        border-radius: 3px; /* Rounded corners */
         padding: 30px; /* Padding around the content */
+        padding-top: 0px; /* Padding around the content */
     }
     
 }
