@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         });
     }, {
-        threshold: 0.25// This value can be adjusted based on when you want the animation to trigger
+        threshold: 0.15// This value can be adjusted based on when you want the animation to trigger
     });
 
     const targets = document.querySelectorAll('.list-outer-container, .content-inner, .hero, .social-icons');
