@@ -76,6 +76,15 @@ figcaption {
     text-align: center;
 }
 
+.quote-block {
+    max-width: 550px; 
+    text-decoration: none; /* No underline or other text decorations */
+    text-align: center;    /* Text aligned to the center */
+    display: block;        /* Element displayed as a block */
+    margin: 0px 0;        /* Adds vertical spacing around the quote */
+    font-size: 14px;
+}
+
 
 footer {
     background-color: var(--background-color);
@@ -262,22 +271,26 @@ input:checked + .slider:before {
 
 /* Main writing */
 .content {
-    margin-top: 20px; 
-    padding: 20px;
+    margin-top: 0px; 
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 .content-inner {
-    max-width: 550px; 
+    max-width: 500px; 
     margin: 0 auto; 
     text-align: left; 
-
+/*
     opacity: 0;
-    transform: translateY(25px);
+    transform: translateY(0px);
     transition: opacity 3s ease-out, transform 2s ease-out;
+*/
 }
 
 /* Icons */
 .social-icons {
+    
     text-align: center; /* Center the icons container */
     padding: 5px;
 
@@ -290,6 +303,11 @@ input:checked + .slider:before {
 
 .icons-container a {
     margin: 0 5px; /* Space out the icons */
+    display: inline-block; /* Align icons in a row */
+}
+
+.icons-container p {
+    margin: 5px 0px; /* Space out the icons */
     display: inline-block; /* Align icons in a row */
 }
 
