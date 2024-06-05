@@ -533,7 +533,8 @@ input:checked + .slider:before {
       }
     
       .hero {
-        height: 25vh; 
+        height: 20vh; 
+        background-size: 135%;
       }
 
     .image-container {
