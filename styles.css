@@ -91,9 +91,6 @@ figcaption {
     display: block; /* Makes the citation a block element within the quote block */
     text-align: right; /* Aligns the citation text to the right */
     margin-top: 10px; /* Adds space between the quote and the citation */
-    padding-left: 30px;
-    padding-right: 30px;
-    
 }
 
 
