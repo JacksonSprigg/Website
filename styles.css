@@ -83,12 +83,17 @@ figcaption {
     display: block;        /* Element displayed as a block */
     margin: 0px 0;        /* Adds vertical spacing around the quote */
     font-size: 14px;
+    padding-left: 30px;
+    padding-right: 30px;
 }
 
 .citation {
     display: block; /* Makes the citation a block element within the quote block */
     text-align: right; /* Aligns the citation text to the right */
     margin-top: 10px; /* Adds space between the quote and the citation */
+    padding-left: 30px;
+    padding-right: 30px;
+    
 }
 
 
@@ -225,16 +230,16 @@ input:checked + .slider:before {
 /* LANDING HERO */
 .hero {
     position: relative;
-    background-image: url('media/blackhole.png'); /* Replace with your image path */
+    background-image: url('media/blackhole.png');
     background-size: cover;
-    background-position: center;
-    height: 30vh; 
+    background-position: center 0px; /* Increased percentage */
+    height: 35vh; 
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     width: 100%;
-    color: #fff; 
+    color: #fff;
 /*
     opacity: 0; /* Start with hero hidden *//*
     transition: opacity 4s ease-in-out; /* Smooth transition for the fade-in effect */
