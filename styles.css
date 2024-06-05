@@ -229,7 +229,7 @@ input:checked + .slider:before {
     position: relative;
     background-image: url('media/blackhole.png');
     background-size: cover;
-    background-position: center 0px; /* Increased percentage */
+    background-position: 50% 40%; /* Adjust both values as needed */
     height: 35vh; 
     display: flex;
     align-items: center;
