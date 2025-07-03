@@ -22,11 +22,11 @@
 
             <!-- Right side -->
             <div>
-                <a href="projects.html"><b>Projects</b></a> <!-- Update href to the actual reading list page -->
+                <a href="projects.html"><b>Projects</b></a>
             </div>
 
             <div>
-                <a href="writing.html"><b>Writing</b></a> <!-- Update href to the actual reading list page -->
+                <a href="writing.html"><b>Writing</b></a> 
             </div>
             
             <!-- Separator -->
@@ -42,7 +42,10 @@
         </nav>
     </header>
 
-    <section class="hero">
+    <section class="hero" onclick="window.location.href='life.html'" style="cursor: pointer; position: relative;">
+        <div class="click-hint" style="position: absolute; bottom: 20px; right: 20px; color: rgba(255, 255, 255, 0.85); font-size: 0.8em; font-style: italic; background: rgba(0, 0, 0, 0.75); padding: 8px 12px; border-radius: 4px; backdrop-filter: blur(4px);">
+        Watch →
+        </div>
     </section>
 
     <section class="content">
@@ -50,19 +53,22 @@
         <div class="content-inner">
             <p>
                 <br>
-                Hi! I'm Jackson, an undergrad studying Physics and Mechatronics at Monash University in Melbourne.
+                Hi! I'm Jackson.
                 <br><br>
-                I spend a lot of my time thinking about the nature of
+                I don't know what this website is yet.
+                For now it serves as a modest repository of Jackson-generated text.
+                <br><br>
+                Like this website, my thoughts are a work in progress. floating between questions about the nature of
                 <a href="https://philpapers.org/browse/metaphysics/" target="_blank">reality</a>,
                 <a href="https://philpapers.org/browse/philosophy-of-mind/" target="_blank">experience</a>, 
                 <a href="https://philpapers.org/browse/meta-ethics/" target="_blank">meaning</a>, 
-                and — most importantly — the
-                <a href="https://philpapers.org/browse/epistemology" target="_blank">limitations of thinking</a> itself.
-                I love learning and have found that inspecting any subject with a curious eye reveals vast depths and inherent beauty.
-                Sadly, my time is finite, and I am all too often forced to resign myself to appreciation rather than understanding.
+                and — most importantly —
+                <a href="https://philpapers.org/browse/epistemology" target="_blank">thinking</a> itself. 
                 <br><br>
-                I enjoy tinkering and making things. From neural networks to firebending gauntlets, I revel in our increasing ability to actualise cool and useful ideas.
+                I equally enjoy tinkering and creating things. The threshold to actualising cool or useful ideas is continually getting lower and lower.
                 <br><br>
+
+
                 Much of my focus is now centred on Artificial Intelligence and its related fields.
                 It has 
                 <a href="https://gwern.net/scaling-hypothesis" target="_blank">become apparent</a> 
@@ -127,18 +133,7 @@
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer>
-        <div class="footer-content" style="visibility: hidden">
-            Black hole by Jean-Pierre Luminet, 
-            <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC</a>
-            | He plotted it
-            <a href="https://blogs.futura-sciences.com/e-luminet/2018/03/07/45-years-black-hole-imaging-1-early-work-1972-1988/">by hand</a>
-            in the 70s!
-        </div>
-    </footer>
-
     <script src="scripts.js"></script>
-    <script src="sim.js"></script>
+    <script src="life.js"></script>
 </body>
 </html>
