@@ -1,24 +1,23 @@
 document.addEventListener('DOMContentLoaded', (event) => {
 
-    let scene, camera, renderer, raycaster, mouse;
+    let scene, camera, renderer;
     let particles, redParticles, greenParticles, blueParticles, blackHole;
     let clock = new THREE.Clock();
     let isGlitching = false;
 
     const params = {
-        particleCount: 5000,
+        particleCount: 50000,
         particleSize: 0.3,
-        gravitationalStrength: 0.1,
         cameraDistance: 80,
         cameraRotationSpeed: 0.05,
         aberrationStrength: 0.28,
         maxAberrationDistance: 50,
-        glitchInterval: [4, 15],
+        glitchInterval: [4, 10],
         glitchDuration: [0.4, 1.5],
         blackHoleRadius: 5,
-        blackHoleStrength: 1.5,
+        blackHoleStrength: 0.5,
         blackHoleSpeed: 0.5,
-        blackHoleInterval: 20,
+        blackHoleInterval: 3,
     };
 
     function init() {
@@ -32,14 +31,10 @@ document.addEventListener('DOMContentLoaded', (event) => {
         //document.body.appendChild(renderer.domElement);
         document.querySelector('.hero').appendChild(renderer.domElement);
 
-        raycaster = new THREE.Raycaster();
-        mouse = new THREE.Vector2();
-
         createParticles();
         createBlackHole();
 
         window.addEventListener('resize', onWindowResize, false);
-        window.addEventListener('mousemove', onMouseMove, false);
 
         startGlitchCycle();
         startBlackHoleCycle();
@@ -56,7 +51,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
         const material = new THREE.PointsMaterial({
             size: params.particleSize,
             color: 0xffffff,
-            blending: THREE.AdditiveBlending,
             transparent: true
         });
 
@@ -114,40 +108,20 @@ document.addEventListener('DOMContentLoaded', (event) => {
         renderer.setSize(window.innerWidth, window.innerHeight);
     }
 
-    function onMouseMove(event) {
-        mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
-        mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
-    }
-
     function updateParticles() {
         const positions = particles.geometry.attributes.position.array;
         const velocities = particles.geometry.attributes.velocity.array;
 
-        raycaster.setFromCamera(mouse, camera);
-        const mousePoint = new THREE.Vector3();
-        raycaster.ray.at(params.cameraDistance, mousePoint);
-
         for (let i = 0; i < params.particleCount; i++) {
             const i3 = i * 3;
 
-            // Mouse gravity
-            let dx = positions[i3] - mousePoint.x;
-            let dy = positions[i3 + 1] - mousePoint.y;
-            let dz = positions[i3 + 2] - mousePoint.z;
+            // Black hole gravity
+            let dx = positions[i3] - blackHole.position.x;
+            let dy = positions[i3 + 1] - blackHole.position.y;
+            let dz = positions[i3 + 2] - blackHole.position.z;
             let distance = Math.sqrt(dx * dx + dy * dy + dz * dz);
 
-            let force = params.gravitationalStrength / (distance * distance);
-            velocities[i3] -= dx / distance * force;
-            velocities[i3 + 1] -= dy / distance * force;
-            velocities[i3 + 2] -= dz / distance * force;
-
-            // Black hole gravity
-            dx = positions[i3] - blackHole.position.x;
-            dy = positions[i3 + 1] - blackHole.position.y;
-            dz = positions[i3 + 2] - blackHole.position.z;
-            distance = Math.sqrt(dx * dx + dy * dy + dz * dz);
-
-            force = params.blackHoleStrength / (distance * distance);
+            let force = params.blackHoleStrength / (distance * distance);
             velocities[i3] -= dx / distance * force;
             velocities[i3 + 1] -= dy / distance * force;
             velocities[i3 + 2] -= dz / distance * force;
@@ -157,10 +131,31 @@ document.addEventListener('DOMContentLoaded', (event) => {
             positions[i3 + 1] += velocities[i3 + 1];
             positions[i3 + 2] += velocities[i3 + 2];
 
-            // Wrap around edges
-            if (Math.abs(positions[i3]) > 75) positions[i3] *= -0.9, velocities[i3] = (Math.random() - 0.5) * 0.1;
-            if (Math.abs(positions[i3 + 1]) > 75) positions[i3 + 1] *= -0.9, velocities[i3 + 1] = (Math.random() - 0.5) * 0.1;
-            if (Math.abs(positions[i3 + 2]) > 75) positions[i3 + 2] *= -0.9, velocities[i3 + 2] = (Math.random() - 0.5) * 0.1;
+            // Simple edge wrapping with velocity reset
+            if (positions[i3] > 75) {
+                positions[i3] = -75;
+                velocities[i3] = (Math.random() - 0.5) * 0.1;
+            }
+            if (positions[i3] < -75) {
+                positions[i3] = 75;
+                velocities[i3] = (Math.random() - 0.5) * 0.1;
+            }
+            if (positions[i3 + 1] > 75) {
+                positions[i3 + 1] = -75;
+                velocities[i3 + 1] = (Math.random() - 0.5) * 0.1;
+            }
+            if (positions[i3 + 1] < -75) {
+                positions[i3 + 1] = 75;
+                velocities[i3 + 1] = (Math.random() - 0.5) * 0.1;
+            }
+            if (positions[i3 + 2] > 75) {
+                positions[i3 + 2] = -75;
+                velocities[i3 + 2] = (Math.random() - 0.5) * 0.1;
+            }
+            if (positions[i3 + 2] < -75) {
+                positions[i3 + 2] = 75;
+                velocities[i3 + 2] = (Math.random() - 0.5) * 0.1;
+            }
         }
 
         particles.geometry.attributes.position.needsUpdate = true;
@@ -238,32 +233,20 @@ document.addEventListener('DOMContentLoaded', (event) => {
     }
 
     function launchBlackHole() {
-        // Set random start position off-screen
-        const side = Math.floor(Math.random() * 4);
-        const position = new THREE.Vector3();
-
-        switch (side) {
-            case 0: // Top
-                position.set(Math.random() * 150 - 80, 80, Math.random() * 150 - 80);
-                break;
-            case 1: // Right
-                position.set(80, Math.random() * 150 - 80, Math.random() * 150 - 80);
-                break;
-            case 2: // Bottom
-                position.set(Math.random() * 150 - 80, -80, Math.random() * 150 - 80);
-                break;
-            case 3: // Left
-                position.set(-80, Math.random() * 150 - 80, Math.random() * 150 - 80);
-                break;
-        }
+        // Set random start position behind the camera
+        const position = new THREE.Vector3(
+            (Math.random() - 0.5) * 200,
+            (Math.random() - 0.5) * 200,
+            -150 // Start behind camera
+        );
 
         blackHole.position.copy(position);
 
-        // Set random trajectory
+        // Shoot toward camera position
         const target = new THREE.Vector3(
-            Math.random() * 200 - 80,
-            Math.random() * 200 - 80,
-            Math.random() * 200 - 80
+            camera.position.x + (Math.random() - 0.5) * 50,
+            camera.position.y + (Math.random() - 0.5) * 50,
+            camera.position.z + 100 // Past the camera
         );
 
         const direction = new THREE.Vector3().subVectors(target, position).normalize();
@@ -288,9 +271,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
         const time = clock.getElapsedTime();
         const angle = time * params.cameraRotationSpeed;
 
-        camera.position.x = Math.sin(angle) * params.cameraDistance * 0.7;
-        camera.position.z = Math.cos(angle) * params.cameraDistance * 0.7;
-        camera.position.y = Math.sin(time * 0.01) * params.cameraDistance * 0.7;
+        camera.position.x = Math.sin(angle) * params.cameraDistance;
+        camera.position.z = Math.cos(angle) * params.cameraDistance;
+        camera.position.y = 0;
 
         camera.lookAt(scene.position);
     }
