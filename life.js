@@ -160,4 +160,5 @@ document.addEventListener('DOMContentLoaded', () => {
     }, params.updateRate);
 
     window.addEventListener('resize', resize);
+    window.addEventListener('touchmove', resize);
 });
