@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const canvas = document.createElement('canvas');
     const ctx = canvas.getContext('2d');
     document.querySelector('.hero').appendChild(canvas);
+    canvas.style.zIndex = '-1';
     canvas.addEventListener("touchstart", function(e) { e.preventDefault(); }, { passive: false });
     canvas.addEventListener("touchmove", function(e) { e.preventDefault(); }, { passive: false });
     canvas.addEventListener("touchend", function(e) { e.preventDefault(); }, { passive: false });
