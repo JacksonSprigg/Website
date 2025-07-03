@@ -129,7 +129,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const offsetX = (canvas.width - params.gridSize * cellSize) / 2;
         const offsetY = (canvas.height - params.gridSize * cellSize) / 2;
         
-        ctx.fillStyle = '#ffffff';
+        ctx.fillStyle = '#fbfbfd';
         for (let y = 0; y < params.gridSize; y++) {
             for (let x = 0; x < params.gridSize; x++) {
                 if (grid[y][x]) {
