@@ -143,6 +143,29 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    // Mobile Safari resize fix - combined approach
+    let resizeFrame;
+    let lastWidth = window.innerWidth;
+    let lastHeight = window.innerHeight;
+
+    function handleResize() {
+        // Quick exit if no actual size change
+        if (window.innerWidth === lastWidth && window.innerHeight === lastHeight) {
+            return;
+        }
+        
+        if (resizeFrame) {
+            cancelAnimationFrame(resizeFrame);
+        }
+        
+        resizeFrame = requestAnimationFrame(() => {
+            lastWidth = window.innerWidth;
+            lastHeight = window.innerHeight;
+            resize();
+            render(); // Re-render after resize
+        });
+    }
+
     // Initialize
     resize();
     initializeGrid();
@@ -156,6 +179,6 @@ document.addEventListener('DOMContentLoaded', () => {
         render();
     }, params.updateRate);
 
-    //window.addEventListener('resize', resize);
-    //window.addEventListener('touchmove', resize);
+    // Add the fixed resize listener
+    window.addEventListener('resize', handleResize);
 });
