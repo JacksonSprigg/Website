@@ -2,10 +2,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const canvas = document.createElement('canvas');
     const ctx = canvas.getContext('2d');
     document.querySelector('.hero').appendChild(canvas);
-    canvas.style.zIndex = '-1';
-    canvas.addEventListener("touchstart", function(e) { e.preventDefault(); }, { passive: false });
-    canvas.addEventListener("touchmove", function(e) { e.preventDefault(); }, { passive: false });
-    canvas.addEventListener("touchend", function(e) { e.preventDefault(); }, { passive: false });
+
+    // Add GPU acceleration fix for iOS Safari here:
+    canvas.style.transform = 'translate3d(0,0,0)';
+    canvas.style.webkitTransform = 'translate3d(0,0,0)';
 
     const params = {
         gridSize: 100,
