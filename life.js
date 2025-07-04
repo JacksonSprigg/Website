@@ -143,7 +143,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Mobile Safari resize fix - combined approach
+    // Mobile Safari resize fix attempt. Scroll event spam.
     let resizeFrame;
     let lastWidth = window.innerWidth;
     let lastHeight = window.innerHeight;
