@@ -3,10 +3,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const ctx = canvas.getContext('2d');
     document.querySelector('.hero').appendChild(canvas);
 
-    // Add GPU acceleration fix for iOS Safari here:
-    canvas.style.transform = 'translate3d(0,0,0)';
-    canvas.style.webkitTransform = 'translate3d(0,0,0)';
-
     const params = {
         gridSize: 100,
         updateRate: 200, // milliseconds between updates
@@ -160,6 +156,6 @@ document.addEventListener('DOMContentLoaded', () => {
         render();
     }, params.updateRate);
 
-    window.addEventListener('resize', resize);
-    window.addEventListener('touchmove', resize);
+    //window.addEventListener('resize', resize);
+    //window.addEventListener('touchmove', resize);
 });
