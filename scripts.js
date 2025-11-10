@@ -7,17 +7,17 @@ function loadHeader() {
     const headerHTML = `
         <nav>
             <div class="home-link">
-                <a href="index.html"><b>ABOUT</b></a>
+                <a href="index.html"><b>Jackson Sprigg</b></a>
             </div>
             <div class="spacer"></div>
             <div>
-                <a href="projects.html"><b>PROJECTS</b></a>
+                <a href="bookshelf.html"><b>Bookshelf</b></a>
             </div>
             <div>
-                <a href="writing.html"><b>WRITING</b></a>
+                <a href="projects.html"><b>Projects</b></a>
             </div>
             <div>
-                <a href="bookshelf.html"><b>BOOKSHELF</b></a>
+                <a href="writing.html"><b>Writing</b></a>
             </div>
             <div class="separator">|</div>
             <div class="theme-toggle-wrapper">
