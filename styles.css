@@ -6,11 +6,11 @@
     --background-color: #F0EEE6;
     --text-color: #141413;
     --nav-background-color: #E3DACC90;
-    --link-colour: #BCD1CA;
+    --link-colour: #141413;
     --contrast: #E3DACC;
     --slider-bg-color: #B0AEA5;
-    --life-background-color: #000000;
-    --life-cell-color: #fbfbfd;
+    --life-background-color: #CBCADB;
+    --life-cell-color: #FAF9F5;
     --hint-text-color: #FAF9F5;
     --hint-bg-color: #141413;
 }
@@ -19,10 +19,10 @@
     --background-color: #141413;
     --text-color: #FAF9F5;
     --nav-background-color: #14141390;
-    --link-colour: #CBCADB;
+    --link-colour: #FAF9F5;
     --contrast: #E3DACC;
     --slider-bg-color: #B0AEA5;
-    --life-background-color: #000000;
+    --life-background-color: #BCD1CA;
     --life-cell-color: #fbfbfd;
     --hint-text-color: #141413;
     --hint-bg-color: #F0EEE6;
