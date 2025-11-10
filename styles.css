@@ -11,8 +11,8 @@
     --slider-bg-color: #5f5f5f;
     --life-background-color: #000000;
     --life-cell-color: #fbfbfd;
-    --hint-text-color: rgba(255, 255, 255, 0.85);
-    --hint-bg-color: rgba(0, 0, 0, 0.75);
+    --hint-text-color: #ffffff;
+    --hint-bg-color: #000000;
 }
 
 [data-theme="dark"] {
@@ -24,8 +24,8 @@
     --slider-bg-color: #b9b9b9;
     --life-background-color: #000000;
     --life-cell-color: #fbfbfd;
-    --hint-text-color: rgba(29, 29, 31, 0.85);
-    --hint-bg-color: rgba(251, 251, 253, 0.75);
+    --hint-text-color: #1d1d1f;
+    --hint-bg-color: #fbfbfd;
 }
 
 /* ============================================================================
