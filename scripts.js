@@ -44,40 +44,6 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 /* ============================================================================
-   IMAGE PRELOADING
-   ============================================================================ */
-
-document.addEventListener("DOMContentLoaded", () => {
-    const images = document.images;
-    const totalImages = images.length;
-    let imagesLoaded = 0;
-
-    // If no images, remove preload class immediately
-    if (totalImages === 0) {
-        document.body.classList.remove("preload");
-        return;
-    }
-
-    // Track image loading
-    const imageLoaded = () => {
-        imagesLoaded++;
-        if (imagesLoaded === totalImages) {
-            document.body.classList.remove("preload");
-        }
-    };
-
-    // Check each image
-    for (let i = 0; i < totalImages; i++) {
-        if (images[i].complete) {
-            imageLoaded();
-        } else {
-            images[i].addEventListener('load', imageLoaded);
-            images[i].addEventListener('error', imageLoaded); // Handle broken images
-        }
-    }
-});
-
-/* ============================================================================
    NAVIGATION HELPERS
    ============================================================================ */
 
