@@ -88,3 +88,33 @@ const books = [
 const dnfBooks = [
     // Add DNF books here as needed
 ];
+
+// Last updated date - change this when you update the bookshelf
+const lastUpdated = "December 2024";
+
+// Media links
+const blogs = [
+    { name: "Gwern.net", url: "https://gwern.net" },
+    { name: "Astral Codex Ten", url: "https://www.astralcodexten.com" },
+    { name: "LessWrong", url: "https://www.lesswrong.com" },
+    // Add more blogs here
+];
+
+const favoritePosts = [
+    { title: "Meditations on Moloch", author: "Scott Alexander", url: "https://slatestarcodex.com/2014/07/30/meditations-on-moloch/" },
+    { title: "The Sequences", author: "Eliezer Yudkowsky", url: "https://www.lesswrong.com/rationality" },
+    // Add more favorite posts here
+];
+
+const podcasts = [
+    { name: "Dwarkesh Podcast", url: "https://www.dwarkeshpatel.com/podcast" },
+    { name: "The Lunar Society", url: "https://www.youtube.com/@TheLunarSociety" },
+    { name: "80,000 Hours", url: "https://80000hours.org/podcast/" },
+    // Add more podcasts here
+];
+
+const youtubeChannels = [
+    { name: "3Blue1Brown", url: "https://www.youtube.com/@3blue1brown" },
+    { name: "Computerphile", url: "https://www.youtube.com/@Computerphile" },
+    // Add more YouTube channels here
+];

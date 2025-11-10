@@ -233,20 +233,78 @@ function setFilter(filter) {
     renderBookShelves();
 }
 
-function showMediaTab(tab) {
-    // Hide all tab contents
-    document.querySelectorAll('.media-tab-content').forEach(content => {
+function showMainTab(tab) {
+    // Hide all main tab contents
+    document.querySelectorAll('.main-tab-content').forEach(content => {
         content.classList.remove('active');
     });
 
-    // Update tab button states
-    document.querySelectorAll('.media-tab').forEach(btn => {
+    // Update main tab button states
+    document.querySelectorAll('.main-tab-btn').forEach(btn => {
         btn.classList.remove('active');
     });
 
     // Show selected tab
-    document.getElementById(`${tab}-content`).classList.add('active');
-    document.querySelector(`[data-tab="${tab}"]`).classList.add('active');
+    document.getElementById(`${tab}-tab`).classList.add('active');
+    document.querySelector(`[data-maintab="${tab}"]`).classList.add('active');
+}
+
+function showMediaSubTab(tab) {
+    // Hide all subtab contents
+    document.querySelectorAll('.media-subtab-content').forEach(content => {
+        content.classList.remove('active');
+    });
+
+    // Update subtab button states
+    document.querySelectorAll('.media-subtab-btn').forEach(btn => {
+        btn.classList.remove('active');
+    });
+
+    // Show selected subtab
+    document.getElementById(`${tab}-tab`).classList.add('active');
+    document.querySelector(`[data-mediatab="${tab}"]`).classList.add('active');
+}
+
+function renderMediaLists() {
+    // Render last updated date
+    const lastUpdatedEl = document.getElementById('last-updated');
+    if (lastUpdatedEl && typeof lastUpdated !== 'undefined') {
+        lastUpdatedEl.textContent = lastUpdated;
+    }
+
+    // Render blogs
+    const blogsContainer = document.getElementById('blogs-list');
+    if (blogsContainer && typeof blogs !== 'undefined') {
+        blogsContainer.innerHTML = '<ul class="media-links">' +
+            blogs.map(blog => `<li><a href="${blog.url}" target="_blank">${blog.name}</a></li>`).join('') +
+            '</ul>';
+    }
+
+    // Render favorite posts
+    const postsContainer = document.getElementById('favorite-posts-list');
+    if (postsContainer && typeof favoritePosts !== 'undefined') {
+        postsContainer.innerHTML = '<ul class="media-links">' +
+            favoritePosts.map(post =>
+                `<li><a href="${post.url}" target="_blank">${post.title}</a> — ${post.author}</li>`
+            ).join('') +
+            '</ul>';
+    }
+
+    // Render podcasts
+    const podcastsContainer = document.getElementById('podcasts-list');
+    if (podcastsContainer && typeof podcasts !== 'undefined') {
+        podcastsContainer.innerHTML = '<ul class="media-links">' +
+            podcasts.map(podcast => `<li><a href="${podcast.url}" target="_blank">${podcast.name}</a></li>`).join('') +
+            '</ul>';
+    }
+
+    // Render YouTube
+    const youtubeContainer = document.getElementById('youtube-list');
+    if (youtubeContainer && typeof youtubeChannels !== 'undefined') {
+        youtubeContainer.innerHTML = '<ul class="media-links">' +
+            youtubeChannels.map(channel => `<li><a href="${channel.url}" target="_blank">${channel.name}</a></li>`).join('') +
+            '</ul>';
+    }
 }
 
 function renderDNF() {
@@ -277,6 +335,7 @@ document.addEventListener('DOMContentLoaded', () => {
         renderCurrentlyReading();
         renderBookShelves();
         renderDNF();
+        renderMediaLists();
     }
 });
 

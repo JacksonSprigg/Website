@@ -633,10 +633,6 @@ footer a:hover {
     margin: 40px 0;
 }
 
-.bookshelf-main-section {
-    margin: 40px 0;
-}
-
 .content-wrapper {
     max-width: 1200px;
     margin: 0 auto;
@@ -649,16 +645,90 @@ footer a:hover {
     text-align: left;
 }
 
-/* Two-column layout: Books left, Media sidebar right */
-.bookshelf-layout {
-    display: grid;
-    grid-template-columns: 1fr 280px;
-    gap: 60px;
-    align-items: start;
+.content-wrapper h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    text-align: left;
 }
 
-.books-main {
-    min-width: 0;
+/* Main Tabs */
+.main-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 30px 0;
+}
+
+.main-tab-btn {
+    padding: 10px 24px;
+    background: transparent;
+    border: 1px solid var(--contrast);
+    color: var(--text-color);
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.main-tab-btn:hover {
+    background: var(--contrast);
+}
+
+.main-tab-btn.active {
+    background: var(--link-colour);
+    border-color: var(--link-colour);
+    color: var(--background-color);
+}
+
+.main-tab-content {
+    display: none;
+}
+
+.main-tab-content.active {
+    display: block;
+}
+
+/* Media Subtabs */
+.media-subtabs {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px 0 40px;
+}
+
+.media-subtab-btn {
+    padding: 8px 18px;
+    background: transparent;
+    border: 1px solid var(--contrast);
+    color: var(--text-color);
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 13px;
+    cursor: pointer;
+    border-radius: 3px;
+    transition: all 0.2s ease;
+    opacity: 0.7;
+}
+
+.media-subtab-btn:hover {
+    opacity: 1;
+}
+
+.media-subtab-btn.active {
+    background: var(--contrast);
+    opacity: 1;
+}
+
+.media-subtab-content {
+    display: none;
+}
+
+.media-subtab-content.active {
+    display: block;
+}
+
+.media-content-section {
+    margin: 20px 0;
 }
 
 /* Books Grid */
@@ -764,66 +834,10 @@ footer a:hover {
     opacity: 1;
 }
 
-/* Media Sidebar */
-.media-sidebar {
-    position: sticky;
-    top: 20px;
-    padding: 20px;
-    background: transparent;
-    border: 1px solid var(--contrast);
-    border-radius: 4px;
-    font-size: 13px;
-}
-
-.media-sidebar h3 {
-    font-size: 14px;
-    margin: 0 0 8px 0;
-    opacity: 0.9;
-}
-
-.media-intro {
-    font-size: 11px;
-    opacity: 0.6;
-    margin: 0 0 15px 0;
-}
-
-/* Media Tabs */
-.media-tabs {
-    display: flex;
-    gap: 6px;
-    margin-bottom: 15px;
-    border-bottom: 1px solid var(--contrast);
-}
-
-.media-tab {
-    padding: 6px 10px;
-    background: transparent;
-    border: none;
-    color: var(--text-color);
-    font-family: 'Source Sans 3', sans-serif;
-    font-size: 11px;
-    cursor: pointer;
-    opacity: 0.5;
-    transition: opacity 0.2s ease;
-    border-bottom: 2px solid transparent;
-    margin-bottom: -1px;
-}
-
-.media-tab:hover {
-    opacity: 0.8;
-}
-
-.media-tab.active {
-    opacity: 1;
-    border-bottom-color: var(--link-colour);
-}
-
-.media-tab-content {
-    display: none;
-}
-
-.media-tab-content.active {
-    display: block;
+/* Media Lists */
+.media-list {
+    max-width: 800px;
+    margin: 0 auto 30px;
 }
 
 .media-links {
@@ -848,20 +862,16 @@ footer a:hover {
 }
 
 /* Mobile Responsive */
-@media (max-width: 968px) {
-    .bookshelf-layout {
-        grid-template-columns: 1fr;
-        gap: 40px;
-    }
-
-    .media-sidebar {
-        position: static;
-        max-width: 500px;
-        margin: 0 auto;
-    }
-}
-
 @media (max-width: 768px) {
+    .main-tabs, .media-subtabs {
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .main-tab-btn, .media-subtab-btn {
+        font-size: 13px;
+        padding: 8px 16px;
+    }
     .books-grid {
         grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
         gap: 18px;
