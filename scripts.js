@@ -1,4 +1,41 @@
 /* ============================================================================
+   HEADER LOADER
+   ============================================================================ */
+
+// Load navigation header
+function loadHeader() {
+    const headerHTML = `
+        <nav>
+            <div class="home-link">
+                <a href="index.html"><b>About</b></a>
+            </div>
+            <div class="spacer"></div>
+            <div>
+                <a href="projects.html"><b>Projects</b></a>
+            </div>
+            <div>
+                <a href="writing.html"><b>Writing</b></a>
+            </div>
+            <div class="separator">|</div>
+            <div class="theme-toggle-wrapper">
+                <label class="theme-toggle" for="theme-toggle-checkbox">
+                    <input type="checkbox" id="theme-toggle-checkbox" />
+                    <div class="slider"></div>
+                </label>
+            </div>
+        </nav>
+    `;
+
+    const header = document.querySelector('header');
+    if (header) {
+        header.innerHTML = headerHTML;
+    }
+}
+
+// Load header immediately when script is parsed
+loadHeader();
+
+/* ============================================================================
    THEME TOGGLE
    ============================================================================ */
 
