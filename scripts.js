@@ -153,6 +153,8 @@ function loadSocialIcons(quote = null, author = null) {
    BOOKSHELF FUNCTIONS
    ============================================================================ */
 
+let currentFilter = 'all';
+
 function renderCurrentlyReading() {
     const container = document.getElementById('currently-reading-grid');
     if (!container || typeof currentlyReading === 'undefined') return;
@@ -174,9 +176,17 @@ function renderBookShelves() {
     const container = document.getElementById('shelves-container');
     if (!container || typeof books === 'undefined') return;
 
+    // Filter books based on current filter
+    let filteredBooks = books;
+    if (currentFilter === 'fiction') {
+        filteredBooks = books.filter(b => b.type === 'fiction');
+    } else if (currentFilter === 'nonfiction') {
+        filteredBooks = books.filter(b => b.type === 'nonfiction');
+    }
+
     // Group books by rating
     const shelves = {};
-    books.forEach(book => {
+    filteredBooks.forEach(book => {
         if (!shelves[book.rating]) {
             shelves[book.rating] = [];
         }
@@ -209,6 +219,34 @@ function renderBookShelves() {
     }
 
     container.innerHTML = html;
+}
+
+function setFilter(filter) {
+    currentFilter = filter;
+
+    // Update button states
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+        btn.classList.remove('active');
+    });
+    document.querySelector(`[data-filter="${filter}"]`).classList.add('active');
+
+    renderBookShelves();
+}
+
+function showMediaTab(tab) {
+    // Hide all tab contents
+    document.querySelectorAll('.media-tab-content').forEach(content => {
+        content.classList.remove('active');
+    });
+
+    // Update tab button states
+    document.querySelectorAll('.media-tab').forEach(btn => {
+        btn.classList.remove('active');
+    });
+
+    // Show selected tab
+    document.getElementById(`${tab}-content`).classList.add('active');
+    document.querySelector(`[data-tab="${tab}"]`).classList.add('active');
 }
 
 function renderDNF() {
