@@ -148,3 +148,97 @@ function loadSocialIcons(quote = null, author = null) {
         socialSection.innerHTML = iconsHTML;
     }
 }
+
+/* ============================================================================
+   BOOKSHELF FUNCTIONS
+   ============================================================================ */
+
+function renderCurrentlyReading() {
+    const container = document.getElementById('currently-reading-grid');
+    if (!container || typeof currentlyReading === 'undefined') return;
+
+    container.innerHTML = currentlyReading.map(book => `
+        <div class="book-card">
+            <div class="book-cover">
+                <img src="media/bookshelf/${book.cover}" alt="${book.title} cover" onerror="this.src='media/bookshelf/placeholder.jpg'">
+            </div>
+            <div class="book-info">
+                <div class="book-title">${book.title}</div>
+                <div class="book-author">${book.author}</div>
+            </div>
+        </div>
+    `).join('');
+}
+
+function renderBookShelves() {
+    const container = document.getElementById('shelves-container');
+    if (!container || typeof books === 'undefined') return;
+
+    // Group books by rating
+    const shelves = {};
+    books.forEach(book => {
+        if (!shelves[book.rating]) {
+            shelves[book.rating] = [];
+        }
+        shelves[book.rating].push(book);
+    });
+
+    // Render shelves from 10 to 1
+    let html = '';
+    for (let rating = 10; rating >= 1; rating--) {
+        if (shelves[rating] && shelves[rating].length > 0) {
+            html += `
+                <div class="shelf">
+                    <div class="shelf-label">${rating}/10</div>
+                    <div class="books-grid">
+                        ${shelves[rating].map(book => `
+                            <div class="book-card">
+                                <div class="book-cover">
+                                    <img src="media/bookshelf/${book.cover}" alt="${book.title} cover" onerror="this.src='media/bookshelf/placeholder.jpg'">
+                                </div>
+                                <div class="book-info">
+                                    <div class="book-title">${book.title}</div>
+                                    <div class="book-author">${book.author}</div>
+                                </div>
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+            `;
+        }
+    }
+
+    container.innerHTML = html;
+}
+
+function renderDNF() {
+    const container = document.getElementById('dnf-grid');
+    if (!container || typeof dnfBooks === 'undefined') return;
+
+    if (dnfBooks.length === 0) {
+        container.innerHTML = '<p style="text-align: center; color: var(--text-color); opacity: 0.6; font-size: 14px;">No DNF books yet.</p>';
+        return;
+    }
+
+    container.innerHTML = dnfBooks.map(book => `
+        <div class="book-card">
+            <div class="book-cover">
+                <img src="media/bookshelf/${book.cover}" alt="${book.title} cover" onerror="this.src='media/bookshelf/placeholder.jpg'">
+            </div>
+            <div class="book-info">
+                <div class="book-title">${book.title}</div>
+                <div class="book-author">${book.author}</div>
+            </div>
+        </div>
+    `).join('');
+}
+
+// Initialize bookshelf on DOMContentLoaded
+document.addEventListener('DOMContentLoaded', () => {
+    if (document.getElementById('currently-reading-grid')) {
+        renderCurrentlyReading();
+        renderBookShelves();
+        renderDNF();
+    }
+});
+

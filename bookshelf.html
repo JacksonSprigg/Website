@@ -13,129 +13,72 @@
     <section>
         <br>
         <h1 class="heading-with-lines"><span>Bookshelf</span></h1>
-        <p style="text-align: center; max-width: 700px; margin: 20px auto; font-size: 14px;">
-            For currently reading and want-to-read lists, check out my
+        <p style="max-width: 700px; margin: 20px auto; font-size: 14px; text-align: left; padding: 0 20px;">
+            For up-to-date currently-reading and want-to-read lists, check my
             <a href="https://www.goodreads.com/review/list/171423136-jackson-sprigg" target="_blank">Goodreads</a>.
-            If you think I'd enjoy something based on what you see here, please
-            <a href="mailto:jacksonsprigg@gmail.com">reach out with a recommendation</a>!
+            If you think I'd enjoy something based on what you see here,
+            <a href="mailto:jacksonsprigg@gmail.com">reach out</a>.
         </p>
-        <p style="text-align: center; font-size: 12px; opacity: 0.7; margin-bottom: 30px;">
+        <p style="max-width: 700px; margin: 10px auto 30px; font-size: 12px; opacity: 0.6; text-align: left; padding: 0 20px;">
             Last updated: <span id="last-updated">December 2024</span>
         </p>
-        <br>
     </section>
 
-    <!-- Tab Navigation -->
-    <section class="content">
-        <div class="tabs">
-            <button class="tab-btn active" data-tab="books" onclick="showTab('books')">Books</button>
-            <button class="tab-btn" data-tab="podcasts" onclick="showTab('podcasts')">Podcasts</button>
-            <button class="tab-btn" data-tab="blogs" onclick="showTab('blogs')">Blogs</button>
-            <button class="tab-btn" data-tab="youtube" onclick="showTab('youtube')">YouTube</button>
-            <button class="tab-btn" data-tab="posts" onclick="showTab('posts')">Favorite Posts</button>
+    <!-- Currently Reading -->
+    <section class="bookshelf-section">
+        <div class="content-wrapper">
+            <h2>Currently Reading</h2>
+            <div id="currently-reading-grid" class="books-grid"></div>
         </div>
     </section>
 
-    <!-- Books Section -->
-    <section id="books-section" class="tab-content active">
-        <div class="content">
-            <div class="filters">
-                <button class="filter-btn active" data-filter="all" onclick="setFilter('all')">All</button>
-                <button class="filter-btn" data-filter="fiction" onclick="setFilter('fiction')">Fiction</button>
-                <button class="filter-btn" data-filter="nonfiction" onclick="setFilter('nonfiction')">Non-Fiction</button>
-            </div>
+    <!-- Book Shelves organized by rating -->
+    <section class="bookshelf-section">
+        <div class="content-wrapper">
+            <h2>The Shelf</h2>
+            <div id="shelves-container"></div>
+        </div>
+    </section>
 
-            <div id="books-grid" class="books-grid"></div>
-
-            <br><br>
-            <h2 style="text-align: center;">Did Not Finish</h2>
-            <br>
+    <!-- DNF Section -->
+    <section class="bookshelf-section">
+        <div class="content-wrapper">
+            <h2>Did Not Finish</h2>
             <div id="dnf-grid" class="books-grid"></div>
         </div>
     </section>
 
-    <!-- Podcasts Section -->
-    <section id="podcasts-section" class="tab-content">
-        <div class="content">
-            <div class="media-list">
-                <div class="media-item">
-                    <h3>Dwarkesh Podcast</h3>
-                    <p>Deep technical conversations with researchers and thinkers.</p>
-                    <a href="https://www.dwarkeshpatel.com/podcast" target="_blank">Listen →</a>
-                </div>
-                <div class="media-item">
-                    <h3>The Lunar Society</h3>
-                    <p>Long-form discussions about technology, science, and society.</p>
-                    <a href="https://www.youtube.com/@TheLunarSociety" target="_blank">Listen →</a>
-                </div>
-                <div class="media-item">
-                    <h3>80,000 Hours Podcast</h3>
-                    <p>Interviews about how to have a positive impact with your career.</p>
-                    <a href="https://80000hours.org/podcast/" target="_blank">Listen →</a>
-                </div>
-                <!-- Add more podcasts as needed -->
-            </div>
-        </div>
-    </section>
+    <!-- Media consumption (minimal) -->
+    <section class="bookshelf-section media-section">
+        <div class="content-wrapper">
+            <h3 style="font-size: 16px; opacity: 0.8; margin-bottom: 20px;">Things I browse in my free time</h3>
 
-    <!-- Blogs Section -->
-    <section id="blogs-section" class="tab-content">
-        <div class="content">
-            <div class="media-list">
-                <div class="media-item">
-                    <h3>Gwern.net</h3>
-                    <p>Long-form essays on statistics, technology, and philosophy.</p>
-                    <a href="https://gwern.net" target="_blank">Visit →</a>
-                </div>
-                <div class="media-item">
-                    <h3>Astral Codex Ten</h3>
-                    <p>Scott Alexander's blog on rationality, medicine, and culture.</p>
-                    <a href="https://www.astralcodexten.com" target="_blank">Visit →</a>
-                </div>
-                <div class="media-item">
-                    <h3>LessWrong</h3>
-                    <p>Community blog for rationality and AI alignment.</p>
-                    <a href="https://www.lesswrong.com" target="_blank">Visit →</a>
-                </div>
-                <!-- Add more blogs as needed -->
+            <div class="media-category">
+                <h4>Blogs & Posts</h4>
+                <ul class="media-links">
+                    <li><a href="https://gwern.net" target="_blank">Gwern.net</a></li>
+                    <li><a href="https://www.astralcodexten.com" target="_blank">Astral Codex Ten</a></li>
+                    <li><a href="https://www.lesswrong.com" target="_blank">LessWrong</a></li>
+                    <li><a href="https://slatestarcodex.com/2014/07/30/meditations-on-moloch/" target="_blank">Meditations on Moloch</a> — Scott Alexander</li>
+                    <li><a href="https://www.lesswrong.com/rationality" target="_blank">The Sequences</a> — Eliezer Yudkowsky</li>
+                </ul>
             </div>
-        </div>
-    </section>
 
-    <!-- YouTube Section -->
-    <section id="youtube-section" class="tab-content">
-        <div class="content">
-            <div class="media-list">
-                <div class="media-item">
-                    <h3>3Blue1Brown</h3>
-                    <p>Mathematical explanations with beautiful animations.</p>
-                    <a href="https://www.youtube.com/@3blue1brown" target="_blank">Watch →</a>
-                </div>
-                <div class="media-item">
-                    <h3>Computerphile</h3>
-                    <p>Computer science and programming topics.</p>
-                    <a href="https://www.youtube.com/@Computerphile" target="_blank">Watch →</a>
-                </div>
-                <!-- Add more YouTube channels as needed -->
+            <div class="media-category">
+                <h4>Podcasts</h4>
+                <ul class="media-links">
+                    <li><a href="https://www.dwarkeshpatel.com/podcast" target="_blank">Dwarkesh Podcast</a></li>
+                    <li><a href="https://www.youtube.com/@TheLunarSociety" target="_blank">The Lunar Society</a></li>
+                    <li><a href="https://80000hours.org/podcast/" target="_blank">80,000 Hours</a></li>
+                </ul>
             </div>
-        </div>
-    </section>
 
-    <!-- Favorite Posts Section -->
-    <section id="posts-section" class="tab-content">
-        <div class="content">
-            <div class="media-list">
-                <div class="media-item">
-                    <h3>Meditations on Moloch</h3>
-                    <p>Scott Alexander on coordination problems and race-to-the-bottom dynamics.</p>
-                    <a href="https://slatestarcodex.com/2014/07/30/meditations-on-moloch/" target="_blank">Read →</a>
-                </div>
-                <div class="media-item">
-                    <h3>The Sequences</h3>
-                    <p>Eliezer Yudkowsky's foundational essays on rationality.</p>
-                    <a href="https://www.lesswrong.com/rationality" target="_blank">Read →</a>
-                </div>
-                <!-- Add more favorite posts as needed -->
+            <div class="media-category">
+                <h4>YouTube</h4>
+                <ul class="media-links">
+                    <li><a href="https://www.youtube.com/@3blue1brown" target="_blank">3Blue1Brown</a></li>
+                    <li><a href="https://www.youtube.com/@Computerphile" target="_blank">Computerphile</a></li>
+                </ul>
             </div>
         </div>
     </section>
@@ -143,7 +86,7 @@
     <section class="social-icons"></section>
 
     <script src="scripts.js"></script>
-    <script src="bookshelf.js"></script>
+    <script src="bookshelf-data.js"></script>
     <script>
         loadSocialIcons();
     </script>
