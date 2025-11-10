@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&family=Source+Serif+4:wght@400;600;700&display=swap');
+
 /* ============================================================================
    THEME VARIABLES
    ============================================================================ */
@@ -37,7 +39,7 @@ html, body {
 }
 
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Source Serif 4', serif;
     background-color: var(--background-color);
     color: var(--text-color);
     line-height: 1.5;
@@ -55,6 +57,10 @@ header, main, footer {
 /* ============================================================================
    TYPOGRAPHY
    ============================================================================ */
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Source Sans 3', sans-serif;
+}
 
 p a {
     color: var(--link-colour);
@@ -149,6 +155,7 @@ nav a {
     color: var(--text-color);
     font-size: 1em;
     text-decoration: none;
+    font-family: 'Source Sans 3', sans-serif;
 }
 
 nav a:hover {
@@ -394,14 +401,14 @@ input:checked + .slider:before {
     font-size: 14px;
     color: var(--text-color);
     line-height: 1.6;
-    font-family: 'Arial', sans-serif;
+    font-family: 'Source Serif 4', serif;
 }
 
 .list-item-details {
     font-size: 12px;
     color: var(--text-color);
     line-height: 1.7;
-    font-family: 'Arial', sans-serif;
+    font-family: 'Source Serif 4', serif;
     margin-top: 20px;
     text-decoration: italic;
 }
