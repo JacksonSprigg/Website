@@ -155,6 +155,14 @@ function loadSocialIcons(quote = null, author = null) {
 
 let currentFilter = 'all';
 
+function getBookCoverPath(book) {
+    // Use ISBN-13 for the cover filename, fallback to placeholder
+    if (book.isbn13) {
+        return `media/bookshelf/covers/${book.isbn13}.jpg`;
+    }
+    return 'media/bookshelf/placeholder.jpg';
+}
+
 function renderCurrentlyReading() {
     const container = document.getElementById('currently-reading-grid');
     if (!container || typeof currentlyReading === 'undefined') return;
@@ -162,7 +170,10 @@ function renderCurrentlyReading() {
     container.innerHTML = currentlyReading.map(book => `
         <div class="book-card">
             <div class="book-cover">
-                <img src="media/bookshelf/${book.cover}" alt="${book.title} cover" onerror="this.src='media/bookshelf/placeholder.jpg'">
+                <img src="${getBookCoverPath(book)}" 
+                     alt="${book.title} cover" 
+                     loading="lazy"
+                     onerror="this.src='media/bookshelf/placeholder.jpg'">
             </div>
             <div class="book-info">
                 <div class="book-title">${book.title}</div>
@@ -204,7 +215,10 @@ function renderBookShelves() {
                         ${shelves[rating].map(book => `
                             <div class="book-card">
                                 <div class="book-cover">
-                                    <img src="media/bookshelf/${book.cover}" alt="${book.title} cover" onerror="this.src='media/bookshelf/placeholder.jpg'">
+                                    <img src="${getBookCoverPath(book)}" 
+                                         alt="${book.title} cover" 
+                                         loading="lazy"
+                                         onerror="this.src='media/bookshelf/placeholder.jpg'">
                                 </div>
                                 <div class="book-info">
                                     <div class="book-title">${book.title}</div>
@@ -319,7 +333,10 @@ function renderDNF() {
     container.innerHTML = dnfBooks.map(book => `
         <div class="book-card">
             <div class="book-cover">
-                <img src="media/bookshelf/${book.cover}" alt="${book.title} cover" onerror="this.src='media/bookshelf/placeholder.jpg'">
+                <img src="${getBookCoverPath(book)}" 
+                     alt="${book.title} cover" 
+                     loading="lazy"
+                     onerror="this.src='media/bookshelf/placeholder.jpg'">
             </div>
             <div class="book-info">
                 <div class="book-title">${book.title}</div>
@@ -338,4 +355,3 @@ document.addEventListener('DOMContentLoaded', () => {
         renderMediaLists();
     }
 });
-
