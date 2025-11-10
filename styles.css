@@ -6,10 +6,8 @@
     --background-color: #fbfbfd;
     --text-color: #1d1d1f;
     --nav-background-color: #f5f5f790;
-    --hover-background-color: #e0e0e0;
     --link-colour: #f36f89;
     --contrast: #e9ecefd0;
-    --contrast-small-screen: #e9ecefd0;
     --slider-bg-color: #5f5f5f;
 }
 
@@ -17,10 +15,8 @@
     --background-color: #161617;
     --text-color: #fff;
     --nav-background-color: #1d1d1f90;
-    --hover-background-color: #333333;
     --link-colour: #f7a8b8;
     --contrast: #343a40d6;
-    --contrast-small-screen: #000000c6;
     --slider-bg-color: #b9b9b9;
 }
 
@@ -223,7 +219,7 @@ input:checked + .slider {
 }
 
 input:focus + .slider {
-    box-shadow: 0 0 1px var(--slider-box-shadow-color);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.2);
 }
 
 input:checked + .slider:before {
@@ -496,7 +492,7 @@ footer a:hover {
     }
 
     .list-item-title a {
-        background-color: var(--contrast-small-screen);
+        background-color: var(--contrast);
         color: var(--link-colour);
         font-size: 18px;
         display: block;
@@ -508,7 +504,7 @@ footer a:hover {
 
     .list-item-content {
         height: 100%;
-        background-color: var(--contrast-small-screen);
+        background-color: var(--contrast);
         padding: 30px 30px 0;
         font-weight: bold;
     }
