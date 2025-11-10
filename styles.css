@@ -3,12 +3,24 @@
    ============================================================================ */
 
 [data-theme="light"] {
+<<<<<<< HEAD
     --background-color: #E3DACC;
     --text-color: #141413;
+=======
+    --background-color: #fbfbfd;
+    --text-color: #1d1d1f;
+>>>>>>> 8ed64b68e17e47cb5813d7f4f4fc23f25261d36c
     --nav-background-color: #f5f5f790;
     --link-colour: #f36f89;
     --contrast: #e9ecefd0;
     --slider-bg-color: #5f5f5f;
+<<<<<<< HEAD
+=======
+    --life-background-color: #000000;
+    --life-cell-color: #fbfbfd;
+    --hint-text-color: rgba(255, 255, 255, 0.85);
+    --hint-bg-color: rgba(0, 0, 0, 0.75);
+>>>>>>> 8ed64b68e17e47cb5813d7f4f4fc23f25261d36c
 }
 
 [data-theme="dark"] {
@@ -18,6 +30,13 @@
     --link-colour: #f7a8b8;
     --contrast: #343a40d6;
     --slider-bg-color: #b9b9b9;
+<<<<<<< HEAD
+=======
+    --life-background-color: #000000;
+    --life-cell-color: #fbfbfd;
+    --hint-text-color: rgba(29, 29, 31, 0.85);
+    --hint-bg-color: rgba(251, 251, 253, 0.75);
+>>>>>>> 8ed64b68e17e47cb5813d7f4f4fc23f25261d36c
 }
 
 /* ============================================================================
@@ -237,6 +256,22 @@ input:checked + .slider:before {
     overflow: hidden;
 }
 
+<<<<<<< HEAD
+=======
+.click-hint {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    color: var(--hint-text-color);
+    background: var(--hint-bg-color);
+    font-size: 0.8em;
+    font-style: italic;
+    padding: 8px 12px;
+    border-radius: 4px;
+    backdrop-filter: blur(4px);
+}
+
+>>>>>>> 8ed64b68e17e47cb5813d7f4f4fc23f25261d36c
 /* ============================================================================
    CONTENT SECTIONS
    ============================================================================ */
