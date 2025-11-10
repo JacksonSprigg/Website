@@ -245,8 +245,6 @@ input:checked + .slider:before {
     overflow: hidden;
 }
 
-<<<<<<< HEAD
-=======
 .click-hint {
     position: absolute;
     bottom: 20px;
@@ -260,7 +258,6 @@ input:checked + .slider:before {
     backdrop-filter: blur(4px);
 }
 
->>>>>>> 8ed64b68e17e47cb5813d7f4f4fc23f25261d36c
 /* ============================================================================
    CONTENT SECTIONS
    ============================================================================ */
