@@ -20,83 +20,95 @@
             <a href="mailto:jacksonsprigg@gmail.com">reach out</a>.
         </p>
         <p style="max-width: 700px; margin: 10px auto 30px; font-size: 12px; opacity: 0.6; text-align: left; padding: 0 20px;">
-            Last updated: <span id="last-updated">December 2024</span>
+            Last updated: <span id="last-updated"></span>
         </p>
     </section>
 
-    <!-- Currently Reading -->
-    <section class="bookshelf-section">
-        <div class="content-wrapper">
-            <h2>Currently Reading</h2>
-            <div id="currently-reading-grid" class="books-grid"></div>
+    <!-- Main Tabs -->
+    <section class="content">
+        <div class="main-tabs">
+            <button class="main-tab-btn active" data-maintab="books" onclick="showMainTab('books')">Books</button>
+            <button class="main-tab-btn" data-maintab="media" onclick="showMainTab('media')">Other Media</button>
         </div>
     </section>
 
-    <!-- Main Content Area (Books on left, Media sidebar on right) -->
-    <section class="bookshelf-main-section">
-        <div class="content-wrapper">
-            <div class="bookshelf-layout">
-                <!-- Left: Main Books Section -->
-                <div class="books-main">
-                    <!-- Book Shelves organized by rating -->
-                    <div class="bookshelf-section">
-                        <div class="shelf-header">
-                            <h2>The Shelf</h2>
-                            <div class="filter-buttons">
-                                <button class="filter-btn active" data-filter="all" onclick="setFilter('all')">All</button>
-                                <button class="filter-btn" data-filter="fiction" onclick="setFilter('fiction')">Fiction</button>
-                                <button class="filter-btn" data-filter="nonfiction" onclick="setFilter('nonfiction')">Non-Fiction</button>
-                            </div>
-                        </div>
-                        <div id="shelves-container"></div>
-                    </div>
+    <!-- Books Tab Content -->
+    <div id="books-tab" class="main-tab-content active">
+        <!-- Currently Reading -->
+        <section class="bookshelf-section">
+            <div class="content-wrapper">
+                <h2>Currently Reading</h2>
+                <div id="currently-reading-grid" class="books-grid"></div>
+            </div>
+        </section>
 
-                    <!-- DNF Section -->
-                    <div class="bookshelf-section">
-                        <h2>Did Not Finish</h2>
-                        <div id="dnf-grid" class="books-grid"></div>
+        <!-- The Shelf with filters -->
+        <section class="bookshelf-section">
+            <div class="content-wrapper">
+                <div class="shelf-header">
+                    <h2>The Shelf</h2>
+                    <div class="filter-buttons">
+                        <button class="filter-btn active" data-filter="all" onclick="setFilter('all')">All</button>
+                        <button class="filter-btn" data-filter="fiction" onclick="setFilter('fiction')">Fiction</button>
+                        <button class="filter-btn" data-filter="nonfiction" onclick="setFilter('nonfiction')">Non-Fiction</button>
                     </div>
                 </div>
-
-                <!-- Right: Media Sidebar -->
-                <aside class="media-sidebar">
-                    <h3>Other Media</h3>
-                    <p class="media-intro">Things I browse in my free time</p>
-
-                    <div class="media-tabs">
-                        <button class="media-tab active" data-tab="blogs" onclick="showMediaTab('blogs')">Blogs</button>
-                        <button class="media-tab" data-tab="podcasts" onclick="showMediaTab('podcasts')">Podcasts</button>
-                        <button class="media-tab" data-tab="youtube" onclick="showMediaTab('youtube')">YouTube</button>
-                    </div>
-
-                    <div class="media-content">
-                        <div id="blogs-content" class="media-tab-content active">
-                            <ul class="media-links">
-                                <li><a href="https://gwern.net" target="_blank">Gwern.net</a></li>
-                                <li><a href="https://www.astralcodexten.com" target="_blank">Astral Codex Ten</a></li>
-                                <li><a href="https://www.lesswrong.com" target="_blank">LessWrong</a></li>
-                                <li><a href="https://slatestarcodex.com/2014/07/30/meditations-on-moloch/" target="_blank">Meditations on Moloch</a> — Scott Alexander</li>
-                                <li><a href="https://www.lesswrong.com/rationality" target="_blank">The Sequences</a> — Eliezer Yudkowsky</li>
-                            </ul>
-                        </div>
-                        <div id="podcasts-content" class="media-tab-content">
-                            <ul class="media-links">
-                                <li><a href="https://www.dwarkeshpatel.com/podcast" target="_blank">Dwarkesh Podcast</a></li>
-                                <li><a href="https://www.youtube.com/@TheLunarSociety" target="_blank">The Lunar Society</a></li>
-                                <li><a href="https://80000hours.org/podcast/" target="_blank">80,000 Hours</a></li>
-                            </ul>
-                        </div>
-                        <div id="youtube-content" class="media-tab-content">
-                            <ul class="media-links">
-                                <li><a href="https://www.youtube.com/@3blue1brown" target="_blank">3Blue1Brown</a></li>
-                                <li><a href="https://www.youtube.com/@Computerphile" target="_blank">Computerphile</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </aside>
+                <div id="shelves-container"></div>
             </div>
+        </section>
+
+        <!-- DNF Section -->
+        <section class="bookshelf-section">
+            <div class="content-wrapper">
+                <h2>Did Not Finish</h2>
+                <div id="dnf-grid" class="books-grid"></div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Other Media Tab Content -->
+    <div id="media-tab" class="main-tab-content">
+        <section class="content">
+            <div class="media-subtabs">
+                <button class="media-subtab-btn active" data-mediatab="blogs" onclick="showMediaSubTab('blogs')">Blogs</button>
+                <button class="media-subtab-btn" data-mediatab="podcasts" onclick="showMediaSubTab('podcasts')">Podcasts</button>
+                <button class="media-subtab-btn" data-mediatab="youtube" onclick="showMediaSubTab('youtube')">YouTube</button>
+            </div>
+        </section>
+
+        <!-- Blogs Content -->
+        <div id="blogs-tab" class="media-subtab-content active">
+            <section class="media-content-section">
+                <div class="content-wrapper">
+                    <h3>Blogs</h3>
+                    <div id="blogs-list" class="media-list"></div>
+
+                    <h3 style="margin-top: 40px;">Favorite Posts</h3>
+                    <div id="favorite-posts-list" class="media-list"></div>
+                </div>
+            </section>
         </div>
-    </section>
+
+        <!-- Podcasts Content -->
+        <div id="podcasts-tab" class="media-subtab-content">
+            <section class="media-content-section">
+                <div class="content-wrapper">
+                    <h3>Podcasts</h3>
+                    <div id="podcasts-list" class="media-list"></div>
+                </div>
+            </section>
+        </div>
+
+        <!-- YouTube Content -->
+        <div id="youtube-tab" class="media-subtab-content">
+            <section class="media-content-section">
+                <div class="content-wrapper">
+                    <h3>YouTube</h3>
+                    <div id="youtube-list" class="media-list"></div>
+                </div>
+            </section>
+        </div>
+    </div>
 
     <section class="social-icons"></section>
 
