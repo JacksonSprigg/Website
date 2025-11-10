@@ -1,50 +1,45 @@
-/* Themes */
+/* ============================================================================
+   THEME VARIABLES
+   ============================================================================ */
+
 [data-theme="light"] {
-
-    /* Nav, background and text */
-    --background-color: #fbfbfd; 
-    --text-color: #1d1d1f; 
+    --background-color: #fbfbfd;
+    --text-color: #1d1d1f;
     --nav-background-color: #f5f5f790;
-    --hover-background-color: #e0e0e0; 
+    --hover-background-color: #e0e0e0;
     --link-colour: #f36f89;
-
     --contrast: #e9ecefd0;
     --contrast-small-screen: #e9ecefd0;
-
-    /* Theme toggle */
-    --slider-bg-color: #5f5f5f; 
+    --slider-bg-color: #5f5f5f;
 }
 
 [data-theme="dark"] {
-
-    /* Nav, background and text */
-    --background-color: #161617; /*old#343434*/
+    --background-color: #161617;
     --text-color: #fff;
     --nav-background-color: #1d1d1f90;
-    --hover-background-color: #333333; 
+    --hover-background-color: #333333;
     --link-colour: #f7a8b8;
-
     --contrast: #343a40d6;
     --contrast-small-screen: #000000c6;
-
-    /* Theme Toggle */
     --slider-bg-color: #b9b9b9;
 }
 
-/* UNIVERSAL */
+/* ============================================================================
+   BASE STYLES
+   ============================================================================ */
+
 html, body {
     overflow-x: hidden;
-  }
+}
 
 body {
     font-family: 'Arial', sans-serif;
     background-color: var(--background-color);
     color: var(--text-color);
     line-height: 1.5;
-    margin: 0px;
-    padding-top: 55px;
-    padding-right: 0px;
-    position: relative
+    margin: 0;
+    padding: 55px 0 0 0;
+    position: relative;
 }
 
 header, main, footer {
@@ -53,9 +48,13 @@ header, main, footer {
     width: 100%;
 }
 
+/* ============================================================================
+   TYPOGRAPHY
+   ============================================================================ */
+
 p a {
     color: var(--link-colour);
-    text-decoration: none; 
+    text-decoration: none;
     font-style: italic;
 }
 
@@ -71,53 +70,73 @@ figcaption {
 }
 
 .quote-block {
-    max-width: 460px; 
-    text-decoration: none; /* No underline or other text decorations */
-    text-align: left;    /* Text aligned to the center */
-    display: block;        /* Element displayed as a block */
-    margin: 0px 0;        /* Adds vertical spacing around the quote */
+    max-width: 460px;
+    text-decoration: none;
+    text-align: left;
+    display: block;
+    margin: 0;
     font-size: 14px;
-    padding-left: 30px;
-    padding-right: 30px;
+    padding: 0 30px;
 }
 
 .citation {
-    display: block; /* Makes the citation a block element within the quote block */
-    text-align: right; /* Aligns the citation text to the right */
-    margin-top: 10px; /* Adds space between the quote and the citation */
+    display: block;
+    text-align: right;
+    margin-top: 10px;
 }
 
-
-footer {
-    background-color: var(--background-color);
-    color:var(--text-color);
-    text-align: left;
-    padding: 10px 10px;
-    font-size: 0.7em;
+.heading-with-lines {
+    text-align: center;
 }
 
-footer a {
-    color: var(--link-colour);
-    text-decoration: none;
+.heading-with-lines span {
+    position: relative;
+    display: inline-block;
+    padding: 0 20px;
 }
 
-footer a:hover {
-    opacity: 0.7;
+.heading-with-lines span:before,
+.heading-with-lines span:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 3px;
+    width: 30px;
+    background-color: var(--text-color);
 }
 
-/* NAV BAR */
+.heading-with-lines span:before {
+    left: -20px;
+}
+
+.heading-with-lines span:after {
+    right: -20px;
+}
+
+.thin-hr {
+    border: 0.5px solid var(--text-color);
+    margin: 15px auto;
+    width: 350px;
+    display: block;
+}
+
+/* ============================================================================
+   NAVIGATION
+   ============================================================================ */
+
 nav {
     width: 100%;
-    position: fixed; 
+    position: fixed;
     top: 0;
     background-color: var(--nav-background-color);
     display: flex;
-    align-items: center; /* Center objects with text */
-    z-index: 100; /* Make sure nav bar is always at the front */
+    align-items: center;
+    z-index: 100;
 }
 
 nav div {
-    display: inline-block; 
+    display: inline-block;
 }
 
 nav a {
@@ -133,33 +152,35 @@ nav a:hover {
 }
 
 .home-link {
-    margin-right: auto; /* Pushes everything else to the right */
+    margin-right: auto;
 }
 
 .spacer {
-    flex-grow: 1; /* Takes up available space */
+    flex-grow: 1;
 }
 
 .separator {
-    margin: 0 15px; /* Adjust spacing around separator */
+    margin: 0 15px;
 }
 
 .home-icon {
-    width: 30px; /* Adjust icon size as needed */
+    width: 30px;
     height: 30px;
     margin-right: 40px;
 }
 
+/* ============================================================================
+   THEME TOGGLE
+   ============================================================================ */
 
-/* Theme Toggler */
 .theme-toggle-wrapper {
     display: inline-block;
     position: relative;
-    margin-left: auto; 
+    margin-left: auto;
     margin-right: 40px;
     padding-left: 10px;
-    width: 35px; /* Reduced from 60px */
-    height: 26px; /* Reduced from 34px */
+    width: 35px;
+    height: 26px;
 }
 
 .theme-toggle {
@@ -188,10 +209,10 @@ nav a:hover {
 .slider:before {
     position: absolute;
     content: "";
-    height: 19px; /* Reduced from 26px */
-    width: 19px; /* Reduced from 26px */
-    left: 5px; /* Adjusted for new size */
-    bottom: 3.5px; /* Adjusted for new size */
+    height: 19px;
+    width: 19px;
+    left: 5px;
+    bottom: 3.5px;
     background-color: var(--text-color);
     transition: .4s;
     border-radius: 50%;
@@ -207,7 +228,7 @@ input:focus + .slider {
 
 input:checked + .slider:before {
     background-color: var(--text-color);
-    transform: translateX(16px); /* Adjusted for new size */
+    transform: translateX(16px);
 }
 
 .slider.round {
@@ -218,10 +239,13 @@ input:checked + .slider:before {
     border-radius: 50%;
 }
 
-/* LANDING HERO */
+/* ============================================================================
+   HERO SECTION
+   ============================================================================ */
+
 .hero {
     position: relative;
-    height: 35vh; 
+    height: 35vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -231,59 +255,57 @@ input:checked + .slider:before {
     overflow: hidden;
 }
 
+/* ============================================================================
+   CONTENT SECTIONS
+   ============================================================================ */
 
-/* Main writing */
 .content {
-    margin-top: 0px; 
-    padding-top: 20px;
-    padding-left: 20px;
-    padding-right: 20px;
+    margin-top: 0;
+    padding: 20px;
 }
 
 .content-inner {
-    max-width: 500px; 
-    margin: 0 auto; 
-    text-align: left; 
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: left;
 }
 
-/* Icons */
+/* ============================================================================
+   SOCIAL ICONS
+   ============================================================================ */
+
 .social-icons {
-    text-align: center; /* Center the icons container */
+    text-align: center;
     padding: 5px;
 }
 
 .icons-container a {
-    margin: 0 5px; /* Space out the icons */
-    display: inline-block; /* Align icons in a row */
+    margin: 0 5px;
+    display: inline-block;
 }
 
 .icons-container p {
-    margin: 5px 0px; /* Space out the icons */
-    display: inline-block; /* Align icons in a row */
+    margin: 5px 0;
+    display: inline-block;
 }
 
 .icons-container svg {
     color: var(--text-color);
-    width: 35px; /* Adjust the size of your icons */
+    width: 35px;
     height: auto;
-    vertical-align: middle; /* Aligns image nicely with text, if any */
-    transition: transform 0.3s ease; /* Smooth transition for hover effect */
+    vertical-align: middle;
+    transition: transform 0.3s ease;
 }
 
 .icons-container svg:hover {
-    transform: translateY(-4px); /* Move the icon up slightly on hover */
-    opacity: 0.7; /* Slightly fade the icon to indicate interactivity */
+    transform: translateY(-4px);
+    opacity: 0.7;
 }
 
-.thin-hr {
-    border: 0.5px solid var(--text-color); /* Thin line with a light grey color */
-    margin: 15px auto; /* Space above and below the line */
-    width: 350px; /* Adjust the width as needed */
-    display: block; /* Ensuring the element is a block-level element */
-}
+/* ============================================================================
+   PROJECTS
+   ============================================================================ */
 
-
-/* Projects */
 .image-container {
     display: flex;
     justify-content: center;
@@ -304,80 +326,42 @@ input:checked + .slider:before {
 }
 
 .project-figure {
-    margin: 0 px; /* Adds spacing between the figures */
+    margin: 0;
 }
 
 .project-image {
-    width: 300px; /* Makes the image fill the container */
-    height: auto; /* Keeps the aspect ratio of the image */
-    transition: transform 0.4s ease; /* Smooth transition for scaling */
+    width: 300px;
+    height: auto;
+    transition: transform 0.4s ease;
 }
 
 .project-image:hover {
-    transform: scale(1.4); /* Increase size by 10% on hover */
+    transform: scale(1.4);
 }
 
-.project p {
-    font-size: 16px; /* Adjust this value to your preference */
-}
-
-.project ol {
-    font-size: 16px; /* Adjust this value to your preference */
-}
-
-.project ul {
-    font-size: 16px; /* Adjust this value to your preference */
-}
-
+/* Consolidated project text styles */
+.project p,
+.project ol,
+.project ul,
 .project dl {
-    font-size: 16px; /* Adjust this value to your preference */
+    font-size: 16px;
 }
 
-.heading-with-lines {
-    text-align: center; /* Center the heading */
-}
-
-.heading-with-lines span {
-    position: relative;
-    display: inline-block;
-    padding: 0 20px; /* Adjusts the spacing around the text */
-}
-
-.heading-with-lines span:before,
-.heading-with-lines span:after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    height: 3px; /* Adjust the thickness of the line */
-    width: 30px; /* Adjust the length of the line */
-    background-color: var(--text-color); /* The color of the line */
-}
-
-.heading-with-lines span:before {
-    left: -20px; /* Adjust distance from the text */
-}
-
-.heading-with-lines span:after {
-    right: -20px; /* Adjust distance from the text */
-}
-
-
-/* LISTS */
+/* ============================================================================
+   LIST CONTAINERS
+   ============================================================================ */
 
 .list-outer-container {
-    position: relative; /* Ensures proper positioning for child elements */
-    width: 90%; /* Adjust width as needed */
-    max-width: 800px; /* Container width */
-    height: 300px; /* Reduced maximum height if needed, or adjust based on content */
+    position: relative;
+    width: 90%;
+    max-width: 800px;
+    height: 300px;
     margin: 0 auto;
-    padding-left: 0px; /* Padding around content */
-    padding-right: 0px; /* Padding around content */
-    overflow: hidden; /* Hide overflow */
-
+    padding: 0;
+    overflow: hidden;
     opacity: 0;
     transform: translateY(50px) scale(1);
-    transition: transform 0.85s ease-out, opacity 0.85s ease-out; /* General slow transition */
+    transition: transform 0.85s ease-out, opacity 0.85s ease-out;
 }
 
 .list-outer-container.active {
@@ -385,52 +369,44 @@ input:checked + .slider:before {
     transform: translateY(0) scale(1);
 }
 
-/* Apply the faster transition for both hover and non-hover states */
-.list-outer-container:hover {
-    transition: transform 0.4s ease-out, opacity 0.4s ease-out; /* Ensure quick transition on and off hover */
-}
-
 .list-outer-container:hover {
     transform: scale(1.05);
     opacity: 0.9;
     cursor: pointer;
+    transition: transform 0.4s ease-out, opacity 0.4s ease-out;
 }
 
 .list-item-content {
-    background-color: var(--contrast); /* Light grey background */
-    padding: 20px; /* Padding around the content */
+    background-color: var(--contrast);
+    padding: 20px;
     max-width: 500px;
-  }
-  
-  /* Styles for the project title */
-  .list-item-title a{
-    color: var(--link-colour);
-    font-size: 18px; /* Larger font size for titles */
-    display: block; /* or 'inline-block' if you prefer */
-    padding: 20px; /* Padding around the content */
+}
 
-    font-weight: bold; /* Make the title bold */
+.list-item-title a {
+    color: var(--link-colour);
+    font-size: 18px;
+    display: block;
+    padding: 20px;
+    font-weight: bold;
     text-decoration: none;
-  }
+}
 
 .list-item-description {
-    font-size: 14px; /* Standard font size for descriptions */
-    color: var(--text-color); /* Medium grey for the description text */
-    line-height: 1.6; /* Space between lines */
+    font-size: 14px;
+    color: var(--text-color);
+    line-height: 1.6;
     font-family: 'Arial', sans-serif;
-  }
+}
 
-  .list-item-details{
-    font-size: 12px; /* Standard font size for descriptions */
-    color: var(--text-color); /* Medium grey for the description text */
-    line-height: 1.7; /* Space between lines */
+.list-item-details {
+    font-size: 12px;
+    color: var(--text-color);
+    line-height: 1.7;
     font-family: 'Arial', sans-serif;
     margin-top: 20px;
     text-decoration: italic;
-  }
-  
+}
 
-/* You might need to adjust the dimensions of the image */
 .overlapping-image img {
     width: 100%;
     height: 100%;
@@ -438,93 +414,108 @@ input:checked + .slider:before {
 }
 
 .special-margin {
-    margin-top: -80px; /* Apply margin on larger screens */
+    margin-top: -80px;
 }
 
 .special-margin-2 {
-    margin-top: -35px; /* Apply margin on larger screens */
+    margin-top: -35px;
 }
 
-/* Responsive design for smaller screens */
-@media (max-width: 768px) {
+/* ============================================================================
+   FOOTER
+   ============================================================================ */
 
+footer {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    text-align: left;
+    padding: 10px;
+    font-size: 0.7em;
+}
+
+footer a {
+    color: var(--link-colour);
+    text-decoration: none;
+}
+
+footer a:hover {
+    opacity: 0.7;
+}
+
+/* ============================================================================
+   MEDIA QUERIES - MOBILE RESPONSIVE
+   ============================================================================ */
+
+@media (max-width: 768px) {
     html, body {
         overflow-x: hidden;
-      }
-      body {
         position: relative;
-      }
-    
-      .hero {
-        height: 22.5vh; 
+    }
+
+    .hero {
+        height: 22.5vh;
         background-size: 135%;
-      }
+    }
 
     .image-container {
-        flex-direction: column; /* Stack images vertically on small screens */
-    }
-    figure {
-        margin: 10px; /* Adds margin around each figure */
-        flex-basis: calc(50% - 20px); /* Subtract double the margin to maintain spacing */
-        text-align: center; /* Center-align the caption */
+        flex-direction: column;
     }
 
-    .special-margin {
-        margin-top: 0; /* Remove margin for smaller screens */
+    figure {
+        margin: 10px;
+        flex-basis: calc(50% - 20px);
+        text-align: center;
     }
+
+    .special-margin,
     .special-margin-2 {
-        margin-top: 0px; /* Remove margin for smaller screens */
+        margin-top: 0;
     }
 
     .list-outer-container {
-        position: relative; /* Ensures proper positioning for child elements */
-        max-width: 450px; /* Container width */
-        height: 370px; /* Reduced maximum height if needed, or adjust based on content */
+        position: relative;
+        max-width: 450px;
+        height: 370px;
         margin: 0 auto;
-        overflow: hidden; /* Hide overflow */
+        overflow: hidden;
     }
 
     .list-item {
-        position: relative; /* Set position relative to contain absolute children */
-        max-width: 500px; /* Set a max width for the container */
+        position: relative;
+        max-width: 500px;
     }
-    
+
     .overlapping-image {
-        position: absolute; /* Absolute positioning */
-        width: 100%; /* Take the full width of the parent */
-        height: 100%; /* Take the full height of the parent */
-        top: 0; /* Align to the top of the parent */
-        left: 0; /* Align to the left of the parent */
-        z-index: -1; /* Place it behind the content */
-        background-size: cover; /* Cover the entire area */
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        background-size: cover;
     }
-    
+
     .list-item-title a {
-        background-color: var(--contrast-small-screen); /* Light grey background */
+        background-color: var(--contrast-small-screen);
         color: var(--link-colour);
-        font-size: 18px; /* Larger font size for titles */
-        display: block; /* Block display to take full available width */
-        font-weight: bold; /* Bold font for title */
-        text-decoration: none; /* No underline */
-        padding: 30px; /* Padding around the content */
-        margin-bottom: 0px; 
-
+        font-size: 18px;
+        display: block;
+        font-weight: bold;
+        text-decoration: none;
+        padding: 30px;
+        margin-bottom: 0;
     }
-    
+
     .list-item-content {
-        height: 100%; /* Take the full height of the parent */
-        background-color: var(--contrast-small-screen); /* Light grey background */
-        padding: 30px; /* Padding around the content */
-        padding-top: 0px; /* Padding around the content */
-        font-weight: bold; /* Make the title bold */
+        height: 100%;
+        background-color: var(--contrast-small-screen);
+        padding: 30px 30px 0;
+        font-weight: bold;
     }
 
-    .list-item-details{
-         /* Positioning */
+    .list-item-details {
         position: absolute;
         bottom: 20px;
         right: 35px;
-      }
-    
+    }
 }
-
