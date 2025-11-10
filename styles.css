@@ -3,29 +3,29 @@
    ============================================================================ */
 
 [data-theme="light"] {
-    --background-color: #E3DACC;
+    --background-color: #F0EEE6;
     --text-color: #141413;
-    --nav-background-color: #f5f5f790;
-    --link-colour: #f36f89;
-    --contrast: #e9ecefd0;
-    --slider-bg-color: #5f5f5f;
+    --nav-background-color: #E3DACC90;
+    --link-colour: #BCD1CA;
+    --contrast: #E3DACC;
+    --slider-bg-color: #B0AEA5;
     --life-background-color: #000000;
     --life-cell-color: #fbfbfd;
-    --hint-text-color: #ffffff;
-    --hint-bg-color: #000000;
+    --hint-text-color: #FAF9F5;
+    --hint-bg-color: #141413;
 }
 
 [data-theme="dark"] {
-    --background-color: #161617;
-    --text-color: #fff;
-    --nav-background-color: #1d1d1f90;
-    --link-colour: #f7a8b8;
-    --contrast: #343a40d6;
-    --slider-bg-color: #b9b9b9;
+    --background-color: #141413;
+    --text-color: #FAF9F5;
+    --nav-background-color: #14141390;
+    --link-colour: #CBCADB;
+    --contrast: #E3DACC;
+    --slider-bg-color: #B0AEA5;
     --life-background-color: #000000;
     --life-cell-color: #fbfbfd;
     --hint-text-color: #141413;
-    --hint-bg-color: #E3DACC;
+    --hint-bg-color: #F0EEE6;
 }
 
 /* ============================================================================

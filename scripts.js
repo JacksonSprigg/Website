@@ -16,6 +16,9 @@ function loadHeader() {
             <div>
                 <a href="writing.html"><b>Writing</b></a>
             </div>
+            <div>
+                <a href="bookshelf.html"><b>Bookshelf</b></a>
+            </div>
             <div class="separator">|</div>
             <div class="theme-toggle-wrapper">
                 <label class="theme-toggle" for="theme-toggle-checkbox">
