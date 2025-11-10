@@ -3,8 +3,8 @@
    ============================================================================ */
 
 [data-theme="light"] {
-    --background-color: #fbfbfd;
-    --text-color: #1d1d1f;
+    --background-color: #E3DACC;
+    --text-color: #141413;
     --nav-background-color: #f5f5f790;
     --link-colour: #f36f89;
     --contrast: #e9ecefd0;
@@ -24,8 +24,8 @@
     --slider-bg-color: #b9b9b9;
     --life-background-color: #000000;
     --life-cell-color: #fbfbfd;
-    --hint-text-color: #1d1d1f;
-    --hint-bg-color: #fbfbfd;
+    --hint-text-color: #141413;
+    --hint-bg-color: #E3DACC;
 }
 
 /* ============================================================================
@@ -245,6 +245,8 @@ input:checked + .slider:before {
     overflow: hidden;
 }
 
+<<<<<<< HEAD
+=======
 .click-hint {
     position: absolute;
     bottom: 20px;
@@ -258,6 +260,7 @@ input:checked + .slider:before {
     backdrop-filter: blur(4px);
 }
 
+>>>>>>> 8ed64b68e17e47cb5813d7f4f4fc23f25261d36c
 /* ============================================================================
    CONTENT SECTIONS
    ============================================================================ */
