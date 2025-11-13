@@ -55,7 +55,7 @@ const books = [
     { title: "Letters to a Young Poet", author: "Rainer Maria Rilke", rating: 6, type: "nonfiction", isbn13: "9780486422459" },
     { title: "Tao Te Ching", author: "Lao Tzu", rating: 8, type: "nonfiction", isbn13: "9780679724346" },
     { title: "The Death of Ivan Ilych", author: "Leo Tolstoy", rating: 8, type: "fiction", isbn13: "thedeathofivanilych" },
-    { title: "The Quantum Astrologer's Handbook: a history of the Renaissance mathematics that birthed imaginary numbers, probability, and the new physics of the universe", author: "Michael Brooks", rating: 6, type: "nonfiction", isbn13: "9781947534810" },
+    { title: "The Quantum Astrologer's Handbook: a history of Renaissance mathematics", author: "Michael Brooks", rating: 6, type: "nonfiction", isbn13: "9781947534810" },
     { title: "Notes from Underground", author: "Fyodor Dostoevsky", rating: 10, type: "fiction", isbn13: "9780679734529" },
     { title: "Ethics in the Real World: 86 Brief Essays on Things that Matter", author: "Peter Singer", rating: 6, type: "nonfiction", isbn13: "9781925355857" },
     { title: "The Last Question", author: "Isaac Asimov", rating: 6, type: "fiction", isbn13: "thelastquestion" },
