@@ -8,7 +8,7 @@
     --background-color: #F0EEE6;
     --text-color: #141413;
     --nav-background-color: #E3DACC90;
-    --link-colour: #141413;
+    --link-colour: #404040;
     --contrast: #E3DACC;
     --slider-bg-color: #B0AEA5;
     --life-background-color: #BCD1CA;
@@ -21,7 +21,7 @@
     --background-color: #141413;
     --text-color: #FAF9F5;
     --nav-background-color: #14141390;
-    --link-colour: #FAF9F5;
+    --link-colour: #c8c8c8;
     --contrast: #E3DACC;
     --slider-bg-color: #B0AEA5;
     --life-background-color: #CBCADB;
@@ -64,7 +64,8 @@ h1, h2, h3, h4, h5, h6 {
 
 p a {
     color: var(--link-colour);
-    text-decoration: none;
+    text-decoration: underline dotted 1px;
+    text-underline-offset: 2px;
     font-style: italic;
 }
 
@@ -394,7 +395,8 @@ input:checked + .slider:before {
     display: block;
     padding: 20px;
     font-weight: bold;
-    text-decoration: none;
+    text-decoration: underline dotted 1px;
+    text-underline-offset: 2px;
 }
 
 .list-item-description {
@@ -441,7 +443,8 @@ footer {
 
 footer a {
     color: var(--link-colour);
-    text-decoration: none;
+    text-decoration: underline dotted 1px;
+    text-underline-offset: 2px;
 }
 
 footer a:hover {
@@ -502,7 +505,8 @@ footer a:hover {
         font-size: 18px;
         display: block;
         font-weight: bold;
-        text-decoration: none;
+        text-decoration: underline dotted 1px;
+        text-underline-offset: 2px;
         padding: 30px;
         margin-bottom: 0;
     }
@@ -854,7 +858,8 @@ footer a:hover {
 
 .media-links a {
     color: var(--link-colour);
-    text-decoration: none;
+    text-decoration: underline dotted 1px;
+    text-underline-offset: 2px;
 }
 
 .media-links a:hover {
