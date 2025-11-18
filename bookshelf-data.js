@@ -6,6 +6,7 @@ const currentlyReading = [
     { title: "Reasons and Persons", author: "Derek Parfit", rating: 0, type: "nonfiction", isbn13: "9780198249085" },
     { title: "Active Inference: The Free Energy Principle in Mind, Brain, and Behavior", author: "Thomas Parr", rating: 0, type: "nonfiction", isbn13: "9780262045353" },
     { title: "Gödel, Escher, Bach: An Eternal Golden Braid", author: "Douglas R. Hofstadter", rating: 0, type: "nonfiction", isbn13: "9780465026562" },
+    { title: "Chip War: The Fight for the World's Most Critical Technology", author: "Chris Miller", rating: 9, type: "nonfiction", isbn13: "9781982172008" },
     { title: "Breakneck: China's Quest to Engineer the Future", author: "Dan Wang", rating: 0, type: "nonfiction", isbn13: "9781324106036" },
     { title: "The Scaling Era: An Oral History of AI, 2019–2025", author: "Dwarkesh Patel", rating: 0, type: "nonfiction", isbn13: "9781953953551" },
     { title: "Labyrinths: Selected Stories & Other Writings", author: "Jorge Luis Borges", rating: 0, type: "fiction", isbn13: "9780811200127" },
