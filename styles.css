@@ -36,10 +36,6 @@
    BASE STYLES
    ============================================================================ */
 
-html {
-    scrollbar-gutter: stable;
-}
-
 html, body {
     overflow-x: hidden;
 }
@@ -249,7 +245,7 @@ input:checked + .slider:before {
 .click-hint {
     position: absolute;
     bottom: 20px;
-    right: 35px;
+    right: 20px;
     color: var(--hint-text-color);
     background: var(--hint-bg-color);
     font-size: 0.8em;
