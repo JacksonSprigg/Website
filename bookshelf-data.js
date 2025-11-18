@@ -121,7 +121,7 @@ const books = [
 ];
 
 
-
+/*
 const dnfBooks = [
     // Add DNF books here as needed
     { title: "Man and His Symbols", author: "C.G. Jung", rating: 0, type: "nonfiction", isbn13: "9780440351832" },
@@ -129,6 +129,7 @@ const dnfBooks = [
     { title: "Life 3.0: Being Human in the Age of Artificial Intelligence", author: "Max Tegmark", rating: 0, type: "nonfiction", isbn13: "9780141981802" },
     { title: "The Brothers Karamazov", author: "Fyodor Dostoevsky", rating: 0, type: "fiction", isbn13: "9780374528379" }
 ];
+*/
 
 // Last updated date - change this when you update the bookshelf
 const lastUpdated = "August 2025";
