@@ -494,11 +494,10 @@ footer a:hover {
     }
 
     .click-hint {
-        right: 50%;
-        transform: translateX(50%);
+        right: 15px;
         bottom: 10px;
         font-size: 0.65em;
-        padding: 6px 10px;
+        padding: 5px 8px;
         white-space: nowrap;
     }
 
@@ -543,6 +542,15 @@ footer a:hover {
     .list-item-description {
         font-size: 13px;
         margin-bottom: 12px;
+    }
+}
+
+/* Extra small screens */
+@media (max-width: 400px) {
+    .click-hint {
+        right: 10px;
+        font-size: 0.55em;
+        padding: 4px 6px;
     }
 }
 
