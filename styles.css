@@ -36,6 +36,10 @@
    BASE STYLES
    ============================================================================ */
 
+html {
+    scrollbar-gutter: stable;
+}
+
 html, body {
     overflow-x: hidden;
 }
@@ -375,7 +379,7 @@ section {
 .overlapping-image {
     border-right: 1px dotted var(--border-color);
     overflow: hidden;
-    height: 250px;
+    height: 200px;
     padding: 2px;
 }
 
@@ -503,7 +507,7 @@ footer a:hover {
     /* Stack image above content on mobile */
     .list-outer-container {
         grid-template-columns: 1fr;
-        grid-template-rows: 250px auto;
+        grid-template-rows: 200px auto;
         max-width: 500px;
         margin: 0 auto 30px;
     }
@@ -511,7 +515,7 @@ footer a:hover {
     .overlapping-image {
         border-right: none;
         border-bottom: 1px dotted var(--border-color);
-        height: 250px;
+        height: 200px;
     }
 
     .list-item-content {
