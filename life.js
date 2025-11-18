@@ -29,8 +29,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function resize() {
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
+        const heroSection = document.querySelector('.hero');
+        canvas.width = heroSection.offsetWidth;
+        canvas.height = heroSection.offsetHeight;
     }
 
     function step() {
