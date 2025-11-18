@@ -79,7 +79,7 @@ const books = [
     { title: "Surely You're Joking, Mr. Feynman!: Adventures of a Curious Character", author: "Richard P. Feynman", rating: 9, type: "nonfiction", isbn13: "9780393355624" },
     { title: "Lying", author: "Sam Harris", rating: 7, type: "nonfiction", isbn13: "9781940051000" },
     { title: "The School of Life: An Emotional Education", author: "Alain de Botton", rating: 7, type: "nonfiction", isbn13: "9780241382325" },
-    { title: "Letters from a Stoic", author: "Seneca", rating: 9, type: "nonfiction", isbn13: "9780140442106" },
+    { title: "On The Shortness Of Life", author: "Seneca", rating: 9, type: "nonfiction", isbn13: "9780143036326" },
     { title: "Why You Will Marry the Wrong Person: & Other Essays", author: "The School of Life", rating: 8, type: "nonfiction", isbn13: "whyyouwillmarrythewrongperson" },
     { title: "The Art of War", author: "Sun Tzu", rating: 6, type: "nonfiction", isbn13: "9781645472834" },
     { title: "To Kill a Mockingbird", author: "Harper Lee", rating: 6, type: "fiction", isbn13: "9780060935467" },
