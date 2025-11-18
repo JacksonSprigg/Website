@@ -1,50 +1,51 @@
-/* Themes */
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600;700&family=Source+Serif+4:wght@400;600;700&display=swap');
+
+/* ============================================================================
+   THEME VARIABLES
+   ============================================================================ */
+
 [data-theme="light"] {
-
-    /* Nav, background and text */
-    --background-color: #fbfbfd; 
-    --text-color: #1d1d1f; 
-    --nav-background-color: #f5f5f790;
-    --hover-background-color: #e0e0e0; 
-    --link-colour: #f36f89;
-
-    --contrast: #e9ecefd0;
-    --contrast-small-screen: #e9ecefd0;
-
-    /* Theme toggle */
-    --slider-bg-color: #5f5f5f; 
+    --background-color: #F0EEE6;
+    --text-color: #141413;
+    --nav-background-color: #E3DACC90;
+    --link-colour: #404040;
+    --contrast: #E3DACC;
+    --slider-bg-color: #B0AEA5;
+    --life-background-color: #BCD1CA;
+    --life-cell-color: #FAF9F5;
+    --hint-text-color: #FAF9F5;
+    --hint-bg-color: #141413;
 }
 
 [data-theme="dark"] {
-
-    /* Nav, background and text */
-    --background-color: #161617; /*old#343434*/
-    --text-color: #fff;
-    --nav-background-color: #1d1d1f90;
-    --hover-background-color: #333333; 
-    --link-colour: #f7a8b8;
-
-    --contrast: #343a40d6;
-    --contrast-small-screen: #000000c6;
-
-    /* Theme Toggle */
-    --slider-bg-color: #b9b9b9;
+    --background-color: #141413;
+    --text-color: #FAF9F5;
+    --nav-background-color: #14141390;
+    --link-colour: #c8c8c8;
+    --contrast: #E3DACC;
+    --slider-bg-color: #B0AEA5;
+    --life-background-color: #CBCADB;
+    --life-cell-color: #fbfbfd;
+    --hint-text-color: #141413;
+    --hint-bg-color: #F0EEE6;
 }
 
-/* UNIVERSAL */
+/* ============================================================================
+   BASE STYLES
+   ============================================================================ */
+
 html, body {
     overflow-x: hidden;
-  }
+}
 
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Source Serif 4', serif;
     background-color: var(--background-color);
     color: var(--text-color);
     line-height: 1.5;
-    margin: 0px;
-    padding-top: 55px;
-    padding-right: 0px;
-    position: relative
+    margin: 0;
+    padding: 55px 0 0 0;
+    position: relative;
 }
 
 header, main, footer {
@@ -53,9 +54,18 @@ header, main, footer {
     width: 100%;
 }
 
+/* ============================================================================
+   TYPOGRAPHY
+   ============================================================================ */
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Source Sans 3', sans-serif;
+}
+
 p a {
     color: var(--link-colour);
-    text-decoration: none; 
+    text-decoration: underline dotted 1px;
+    text-underline-offset: 2px;
     font-style: italic;
 }
 
@@ -71,53 +81,74 @@ figcaption {
 }
 
 .quote-block {
-    max-width: 460px; 
-    text-decoration: none; /* No underline or other text decorations */
-    text-align: left;    /* Text aligned to the center */
-    display: block;        /* Element displayed as a block */
-    margin: 0px 0;        /* Adds vertical spacing around the quote */
+    max-width: 460px;
+    text-decoration: none;
+    text-align: left;
+    display: block;
+    margin: 0;
     font-size: 14px;
-    padding-left: 30px;
-    padding-right: 30px;
+    padding: 0 30px;
+    font-style: italic;
 }
 
 .citation {
-    display: block; /* Makes the citation a block element within the quote block */
-    text-align: right; /* Aligns the citation text to the right */
-    margin-top: 10px; /* Adds space between the quote and the citation */
+    display: block;
+    text-align: right;
+    margin-top: 10px;
 }
 
-
-footer {
-    background-color: var(--background-color);
-    color:var(--text-color);
-    text-align: left;
-    padding: 10px 10px;
-    font-size: 0.7em;
+.heading-with-lines {
+    text-align: center;
 }
 
-footer a {
-    color: var(--link-colour);
-    text-decoration: none;
+.heading-with-lines span {
+    position: relative;
+    display: inline-block;
+    padding: 0 20px;
 }
 
-footer a:hover {
-    opacity: 0.7;
+.heading-with-lines span:before,
+.heading-with-lines span:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 3px;
+    width: 30px;
+    background-color: var(--text-color);
 }
 
-/* NAV BAR */
+.heading-with-lines span:before {
+    left: -20px;
+}
+
+.heading-with-lines span:after {
+    right: -20px;
+}
+
+.thin-hr {
+    border: 0.5px solid var(--text-color);
+    margin: 15px auto;
+    width: 350px;
+    display: block;
+}
+
+/* ============================================================================
+   NAVIGATION
+   ============================================================================ */
+
 nav {
     width: 100%;
-    position: fixed; 
+    position: fixed;
     top: 0;
     background-color: var(--nav-background-color);
     display: flex;
-    align-items: center; /* Center objects with text */
-    z-index: 100; /* Make sure nav bar is always at the front */
+    align-items: center;
+    z-index: 100;
 }
 
 nav div {
-    display: inline-block; 
+    display: inline-block;
 }
 
 nav a {
@@ -126,6 +157,7 @@ nav a {
     color: var(--text-color);
     font-size: 1em;
     text-decoration: none;
+    font-family: 'Source Sans 3', sans-serif;
 }
 
 nav a:hover {
@@ -133,33 +165,29 @@ nav a:hover {
 }
 
 .home-link {
-    margin-right: auto; /* Pushes everything else to the right */
+    margin-right: auto;
 }
 
 .spacer {
-    flex-grow: 1; /* Takes up available space */
+    flex-grow: 1;
 }
 
 .separator {
-    margin: 0 15px; /* Adjust spacing around separator */
+    margin: 0 15px;
 }
 
-.home-icon {
-    width: 30px; /* Adjust icon size as needed */
-    height: 30px;
-    margin-right: 40px;
-}
+/* ============================================================================
+   THEME TOGGLE
+   ============================================================================ */
 
-
-/* Theme Toggler */
 .theme-toggle-wrapper {
     display: inline-block;
     position: relative;
-    margin-left: auto; 
+    margin-left: auto;
     margin-right: 40px;
     padding-left: 10px;
-    width: 35px; /* Reduced from 60px */
-    height: 26px; /* Reduced from 34px */
+    width: 35px;
+    height: 26px;
 }
 
 .theme-toggle {
@@ -182,16 +210,16 @@ nav a:hover {
     bottom: 0;
     background-color: var(--slider-bg-color);
     transition: .4s;
-    border-radius: 30px;
+    border-radius: 50px;
 }
 
 .slider:before {
     position: absolute;
     content: "";
-    height: 19px; /* Reduced from 26px */
-    width: 19px; /* Reduced from 26px */
-    left: 5px; /* Adjusted for new size */
-    bottom: 3.5px; /* Adjusted for new size */
+    height: 19px;
+    width: 19px;
+    left: 5px;
+    bottom: 3.5px;
     background-color: var(--text-color);
     transition: .4s;
     border-radius: 50%;
@@ -202,26 +230,21 @@ input:checked + .slider {
 }
 
 input:focus + .slider {
-    box-shadow: 0 0 1px var(--slider-box-shadow-color);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.2);
 }
 
 input:checked + .slider:before {
     background-color: var(--text-color);
-    transform: translateX(16px); /* Adjusted for new size */
+    transform: translateX(16px);
 }
 
-.slider.round {
-    border-radius: 50px;
-}
+/* ============================================================================
+   HERO SECTION
+   ============================================================================ */
 
-.slider.round:before {
-    border-radius: 50%;
-}
-
-/* LANDING HERO */
 .hero {
     position: relative;
-    height: 35vh; 
+    height: 35vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -231,59 +254,70 @@ input:checked + .slider:before {
     overflow: hidden;
 }
 
+.click-hint {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    color: var(--hint-text-color);
+    background: var(--hint-bg-color);
+    font-size: 0.8em;
+    font-style: italic;
+    padding: 8px 12px;
+    border-radius: 4px;
+    backdrop-filter: blur(4px);
+}
 
-/* Main writing */
+/* ============================================================================
+   CONTENT SECTIONS
+   ============================================================================ */
+
 .content {
-    margin-top: 0px; 
-    padding-top: 20px;
-    padding-left: 20px;
-    padding-right: 20px;
+    margin-top: 0;
+    padding: 20px;
 }
 
 .content-inner {
-    max-width: 500px; 
-    margin: 0 auto; 
-    text-align: left; 
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: left;
 }
 
-/* Icons */
+/* ============================================================================
+   SOCIAL ICONS
+   ============================================================================ */
+
 .social-icons {
-    text-align: center; /* Center the icons container */
+    text-align: center;
     padding: 5px;
 }
 
 .icons-container a {
-    margin: 0 5px; /* Space out the icons */
-    display: inline-block; /* Align icons in a row */
+    margin: 0 5px;
+    display: inline-block;
 }
 
 .icons-container p {
-    margin: 5px 0px; /* Space out the icons */
-    display: inline-block; /* Align icons in a row */
+    margin: 5px 0;
+    display: inline-block;
 }
 
 .icons-container svg {
     color: var(--text-color);
-    width: 35px; /* Adjust the size of your icons */
+    width: 35px;
     height: auto;
-    vertical-align: middle; /* Aligns image nicely with text, if any */
-    transition: transform 0.3s ease; /* Smooth transition for hover effect */
+    vertical-align: middle;
+    transition: transform 0.3s ease;
 }
 
 .icons-container svg:hover {
-    transform: translateY(-4px); /* Move the icon up slightly on hover */
-    opacity: 0.7; /* Slightly fade the icon to indicate interactivity */
+    transform: translateY(-4px);
+    opacity: 0.7;
 }
 
-.thin-hr {
-    border: 0.5px solid var(--text-color); /* Thin line with a light grey color */
-    margin: 15px auto; /* Space above and below the line */
-    width: 350px; /* Adjust the width as needed */
-    display: block; /* Ensuring the element is a block-level element */
-}
+/* ============================================================================
+   PROJECTS
+   ============================================================================ */
 
-
-/* Projects */
 .image-container {
     display: flex;
     justify-content: center;
@@ -303,228 +337,573 @@ input:checked + .slider:before {
     height: 100%;
 }
 
-.project-figure {
-    margin: 0 px; /* Adds spacing between the figures */
-}
-
 .project-image {
-    width: 300px; /* Makes the image fill the container */
-    height: auto; /* Keeps the aspect ratio of the image */
-    transition: transform 0.4s ease; /* Smooth transition for scaling */
+    width: 300px;
+    height: auto;
+    transition: transform 0.4s ease;
 }
 
 .project-image:hover {
-    transform: scale(1.4); /* Increase size by 10% on hover */
+    transform: scale(1.4);
 }
 
-.project p {
-    font-size: 16px; /* Adjust this value to your preference */
-}
-
-.project ol {
-    font-size: 16px; /* Adjust this value to your preference */
-}
-
-.project ul {
-    font-size: 16px; /* Adjust this value to your preference */
-}
-
+/* Consolidated project text styles */
+.project p,
+.project ol,
+.project ul,
 .project dl {
-    font-size: 16px; /* Adjust this value to your preference */
+    font-size: 16px;
 }
 
-.heading-with-lines {
-    text-align: center; /* Center the heading */
-}
-
-.heading-with-lines span {
-    position: relative;
-    display: inline-block;
-    padding: 0 20px; /* Adjusts the spacing around the text */
-}
-
-.heading-with-lines span:before,
-.heading-with-lines span:after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    height: 3px; /* Adjust the thickness of the line */
-    width: 30px; /* Adjust the length of the line */
-    background-color: var(--text-color); /* The color of the line */
-}
-
-.heading-with-lines span:before {
-    left: -20px; /* Adjust distance from the text */
-}
-
-.heading-with-lines span:after {
-    right: -20px; /* Adjust distance from the text */
-}
-
-
-/* LISTS */
+/* ============================================================================
+   LIST CONTAINERS - Minimal Box Design
+   ============================================================================ */
 
 .list-outer-container {
-    position: relative; /* Ensures proper positioning for child elements */
-    width: 90%; /* Adjust width as needed */
-    max-width: 800px; /* Container width */
-    height: 300px; /* Reduced maximum height if needed, or adjust based on content */
-    margin: 0 auto;
-    padding-left: 0px; /* Padding around content */
-    padding-right: 0px; /* Padding around content */
-    overflow: hidden; /* Hide overflow */
-
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 0;
+    max-width: 900px;
+    margin: 0 auto 40px;
+    border: 1px solid var(--contrast);
+    cursor: pointer;
     opacity: 0;
-    transform: translateY(50px) scale(1);
-    transition: transform 0.85s ease-out, opacity 0.85s ease-out; /* General slow transition */
+    transform: translateY(20px);
+    transition: transform 0.6s ease-out, opacity 0.6s ease-out, border-color 0.3s ease;
 }
 
 .list-outer-container.active {
     opacity: 1;
-    transform: translateY(0) scale(1);
-}
-
-/* Apply the faster transition for both hover and non-hover states */
-.list-outer-container:hover {
-    transition: transform 0.4s ease-out, opacity 0.4s ease-out; /* Ensure quick transition on and off hover */
+    transform: translateY(0);
 }
 
 .list-outer-container:hover {
-    transform: scale(1.05);
-    opacity: 0.9;
-    cursor: pointer;
+    border-color: var(--link-colour);
+}
+
+.overlapping-image {
+    border-right: 1px solid var(--contrast);
+    overflow: hidden;
+    height: 100%;
+    min-height: 250px;
+}
+
+.overlapping-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }
 
 .list-item-content {
-    background-color: var(--contrast); /* Light grey background */
-    padding: 20px; /* Padding around the content */
-    max-width: 500px;
-  }
-  
-  /* Styles for the project title */
-  .list-item-title a{
-    color: var(--link-colour);
-    font-size: 18px; /* Larger font size for titles */
-    display: block; /* or 'inline-block' if you prefer */
-    padding: 20px; /* Padding around the content */
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
 
-    font-weight: bold; /* Make the title bold */
+.list-item-title a {
+    color: var(--text-color);
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    display: block;
     text-decoration: none;
-  }
+    font-family: 'Source Sans 3', sans-serif;
+}
 
 .list-item-description {
-    font-size: 14px; /* Standard font size for descriptions */
-    color: var(--text-color); /* Medium grey for the description text */
-    line-height: 1.6; /* Space between lines */
-    font-family: 'Arial', sans-serif;
-  }
+    font-size: 14px;
+    color: var(--text-color);
+    line-height: 1.7;
+    font-family: 'Source Serif 4', serif;
+    margin-bottom: 15px;
+}
 
-  .list-item-details{
-    font-size: 12px; /* Standard font size for descriptions */
-    color: var(--text-color); /* Medium grey for the description text */
-    line-height: 1.7; /* Space between lines */
-    font-family: 'Arial', sans-serif;
-    margin-top: 20px;
-    text-decoration: italic;
-  }
-  
+.list-item-details {
+    font-size: 12px;
+    color: var(--text-color);
+    opacity: 0.6;
+    font-family: 'Source Serif 4', serif;
+    font-style: italic;
+}
 
-/* You might need to adjust the dimensions of the image */
-.overlapping-image img {
+.special-margin {
+    margin-top: -80px;
+}
+
+.special-margin-2 {
+    margin-top: -35px;
+}
+
+/* ============================================================================
+   FOOTER
+   ============================================================================ */
+
+footer {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    text-align: left;
+    padding: 10px;
+    font-size: 0.7em;
+}
+
+footer a {
+    color: var(--link-colour);
+    text-decoration: underline dotted 1px;
+    text-underline-offset: 2px;
+}
+
+footer a:hover {
+    opacity: 0.7;
+}
+
+/* ============================================================================
+   MEDIA QUERIES - MOBILE RESPONSIVE
+   ============================================================================ */
+
+@media (max-width: 768px) {
+    html, body {
+        overflow-x: hidden;
+        position: relative;
+    }
+
+    .hero {
+        height: 22.5vh;
+        background-size: 135%;
+    }
+
+    .image-container {
+        flex-direction: column;
+    }
+
+    figure {
+        margin: 10px;
+        flex-basis: calc(50% - 20px);
+        text-align: center;
+    }
+
+    .special-margin,
+    .special-margin-2 {
+        margin-top: 0;
+    }
+
+    /* Stack image above content on mobile */
+    .list-outer-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: 250px auto;
+        max-width: 500px;
+        margin: 0 auto 30px;
+    }
+
+    .overlapping-image {
+        border-right: none;
+        border-bottom: 1px solid var(--contrast);
+        min-height: 250px;
+    }
+
+    .list-item-content {
+        padding: 25px;
+    }
+
+    .list-item-title a {
+        font-size: 18px;
+        margin-bottom: 12px;
+    }
+
+    .list-item-description {
+        font-size: 13px;
+        margin-bottom: 12px;
+    }
+}
+
+/* ============================================================================
+   TEXT OVERLAY (LIFE PAGE)
+   ============================================================================ */
+
+.text-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: var(--hint-bg-color);
+    color: var(--hint-text-color);
+    border: 1px solid var(--contrast);
+    border-radius: 20px;
+    padding: 6px 12px;
+    font-family: monospace;
+    font-size: 11px;
+    cursor: pointer;
+    backdrop-filter: blur(4px);
+    transition: all 0.3s ease;
+    z-index: 1000;
+    user-select: none;
+}
+
+.text-toggle:hover {
+    opacity: 0.8;
+    transform: translateY(-2px);
+}
+
+.text-overlay {
+    position: fixed;
+    bottom: 70px;
+    right: 20px;
+    left: auto;
+    max-width: 500px;
+    max-height: 60vh;
+    overflow-y: auto;
+    color: var(--text-color);
+    font-family: monospace;
+    font-size: 13px;
+    line-height: 1.6;
+    background: var(--background-color);
+    padding: 20px;
+    border-radius: 8px;
+    backdrop-filter: blur(8px);
+    border: 1px solid var(--contrast);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+    z-index: 999;
+    box-shadow: 0 8px 32px var(--hint-bg-color);
+}
+
+.text-overlay.expanded {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.text-overlay::-webkit-scrollbar {
+    width: 6px;
+}
+
+.text-overlay::-webkit-scrollbar-track {
+    background: var(--contrast);
+    border-radius: 3px;
+}
+
+.text-overlay::-webkit-scrollbar-thumb {
+    background: var(--slider-bg-color);
+    border-radius: 3px;
+}
+
+.text-overlay::-webkit-scrollbar-thumb:hover {
+    opacity: 0.7;
+}
+
+.text-overlay p {
+    margin-bottom: 15px;
+}
+
+.text-overlay p:last-child {
+    margin-bottom: 0;
+    font-size: 11px;
+}
+
+/* Mobile responsiveness for text overlay */
+@media (max-width: 520px) {
+    .text-overlay {
+        bottom: 60px;
+        right: 15px;
+        left: 15px;
+        max-width: none;
+        max-height: 55vh;
+        font-size: 12px;
+        padding: 18px;
+    }
+}
+
+@media (max-height: 600px) {
+    .text-overlay {
+        max-height: 40vh;
+    }
+}
+
+/* ============================================================================
+   BOOKSHELF
+   ============================================================================ */
+
+.bookshelf-section {
+    margin: 40px 0;
+}
+
+.content-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.content-wrapper h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.content-wrapper h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+/* Main Tabs */
+.main-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 30px 0;
+}
+
+.main-tab-btn {
+    padding: 10px 24px;
+    background: transparent;
+    border: 1px solid var(--contrast);
+    color: var(--text-color);
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.main-tab-btn:hover {
+    background: var(--contrast);
+}
+
+.main-tab-btn.active {
+    background: var(--link-colour);
+    border-color: var(--link-colour);
+    color: var(--background-color);
+}
+
+.main-tab-content {
+    display: none;
+}
+
+.main-tab-content.active {
+    display: block;
+}
+
+/* Media Subtabs */
+.media-subtabs {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px 0 40px;
+}
+
+.media-subtab-btn {
+    padding: 8px 18px;
+    background: transparent;
+    border: 1px solid var(--contrast);
+    color: var(--text-color);
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 13px;
+    cursor: pointer;
+    border-radius: 3px;
+    transition: all 0.2s ease;
+    opacity: 0.7;
+}
+
+.media-subtab-btn:hover {
+    opacity: 1;
+}
+
+.media-subtab-btn.active {
+    background: var(--contrast);
+    opacity: 1;
+}
+
+.media-subtab-content {
+    display: none;
+}
+
+.media-subtab-content.active {
+    display: block;
+}
+
+.media-content-section {
+    margin: 20px 0;
+}
+
+/* Books Grid */
+.books-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 25px;
+    margin-bottom: 30px;
+}
+
+.book-card {
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease;
+}
+
+.book-card:hover {
+    transform: translateY(-3px);
+}
+
+.book-cover {
+    width: 100%;
+    aspect-ratio: 2/3;
+    background: var(--contrast);
+    border-radius: 3px;
+    overflow: hidden;
+    margin-bottom: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.book-cover img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-.special-margin {
-    margin-top: -80px; /* Apply margin on larger screens */
+.book-info {
+    width: 100%;
 }
 
-.special-margin-2 {
-    margin-top: -35px; /* Apply margin on larger screens */
+.book-title {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 3px;
+    color: var(--text-color);
+    line-height: 1.3;
 }
 
-/* Responsive design for smaller screens */
+.book-author {
+    font-size: 10px;
+    opacity: 0.6;
+}
+
+/* Shelf Layout */
+.shelf-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.shelf {
+    margin-bottom: 40px;
+    border-left: 2px solid var(--contrast);
+    padding-left: 20px;
+}
+
+.shelf-label {
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    opacity: 0.7;
+    text-align: left;
+}
+
+/* Filter Buttons */
+.filter-buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.filter-btn {
+    padding: 6px 14px;
+    background: transparent;
+    border: 1px solid var(--contrast);
+    color: var(--text-color);
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 12px;
+    cursor: pointer;
+    border-radius: 3px;
+    transition: all 0.2s ease;
+    opacity: 0.7;
+}
+
+.filter-btn:hover {
+    opacity: 1;
+}
+
+.filter-btn.active {
+    background: var(--contrast);
+    opacity: 1;
+}
+
+/* Media Lists */
+.media-list {
+    max-width: 800px;
+    margin: 0 auto 30px;
+}
+
+.media-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.media-links li {
+    margin-bottom: 8px;
+    font-size: 12px;
+    line-height: 1.4;
+}
+
+.media-links a {
+    color: var(--link-colour);
+    text-decoration: underline dotted 1px;
+    text-underline-offset: 2px;
+}
+
+.media-links a:hover {
+    opacity: 0.7;
+}
+
+/* Mobile Responsive */
 @media (max-width: 768px) {
-
-    html, body {
-        overflow-x: hidden;
-      }
-      body {
-        position: relative;
-      }
-    
-      .hero {
-        height: 22.5vh; 
-        background-size: 135%;
-      }
-
-    .image-container {
-        flex-direction: column; /* Stack images vertically on small screens */
-    }
-    figure {
-        margin: 10px; /* Adds margin around each figure */
-        flex-basis: calc(50% - 20px); /* Subtract double the margin to maintain spacing */
-        text-align: center; /* Center-align the caption */
+    .main-tabs, .media-subtabs {
+        flex-wrap: wrap;
+        gap: 8px;
     }
 
-    .special-margin {
-        margin-top: 0; /* Remove margin for smaller screens */
+    .main-tab-btn, .media-subtab-btn {
+        font-size: 13px;
+        padding: 8px 16px;
     }
-    .special-margin-2 {
-        margin-top: 0px; /* Remove margin for smaller screens */
-    }
-
-    .list-outer-container {
-        position: relative; /* Ensures proper positioning for child elements */
-        max-width: 450px; /* Container width */
-        height: 370px; /* Reduced maximum height if needed, or adjust based on content */
-        margin: 0 auto;
-        overflow: hidden; /* Hide overflow */
+    .books-grid {
+        grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+        gap: 18px;
     }
 
-    .list-item {
-        position: relative; /* Set position relative to contain absolute children */
-        max-width: 500px; /* Set a max width for the container */
-    }
-    
-    .overlapping-image {
-        position: absolute; /* Absolute positioning */
-        width: 100%; /* Take the full width of the parent */
-        height: 100%; /* Take the full height of the parent */
-        top: 0; /* Align to the top of the parent */
-        left: 0; /* Align to the left of the parent */
-        z-index: -1; /* Place it behind the content */
-        background-size: cover; /* Cover the entire area */
-    }
-    
-    .list-item-title a {
-        background-color: var(--contrast-small-screen); /* Light grey background */
-        color: var(--link-colour);
-        font-size: 18px; /* Larger font size for titles */
-        display: block; /* Block display to take full available width */
-        font-weight: bold; /* Bold font for title */
-        text-decoration: none; /* No underline */
-        padding: 30px; /* Padding around the content */
-        margin-bottom: 0px; 
-
-    }
-    
-    .list-item-content {
-        height: 100%; /* Take the full height of the parent */
-        background-color: var(--contrast-small-screen); /* Light grey background */
-        padding: 30px; /* Padding around the content */
-        padding-top: 0px; /* Padding around the content */
-        font-weight: bold; /* Make the title bold */
+    .book-title {
+        font-size: 11px;
     }
 
-    .list-item-details{
-         /* Positioning */
-        position: absolute;
-        bottom: 20px;
-        right: 35px;
-      }
-    
+    .book-author {
+        font-size: 9px;
+    }
+
+    .shelf {
+        padding-left: 15px;
+    }
+
+    .shelf-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .filter-buttons {
+        width: 100%;
+    }
+
+    .filter-btn {
+        flex: 1;
+        font-size: 11px;
+        padding: 5px 10px;
+    }
+
+    .content-wrapper {
+        padding: 0 15px;
+    }
 }
 

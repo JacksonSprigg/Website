@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookshelf</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="media\logos\blackhole_logo.svg">
+</head>
+<body>
+    <header></header>
+
+    <section>
+        <br>
+        <h1 class="heading-with-lines"><span>Bookshelf</span></h1>
+        <p style="max-width: 700px; margin: 20px auto; font-size: 14px; text-align: left; padding: 0 20px;">
+            For up-to-date currently-reading and want-to-read lists, check my
+            <a href="https://www.goodreads.com/review/list/171423136-jackson-sprigg" target="_blank">Goodreads</a>.
+            If you think I'd enjoy something based on what you see here,
+            <a href="mailto:jacksonsprigg@gmail.com">reach out</a>.
+        </p>
+        <p style="max-width: 700px; margin: 10px auto 30px; font-size: 12px; opacity: 0.6; text-align: left; padding: 0 20px;">
+            Last updated: <span id="last-updated"></span>
+        </p>
+    </section>
+
+    <!-- Main Tabs -->
+    <section class="content">
+        <div class="main-tabs">
+            <button class="main-tab-btn active" data-maintab="books" onclick="showMainTab('books')">Books</button>
+            <button class="main-tab-btn" data-maintab="media" onclick="showMainTab('media')">Other Media</button>
+        </div>
+    </section>
+
+    <!-- Books Tab Content -->
+    <div id="books-tab" class="main-tab-content active">
+        <!-- Currently Reading -->
+        <section class="bookshelf-section">
+            <div class="content-wrapper">
+                <h2>Currently Reading</h2>
+                <div id="currently-reading-grid" class="books-grid"></div>
+            </div>
+        </section>
+
+        <!-- The Shelf with filters -->
+        <section class="bookshelf-section">
+            <div class="content-wrapper">
+                <div class="shelf-header">
+                    <h2>The Shelf</h2>
+                    <div class="filter-buttons">
+                        <button class="filter-btn active" data-filter="all" onclick="setFilter('all')">All</button>
+                        <button class="filter-btn" data-filter="fiction" onclick="setFilter('fiction')">Fiction</button>
+                        <button class="filter-btn" data-filter="nonfiction" onclick="setFilter('nonfiction')">Non-Fiction</button>
+                    </div>
+                </div>
+                <div id="shelves-container"></div>
+            </div>
+        </section>
+
+        <!-- DNF Section -->
+        <section class="bookshelf-section">
+            <div class="content-wrapper">
+                <h2>Did Not Finish</h2>
+                <div id="dnf-grid" class="books-grid"></div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Other Media Tab Content -->
+    <div id="media-tab" class="main-tab-content">
+        <section class="content">
+            <div class="media-subtabs">
+                <button class="media-subtab-btn active" data-mediatab="blogs" onclick="showMediaSubTab('blogs')">Blogs</button>
+                <button class="media-subtab-btn" data-mediatab="podcasts" onclick="showMediaSubTab('podcasts')">Podcasts</button>
+                <button class="media-subtab-btn" data-mediatab="youtube" onclick="showMediaSubTab('youtube')">YouTube</button>
+            </div>
+        </section>
+
+        <!-- Blogs Content -->
+        <div id="blogs-tab" class="media-subtab-content active">
+            <section class="media-content-section">
+                <div class="content-wrapper">
+                    <h3>Blogs</h3>
+                    <div id="blogs-list" class="media-list"></div>
+
+                    <h3 style="margin-top: 40px;">Favorite Posts</h3>
+                    <div id="favorite-posts-list" class="media-list"></div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Podcasts Content -->
+        <div id="podcasts-tab" class="media-subtab-content">
+            <section class="media-content-section">
+                <div class="content-wrapper">
+                    <h3>Podcasts</h3>
+                    <div id="podcasts-list" class="media-list"></div>
+                </div>
+            </section>
+        </div>
+
+        <!-- YouTube Content -->
+        <div id="youtube-tab" class="media-subtab-content">
+            <section class="media-content-section">
+                <div class="content-wrapper">
+                    <h3>YouTube</h3>
+                    <div id="youtube-list" class="media-list"></div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <section class="social-icons"></section>
+
+    <script src="scripts.js"></script>
+    <script src="bookshelf-data.js"></script>
+    <script>
+        loadSocialIcons(
+            'A precondition for reading good books is not reading bad ones: for life is short.',
+            '― Arthur Schopenhauer, Essays and Aphorisms'
+        );
+    </script>
+</body>
+</html>

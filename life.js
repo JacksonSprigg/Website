@@ -122,14 +122,18 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function render() {
-        ctx.fillStyle = '#000000';
+        // Get colors from CSS variables
+        const bgColor = getComputedStyle(document.documentElement).getPropertyValue('--life-background-color').trim();
+        const cellColor = getComputedStyle(document.documentElement).getPropertyValue('--life-cell-color').trim();
+
+        ctx.fillStyle = bgColor;
         ctx.fillRect(0, 0, canvas.width, canvas.height);
-        
+
         const cellSize = Math.max(canvas.width / params.gridSize, canvas.height / params.gridSize) * 1.1;
         const offsetX = (canvas.width - params.gridSize * cellSize) / 2;
         const offsetY = (canvas.height - params.gridSize * cellSize) / 2;
-        
-        ctx.fillStyle = '#fbfbfd';
+
+        ctx.fillStyle = cellColor;
         for (let y = 0; y < params.gridSize; y++) {
             for (let x = 0; x < params.gridSize; x++) {
                 if (grid[y][x]) {
