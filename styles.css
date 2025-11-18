@@ -486,7 +486,7 @@ footer a:hover {
     .theme-toggle-wrapper {
         margin-right: 28px; /* 40px × 0.7 */
         padding-left: 7px;  /* 10px × 0.7 */
-        transform: scale(0.9); /* 35px → 24.5px */
+        transform: scale(2); /* 35px → 24.5px */
     }
 
     .click-hint {
