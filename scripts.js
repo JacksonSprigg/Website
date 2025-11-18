@@ -93,6 +93,36 @@ function navigateToURL(url) {
 }
 
 /* ============================================================================
+   ARTICLE LINK CREATOR
+   ============================================================================ */
+
+// Create an article link box with image and content
+function createArticleLink(config) {
+    const { url, imageSrc, imageAlt, title, description, readTime } = config;
+
+    return `
+        <div class="list-outer-container" onclick="navigateToURL('${url}')">
+            <div class="overlapping-image">
+                <img src="${imageSrc}" alt="${imageAlt}">
+            </div>
+            <div class="list-item-content">
+                <div>
+                    <div class="list-item-title">
+                        <a>${title}</a>
+                    </div>
+                    <div class="list-item-description">
+                        ${description}
+                    </div>
+                </div>
+                <div class="list-item-details">
+                    ${readTime}
+                </div>
+            </div>
+        </div>
+    `;
+}
+
+/* ============================================================================
    SOCIAL ICONS LOADER
    ============================================================================ */
 
