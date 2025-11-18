@@ -388,8 +388,7 @@ section {
 .overlapping-image {
     border-right: 1px dotted var(--border-color);
     overflow: hidden;
-    height: 100%;
-    min-height: 220px;
+    height: 280px;
     padding: 2px;
 }
 
@@ -473,32 +472,34 @@ footer a:hover {
         position: relative;
     }
 
+    /* Systematic 0.6x scaling of desktop values */
     nav a {
-        padding: 10px 3px;
-        font-size: 0.75em;
-    }
-
-    .theme-toggle-wrapper {
-        margin-right: 3px;
-        margin-left: 3px;
-        transform: scale(0.85);
+        padding: 9px 6px;   /* 15px 10px × 0.6 */
+        font-size: 0.6em;   /* 1em × 0.6 */
+        white-space: nowrap;
     }
 
     .separator {
-        margin: 0 2px;
-        font-size: 0.75em;
+        margin: 0 9px;      /* 15px × 0.6 */
+    }
+
+    .theme-toggle-wrapper {
+        margin-right: 24px; /* 40px × 0.6 */
+        padding-left: 6px;  /* 10px × 0.6 */
+        transform: scale(0.6); /* 35px → 21px */
+    }
+
+    .click-hint {
+        right: 36px;        /* 60px × 0.6 */
+        bottom: 12px;       /* 20px × 0.6 */
+        font-size: 0.48em;  /* 0.8em × 0.6 */
+        padding: 5px 7px;   /* 8px 12px × 0.6 */
+        white-space: nowrap;
     }
 
     .hero {
         height: 22.5vh;
         background-size: 135%;
-    }
-
-    .click-hint {
-        right: 10px;
-        bottom: 10px;
-        font-size: 0.7em;
-        padding: 6px 10px;
     }
 
     .image-container {
@@ -542,6 +543,31 @@ footer a:hover {
     .list-item-description {
         font-size: 13px;
         margin-bottom: 12px;
+    }
+}
+
+/* Extra small screens - Systematic 0.5x scaling */
+@media (max-width: 400px) {
+    nav a {
+        padding: 8px 5px;   /* 15px 10px × 0.5 */
+        font-size: 0.5em;   /* 1em × 0.5 */
+    }
+
+    .separator {
+        margin: 0 8px;      /* 15px × 0.5 */
+    }
+
+    .theme-toggle-wrapper {
+        margin-right: 20px; /* 40px × 0.5 */
+        padding-left: 5px;  /* 10px × 0.5 */
+        transform: scale(0.5); /* 35px → 17.5px */
+    }
+
+    .click-hint {
+        right: 30px;        /* 60px × 0.5 */
+        bottom: 10px;       /* 20px × 0.5 */
+        font-size: 0.4em;   /* 0.8em × 0.5 */
+        padding: 4px 6px;   /* 8px 12px × 0.5 */
     }
 }
 
