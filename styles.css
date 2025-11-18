@@ -36,6 +36,18 @@
    BASE STYLES
    ============================================================================ */
 
+html {
+    scrollbar-gutter: stable;
+}
+
+html[data-theme="light"] {
+    color-scheme: light;
+}
+
+html[data-theme="dark"] {
+    color-scheme: dark;
+}
+
 html, body {
     overflow-x: hidden;
 }
@@ -124,6 +136,7 @@ nav {
     background-color: var(--nav-background-color);
     display: flex;
     align-items: center;
+    min-height: 55px;
     z-index: 100;
 }
 
@@ -245,7 +258,7 @@ input:checked + .slider:before {
 .click-hint {
     position: absolute;
     bottom: 20px;
-    right: 20px;
+    right: 60px;
     color: var(--hint-text-color);
     background: var(--hint-bg-color);
     font-size: 0.8em;
@@ -375,7 +388,8 @@ section {
 .overlapping-image {
     border-right: 1px dotted var(--border-color);
     overflow: hidden;
-    height: 250px;
+    height: 100%;
+    min-height: 220px;
     padding: 2px;
 }
 
@@ -460,17 +474,19 @@ footer a:hover {
     }
 
     nav a {
-        padding: 10px 5px;
-        font-size: 0.8em;
+        padding: 10px 3px;
+        font-size: 0.75em;
     }
 
     .theme-toggle-wrapper {
-        margin-right: 5px;
+        margin-right: 3px;
+        margin-left: 3px;
+        transform: scale(0.85);
     }
 
     .separator {
-        margin: 0 3px;
-        font-size: 0.8em;
+        margin: 0 2px;
+        font-size: 0.75em;
     }
 
     .hero {
@@ -503,7 +519,7 @@ footer a:hover {
     /* Stack image above content on mobile */
     .list-outer-container {
         grid-template-columns: 1fr;
-        grid-template-rows: 250px auto;
+        grid-template-rows: 220px auto;
         max-width: 500px;
         margin: 0 auto 30px;
     }
@@ -511,7 +527,7 @@ footer a:hover {
     .overlapping-image {
         border-right: none;
         border-bottom: 1px dotted var(--border-color);
-        height: 250px;
+        height: 220px;
     }
 
     .list-item-content {
