@@ -472,34 +472,34 @@ footer a:hover {
         position: relative;
     }
 
+    /* Systematic 0.8x scaling of desktop values */
     nav a {
-        padding: 10px 4px;
-        font-size: 0.75em;
+        padding: 12px 8px;  /* 15px 10px × 0.8 */
+        font-size: 0.8em;   /* 1em × 0.8 */
         white-space: nowrap;
     }
 
-    .theme-toggle-wrapper {
-        margin-right: 6px;
-        margin-left: 6px;
-        transform: scale(0.85);
+    .separator {
+        margin: 0 12px;     /* 15px × 0.8 */
     }
 
-    .separator {
-        margin: 0 4px;
-        font-size: 0.75em;
+    .theme-toggle-wrapper {
+        margin-right: 32px; /* 40px × 0.8 */
+        padding-left: 8px;  /* 10px × 0.8 */
+        transform: scale(0.8); /* 35px → 28px */
+    }
+
+    .click-hint {
+        right: 48px;        /* 60px × 0.8 */
+        bottom: 16px;       /* 20px × 0.8 */
+        font-size: 0.64em;  /* 0.8em × 0.8 */
+        padding: 6px 10px;  /* 8px 12px × 0.8 */
+        white-space: nowrap;
     }
 
     .hero {
         height: 22.5vh;
         background-size: 135%;
-    }
-
-    .click-hint {
-        right: 30px;
-        bottom: 10px;
-        font-size: 0.65em;
-        padding: 5px 8px;
-        white-space: nowrap;
     }
 
     .image-container {
@@ -546,28 +546,28 @@ footer a:hover {
     }
 }
 
-/* Extra small screens */
+/* Extra small screens - Systematic 0.65x scaling */
 @media (max-width: 400px) {
     nav a {
-        padding: 10px 2px;
-        font-size: 0.65em;
-    }
-
-    .theme-toggle-wrapper {
-        margin-right: 4px;
-        margin-left: 4px;
-        transform: scale(0.75);
+        padding: 10px 6px;  /* 15px 10px × 0.65 */
+        font-size: 0.65em;  /* 1em × 0.65 */
     }
 
     .separator {
-        margin: 0 2px;
-        font-size: 0.65em;
+        margin: 0 10px;     /* 15px × 0.65 */
+    }
+
+    .theme-toggle-wrapper {
+        margin-right: 26px; /* 40px × 0.65 */
+        padding-left: 6px;  /* 10px × 0.65 */
+        transform: scale(0.65); /* 35px → 23px */
     }
 
     .click-hint {
-        right: 25px;
-        font-size: 0.55em;
-        padding: 4px 6px;
+        right: 39px;        /* 60px × 0.65 */
+        bottom: 13px;       /* 20px × 0.65 */
+        font-size: 0.52em;  /* 0.8em × 0.65 */
+        padding: 5px 8px;   /* 8px 12px × 0.65 */
     }
 }
 
