@@ -258,7 +258,7 @@ input:checked + .slider:before {
 .click-hint {
     position: absolute;
     bottom: 20px;
-    right: 40px;
+    right: 60px;
     color: var(--hint-text-color);
     background: var(--hint-bg-color);
     font-size: 0.8em;
