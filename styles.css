@@ -357,13 +357,16 @@ input:checked + .slider:before {
    LIST CONTAINERS - Minimal Box Design
    ============================================================================ */
 
+section {
+    padding: 0 20px;
+}
+
 .list-outer-container {
     display: grid;
     grid-template-columns: 300px 1fr;
     gap: 0;
     max-width: 900px;
     margin: 0 auto 40px;
-    padding: 0 20px;
     border: 1px dotted var(--contrast);
     cursor: pointer;
     opacity: 0;
@@ -493,7 +496,6 @@ footer a:hover {
         grid-template-rows: 250px auto;
         max-width: 500px;
         margin: 0 auto 30px;
-        padding: 0 15px;
     }
 
     .overlapping-image {
