@@ -327,6 +327,7 @@ input:checked + .slider:before {
     position: relative;
     overflow: hidden;
     padding-top: 56.25%; /* 16:9 Aspect Ratio */
+    border: 1px dotted var(--contrast);
 }
 
 .video-container iframe {
@@ -340,11 +341,8 @@ input:checked + .slider:before {
 .project-image {
     width: 300px;
     height: auto;
-    transition: transform 0.4s ease;
-}
-
-.project-image:hover {
-    transform: scale(1.4);
+    border: 1px dotted var(--contrast);
+    padding: 2px;
 }
 
 /* Consolidated project text styles */
@@ -359,13 +357,17 @@ input:checked + .slider:before {
    LIST CONTAINERS - Minimal Box Design
    ============================================================================ */
 
+section {
+    padding: 0 20px;
+}
+
 .list-outer-container {
     display: grid;
     grid-template-columns: 300px 1fr;
     gap: 0;
     max-width: 900px;
     margin: 0 auto 40px;
-    border: 1px solid var(--contrast);
+    border: 1px dotted var(--contrast);
     cursor: pointer;
     opacity: 0;
     transform: translateY(20px);
@@ -382,7 +384,7 @@ input:checked + .slider:before {
 }
 
 .overlapping-image {
-    border-right: 1px solid var(--contrast);
+    border-right: 1px dotted var(--contrast);
     overflow: hidden;
     height: 100%;
     min-height: 250px;
@@ -498,7 +500,7 @@ footer a:hover {
 
     .overlapping-image {
         border-right: none;
-        border-bottom: 1px solid var(--contrast);
+        border-bottom: 1px dotted var(--contrast);
         min-height: 250px;
     }
 
