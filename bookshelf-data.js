@@ -4,7 +4,6 @@
 
 const currentlyReading = [
     { title: "Permutation City", author: "Greg Egan", rating: 0, type: "fiction", isbn13: "9780061054815" },
-    { title: "Alice's Adventures in Wonderland", author: "Lewis Carroll", rating: 0, type: "fiction", isbn13: "9781529002461" },
     { title: "Breakneck: China's Quest to Engineer the Future", author: "Dan Wang", rating: 0, type: "nonfiction", isbn13: "9781324106036" },
     { title: "Active Inference: The Free Energy Principle in Mind, Brain, and Behavior", author: "Thomas Parr", rating: 0, type: "nonfiction", isbn13: "9780262045353" },
     { title: "Lolita", author: "Vladimir Nabokov", rating: 0, type: "fiction", isbn13: "9780141197012" },
@@ -18,6 +17,7 @@ const currentlyReading = [
 
 const books = [
     { title: "Simulacra and Simulation", author: "Jean Baudrillard", rating: 6, type: "nonfiction", isbn13: "9780472065219" },
+    { title: "Alice's Adventures in Wonderland", author: "Lewis Carroll", rating: 7, type: "fiction", isbn13: "9781529002461" },
     { title: "If Anyone Builds It, Everyone Dies: Why Superhuman AI Would Kill Us All", author: "Eliezer Yudkowsky", rating: 7, type: "nonfiction", isbn13: "9780316595643" },
     { title: "Brief Interviews with Hideous Men", author: "David Foster Wallace", rating: 7, type: "fiction", isbn13: "9780349111889" },
     { title: "A Brief History of Intelligence: Evolution, AI, and the Five Breakthroughs That Made Our Brains", author: "Max Solomon Bennett", rating: 9, type: "nonfiction", isbn13: "9780008560133" },
@@ -74,13 +74,12 @@ const books = [
     { title: "Why I Write and Other Essays", author: "George Orwell", rating: 8, type: "nonfiction", isbn13: "9780143036357" },
     { title: "The Symposium", author: "Plato", rating: 5, type: "nonfiction", isbn13: "9780140449273" },
     { title: "On Bullshit", author: "Harry G. Frankfurt", rating: 7, type: "nonfiction", isbn13: "9780691122946" },
-    { title: "Stay or Leave: Essays on relationships", author: "The School of Life", rating: 10, type: "nonfiction", isbn13: "9781915087515" },
     { title: "Waking Up: A Guide to Spirituality Without Religion", author: "Sam Harris", rating: 7, type: "nonfiction", isbn13: "9781451636017" },
     { title: "Man's Search for Meaning", author: "Viktor E. Frankl", rating: 7, type: "nonfiction", isbn13: "9780807014295" },
     { title: "Surely You're Joking, Mr. Feynman!: Adventures of a Curious Character", author: "Richard P. Feynman", rating: 9, type: "nonfiction", isbn13: "9780393355624" },
     { title: "Lying", author: "Sam Harris", rating: 7, type: "nonfiction", isbn13: "9781940051000" },
     { title: "The School of Life: An Emotional Education", author: "Alain de Botton", rating: 7, type: "nonfiction", isbn13: "9780241382325" },
-    { title: "On the Shortness of Life", author: "Seneca", rating: 10, type: "nonfiction", isbn13: "9780143036326" },
+    { title: "Letters from a Stoic", author: "Seneca", rating: 10, type: "nonfiction", isbn13: "9780140442106" },
     { title: "Why You Will Marry the Wrong Person: & Other Essays", author: "The School of Life", rating: 8, type: "nonfiction", isbn13: "whyyouwillmarrythewrongperson" },
     { title: "The Art of War", author: "Sun Tzu", rating: 6, type: "nonfiction", isbn13: "9781645472834" },
     { title: "To Kill a Mockingbird", author: "Harper Lee", rating: 6, type: "fiction", isbn13: "9780060935467" },
@@ -101,6 +100,7 @@ const books = [
     { title: "QED: The Strange Theory of Light and Matter", author: "Richard P. Feynman", rating: 7, type: "nonfiction", isbn13: "9780691024172" },
     { title: "The Doors of Perception & Heaven and Hell", author: "Aldous Huxley", rating: 8, type: "nonfiction", isbn13: "thedoorsofperceptionandheavenandhell" },
     { title: "The Stranger", author: "Albert Camus", rating: 8, type: "fiction", isbn13: "9780141182506" },
+    { title: "Stay or Leave: Essays on relationships", author: "The School of Life", rating: 10, type: "nonfiction", isbn13: "9781915087515" },
     { title: "Fahrenheit 451", author: "Ray Bradbury", rating: 7, type: "fiction", isbn13: "9781451673319" },
     { title: "Mortality", author: "Christopher Hitchens", rating: 8, type: "nonfiction", isbn13: "9781455502752" },
     { title: "Letter to a Christian Nation", author: "Sam Harris", rating: 6, type: "nonfiction", isbn13: "9780307265777" },
