@@ -106,31 +106,6 @@ figcaption {
     text-align: center;
 }
 
-.heading-with-lines span {
-    position: relative;
-    display: inline-block;
-    padding: 0 20px;
-}
-
-.heading-with-lines span:before,
-.heading-with-lines span:after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    height: 3px;
-    width: 30px;
-    background-color: var(--text-color);
-}
-
-.heading-with-lines span:before {
-    left: -20px;
-}
-
-.heading-with-lines span:after {
-    right: -20px;
-}
-
 .thin-hr {
     border: 0.5px solid var(--text-color);
     margin: 15px auto;
@@ -278,6 +253,7 @@ input:checked + .slider:before {
     padding: 8px 12px;
     border-radius: 4px;
     backdrop-filter: blur(4px);
+    z-index: 10;
 }
 
 /* ============================================================================
@@ -400,6 +376,7 @@ section {
     border-right: 1px dotted var(--border-color);
     overflow: hidden;
     height: 250px;
+    padding: 2px;
 }
 
 .overlapping-image img {
@@ -482,22 +459,20 @@ footer a:hover {
         position: relative;
     }
 
-    nav {
-        flex-wrap: wrap;
-        padding: 5px 10px;
-    }
-
     nav a {
-        padding: 10px 8px;
-        font-size: 0.9em;
+        padding: 10px 6px;
+        font-size: 0.85em;
     }
 
     .theme-toggle-wrapper {
-        margin-right: 10px;
+        margin-right: 8px;
+        width: 30px;
+        height: 22px;
     }
 
     .separator {
-        margin: 0 8px;
+        margin: 0 5px;
+        font-size: 0.85em;
     }
 
     .hero {
@@ -569,7 +544,7 @@ footer a:hover {
     border: 1px solid var(--contrast);
     border-radius: 20px;
     padding: 6px 12px;
-    font-family: monospace;
+    font-family: 'Source Sans 3', sans-serif;
     font-size: 11px;
     cursor: pointer;
     backdrop-filter: blur(4px);
@@ -592,7 +567,7 @@ footer a:hover {
     max-height: 60vh;
     overflow-y: auto;
     color: var(--text-color);
-    font-family: monospace;
+    font-family: 'Source Serif 4', serif;
     font-size: 13px;
     line-height: 1.6;
     background: var(--background-color);
