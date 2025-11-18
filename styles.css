@@ -475,7 +475,7 @@ footer a:hover {
     /* Systematic 0.7x scaling of desktop values */
     nav a {
         padding: 11px 7px;  /* 15px 10px × 0.7 */
-        font-size: 0.9em;   /* 1em × 0.7 */
+        font-size: 0.8em;   /* 1em × 0.7 */
         white-space: nowrap;
     }
 
@@ -486,7 +486,7 @@ footer a:hover {
     .theme-toggle-wrapper {
         margin-right: 28px; /* 40px × 0.7 */
         padding-left: 7px;  /* 10px × 0.7 */
-        transform: scale(2); /* 35px → 24.5px */
+        transform: scale(0.8); /* 35px → 24.5px */
     }
 
     .click-hint {
@@ -550,7 +550,7 @@ footer a:hover {
 @media (max-width: 400px) {
     nav a {
         padding: 9px 6px;   /* 15px 10px × 0.6 */
-        font-size: 0.6em;   /* 1em × 0.6 */
+        font-size: 0.8em;   /* 1em × 0.6 */
     }
 
     .separator {
@@ -560,7 +560,7 @@ footer a:hover {
     .theme-toggle-wrapper {
         margin-right: 24px; /* 40px × 0.6 */
         padding-left: 6px;  /* 10px × 0.6 */
-        transform: scale(0.6); /* 35px → 21px */
+        transform: scale(0.8); /* 35px → 21px */
     }
 
     .click-hint {
