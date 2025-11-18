@@ -88,6 +88,7 @@ figcaption {
     margin: 0;
     font-size: 14px;
     padding: 0 30px;
+    font-style: italic;
 }
 
 .citation {
@@ -355,70 +356,76 @@ input:checked + .slider:before {
 }
 
 /* ============================================================================
-   LIST CONTAINERS
+   LIST CONTAINERS - Minimal Box Design
    ============================================================================ */
 
 .list-outer-container {
-    position: relative;
-    width: 90%;
-    max-width: 800px;
-    height: 300px;
-    margin: 0 auto;
-    padding: 0;
-    overflow: hidden;
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 0;
+    max-width: 900px;
+    margin: 0 auto 40px;
+    border: 1px solid var(--contrast);
+    cursor: pointer;
     opacity: 0;
-    transform: translateY(50px) scale(1);
-    transition: transform 0.85s ease-out, opacity 0.85s ease-out;
+    transform: translateY(20px);
+    transition: transform 0.6s ease-out, opacity 0.6s ease-out, border-color 0.3s ease;
 }
 
 .list-outer-container.active {
     opacity: 1;
-    transform: translateY(0) scale(1);
+    transform: translateY(0);
 }
 
 .list-outer-container:hover {
-    transform: scale(1.05);
-    opacity: 0.9;
-    cursor: pointer;
-    transition: transform 0.4s ease-out, opacity 0.4s ease-out;
+    border-color: var(--link-colour);
 }
 
-.list-item-content {
-    background-color: var(--contrast);
-    padding: 20px;
-    max-width: 500px;
-}
-
-.list-item-title a {
-    color: var(--link-colour);
-    font-size: 18px;
-    display: block;
-    padding: 20px;
-    font-weight: bold;
-    text-decoration: underline dotted 1px;
-    text-underline-offset: 2px;
-}
-
-.list-item-description {
-    font-size: 14px;
-    color: var(--text-color);
-    line-height: 1.6;
-    font-family: 'Source Serif 4', serif;
-}
-
-.list-item-details {
-    font-size: 12px;
-    color: var(--text-color);
-    line-height: 1.7;
-    font-family: 'Source Serif 4', serif;
-    margin-top: 20px;
-    text-decoration: italic;
+.overlapping-image {
+    border-right: 1px solid var(--contrast);
+    overflow: hidden;
+    height: 100%;
+    min-height: 250px;
 }
 
 .overlapping-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    display: block;
+}
+
+.list-item-content {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.list-item-title a {
+    color: var(--text-color);
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    display: block;
+    text-decoration: none;
+    font-family: 'Source Sans 3', sans-serif;
+}
+
+.list-item-description {
+    font-size: 14px;
+    color: var(--text-color);
+    line-height: 1.7;
+    font-family: 'Source Serif 4', serif;
+    margin-bottom: 15px;
+}
+
+.list-item-details {
+    font-size: 12px;
+    color: var(--text-color);
+    opacity: 0.6;
+    font-family: 'Source Serif 4', serif;
+    font-style: italic;
 }
 
 .special-margin {
@@ -481,47 +488,32 @@ footer a:hover {
         margin-top: 0;
     }
 
+    /* Stack image above content on mobile */
     .list-outer-container {
-        position: relative;
-        max-width: 450px;
-        height: 370px;
-        margin: 0 auto;
-        overflow: hidden;
+        grid-template-columns: 1fr;
+        grid-template-rows: 250px auto;
+        max-width: 500px;
+        margin: 0 auto 30px;
     }
 
     .overlapping-image {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        top: 0;
-        left: 0;
-        z-index: -1;
-        background-size: cover;
-    }
-
-    .list-item-title a {
-        background-color: var(--contrast);
-        color: var(--link-colour);
-        font-size: 18px;
-        display: block;
-        font-weight: bold;
-        text-decoration: underline dotted 1px;
-        text-underline-offset: 2px;
-        padding: 30px;
-        margin-bottom: 0;
+        border-right: none;
+        border-bottom: 1px solid var(--contrast);
+        min-height: 250px;
     }
 
     .list-item-content {
-        height: 100%;
-        background-color: var(--contrast);
-        padding: 30px 30px 0;
-        font-weight: bold;
+        padding: 25px;
     }
 
-    .list-item-details {
-        position: absolute;
-        bottom: 20px;
-        right: 35px;
+    .list-item-title a {
+        font-size: 18px;
+        margin-bottom: 12px;
+    }
+
+    .list-item-description {
+        font-size: 13px;
+        margin-bottom: 12px;
     }
 }
 
