@@ -19,7 +19,7 @@ const currentlyReading = [
 const books = [
     { title: "Simulacra and Simulation", author: "Jean Baudrillard", rating: 6, type: "nonfiction", isbn13: "9780472065219" },
     { title: "If Anyone Builds It, Everyone Dies: Why Superhuman AI Would Kill Us All", author: "Eliezer Yudkowsky", rating: 7, type: "nonfiction", isbn13: "9780316595643" },
-    { title: "Brief Interviews with Hideous Men", author: "David Foster Wallace", rating: 6, type: "fiction", isbn13: "9780349111889" },
+    { title: "Brief Interviews with Hideous Men", author: "David Foster Wallace", rating: 7, type: "fiction", isbn13: "9780349111889" },
     { title: "A Brief History of Intelligence: Evolution, AI, and the Five Breakthroughs That Made Our Brains", author: "Max Solomon Bennett", rating: 9, type: "nonfiction", isbn13: "9780008560133" },
     { title: "Romeo and Juliet", author: "William Shakespeare", rating: 6, type: "fiction", isbn13: "9780743477116" },
     { title: "Neurolinguistics", author: "Giosuè Baggio", rating: 6, type: "nonfiction", isbn13: "9780262368148" },
@@ -39,7 +39,7 @@ const books = [
     { title: "All About Love: New Visions", author: "bell hooks", rating: 2, type: "nonfiction", isbn13: "9780688168445" },
     { title: "Harry Potter and the Methods of Rationality", author: "Eliezer Yudkowsky", rating: 8, type: "fiction", isbn13: "harrypotterandthemethodsofrationality" },
     { title: "The Metamorphosis and Other Stories", author: "Franz Kafka", rating: 7, type: "fiction", isbn13: "9781593080297" },
-    { title: "What Do You Care What Other People Think?: Further Adventures of a Curious Character", author: "Richard P. Feynman", rating: 8, type: "nonfiction", isbn13: "9780393355642" },
+    { title: "What Do You Care What Other People Think?: Further Adventures of a Curious Character", author: "Richard P. Feynman", rating: 7, type: "nonfiction", isbn13: "9780393355642" },
     { title: "Three Worlds Collide", author: "Eliezer Yudkowsky", rating: 7, type: "fiction", isbn13: "threeworldscollide" },
     { title: "Inadequate Equilibria: Where and How Civilizations Get Stuck", author: "Eliezer Yudkowsky", rating: 8, type: "nonfiction", isbn13: "9781939311207" },
     { title: "Consider the Lobster and Other Essays", author: "David Foster Wallace", rating: 8, type: "nonfiction", isbn13: "9780316156110" },
@@ -74,7 +74,7 @@ const books = [
     { title: "Why I Write and Other Essays", author: "George Orwell", rating: 8, type: "nonfiction", isbn13: "9780143036357" },
     { title: "The Symposium", author: "Plato", rating: 5, type: "nonfiction", isbn13: "9780140449273" },
     { title: "On Bullshit", author: "Harry G. Frankfurt", rating: 7, type: "nonfiction", isbn13: "9780691122946" },
-    { title: "Stay or Leave", author: "The School of Life", rating: 10, type: "nonfiction", isbn13: "9781915087515" },
+    { title: "Stay or Leave: Essays on relationships", author: "The School of Life", rating: 10, type: "nonfiction", isbn13: "9781915087515" },
     { title: "Waking Up: A Guide to Spirituality Without Religion", author: "Sam Harris", rating: 7, type: "nonfiction", isbn13: "9781451636017" },
     { title: "Man's Search for Meaning", author: "Viktor E. Frankl", rating: 7, type: "nonfiction", isbn13: "9780807014295" },
     { title: "Surely You're Joking, Mr. Feynman!: Adventures of a Curious Character", author: "Richard P. Feynman", rating: 9, type: "nonfiction", isbn13: "9780393355624" },
@@ -108,6 +108,7 @@ const books = [
     { title: "Free Will", author: "Sam Harris", rating: 7, type: "nonfiction", isbn13: "9781451683400" },
     { title: "A Brief History of Time", author: "Stephen Hawking", rating: 6, type: "nonfiction", isbn13: "9780553176988" },
     { title: "The Blind Watchmaker: Why the Evidence of Evolution Reveals a Universe Without Design", author: "Richard Dawkins", rating: 8, type: "nonfiction", isbn13: "9780141026169" },
+    { title: "Superintelligence: Paths, Dangers, Strategies", author: "Nick Bostrom", rating: 9, type: "nonfiction", isbn13: "9780199678112" },
     { title: "Crime and Punishment", author: "Fyodor Dostoevsky", rating: 9, type: "fiction", isbn13: "9780143058144" }
 ];
 
@@ -116,7 +117,6 @@ const dnfBooks = [
     // Add DNF books here as needed
     { title: "Man and His Symbols", author: "C.G. Jung", rating: 0, type: "nonfiction", isbn13: "9780440351832" },
     { title: "The Fall", author: "Albert Camus", rating: 0, type: "fiction", isbn13: "9780679720225" },
-    { title: "Superintelligence: Paths, Dangers, Strategies", author: "Nick Bostrom", rating: 0, type: "nonfiction", isbn13: "9780199678112" },
     { title: "Life 3.0: Being Human in the Age of Artificial Intelligence", author: "Max Tegmark", rating: 0, type: "nonfiction", isbn13: "9780141981802" },
     { title: "The Brothers Karamazov", author: "Fyodor Dostoevsky", rating: 0, type: "fiction", isbn13: "9780374528379" }
 ];
