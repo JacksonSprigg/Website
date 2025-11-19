@@ -475,7 +475,7 @@ footer a:hover {
     /* Systematic 0.7x scaling of desktop values */
     nav a {
         padding: 11px 7px;  /* 15px 10px × 0.7 */
-        font-size: 0.8em;   /* 1em × 0.7 */
+        font-size: 0.7em;   /* 1em × 0.7 */
         white-space: nowrap;
     }
 
@@ -486,11 +486,11 @@ footer a:hover {
     .theme-toggle-wrapper {
         margin-right: 28px; /* 40px × 0.7 */
         padding-left: 7px;  /* 10px × 0.7 */
-        transform: scale(0.8); /* 35px → 24.5px */
+        transform: scale(0.75); /* 35px → 24.5px */
     }
 
     .click-hint {
-        right: 50px;        /* Increased for scrollbar clearance */
+        right: 60px;        /* Increased for scrollbar clearance */
         bottom: 14px;       /* 20px × 0.7 */
         font-size: 0.56em;  /* 0.8em × 0.7 */
         padding: 6px 8px;   /* 8px 12px × 0.7 */
