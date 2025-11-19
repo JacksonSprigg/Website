@@ -550,7 +550,7 @@ footer a:hover {
 @media (max-width: 400px) {
     nav a {
         padding: 9px 6px;   /* 15px 10px × 0.6 */
-        font-size: 0.8em;   /* 1em × 0.6 */
+        font-size: 0.7em;   /* 1em × 0.6 */
     }
 
     .separator {
@@ -560,11 +560,11 @@ footer a:hover {
     .theme-toggle-wrapper {
         margin-right: 24px; /* 40px × 0.6 */
         padding-left: 6px;  /* 10px × 0.6 */
-        transform: scale(0.8); /* 35px → 21px */
+        transform: scale(0.7); /* 35px → 21px */
     }
 
     .click-hint {
-        right: 45px;        /* Increased for scrollbar clearance */
+        right: 55px;        /* Increased for scrollbar clearance */
         bottom: 12px;       /* 20px × 0.6 */
         font-size: 0.48em;  /* 0.8em × 0.6 */
         padding: 5px 7px;   /* 8px 12px × 0.6 */
