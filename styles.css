@@ -549,12 +549,12 @@ footer a:hover {
 /* Extra small screens - Systematic 0.6x scaling */
 @media (max-width: 400px) {
     nav a {
-        padding: 9px 6px;   /* 15px 10px × 0.6 */
+        padding: 10px 7px;   /* 15px 10px × 0.6 */
         font-size: 0.7em;   /* 1em × 0.6 */
     }
 
     .separator {
-        margin: 0 9px;      /* 15px × 0.6 */
+        margin: 0 10px;      /* 15px × 0.6 */
     }
 
     .theme-toggle-wrapper {
