@@ -489,7 +489,7 @@ footer a:hover {
     }
 
     input:checked + .slider:before {
-        transform: translateX(11px);
+        transform: translateX(13px);
     }
 
     .click-hint {
@@ -566,7 +566,7 @@ footer a:hover {
     }
 
     input:checked + .slider:before {
-        transform: translateX(11px);
+        transform: translateX(13px);
     }
 
     .click-hint {
