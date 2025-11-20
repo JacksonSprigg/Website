@@ -770,6 +770,11 @@ footer a:hover {
     margin-bottom: 30px;
 }
 
+#currently-reading-grid {
+    border-left: 2px solid var(--contrast);
+    padding-left: 20px;
+}
+
 .book-card {
     display: flex;
     flex-direction: column;
@@ -917,7 +922,7 @@ footer a:hover {
         font-size: 9px;
     }
 
-    .shelf {
+    .shelf, #currently-reading-grid {
         padding-left: 15px;
     }
 
