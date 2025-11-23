@@ -779,7 +779,7 @@ footer a:hover {
     display: flex;
     flex-direction: column;
     transition: transform 0.3s ease;
-    max-width: 160px;
+    max-width: 200px;
 }
 
 .book-card:hover {
