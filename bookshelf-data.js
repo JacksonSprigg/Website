@@ -139,24 +139,40 @@ const blogs = [
     { name: "Gwern.net", url: "https://gwern.net" },
     { name: "Astral Codex Ten", url: "https://www.astralcodexten.com" },
     { name: "LessWrong", url: "https://www.lesswrong.com" },
-    // Add more blogs here
+    { name: "The Alignment Forum", url: "https://www.alignmentforum.org" },
+    { name: "Marginal Revolution", url: "https://marginalrevolution.com" },
+    { name: "Paul Christiano", url: "https://paulfchristiano.com" },
+    { name: "Nostalgebraist", url: "https://nostalgebraist.tumblr.com" },
+    { name: "Dan Wang", url: "https://danwang.co" },
+    { name: "Richard Ngo", url: "https://www.richardcngo.com" },
+    { name: "Cold Takes", url: "https://www.cold-takes.com" }
 ];
 
 const favoritePosts = [
     { title: "Meditations on Moloch", author: "Scott Alexander", url: "https://slatestarcodex.com/2014/07/30/meditations-on-moloch/" },
     { title: "The Sequences", author: "Eliezer Yudkowsky", url: "https://www.lesswrong.com/rationality" },
-    // Add more favorite posts here
+    { title: "Simulators", author: "janus", url: "https://www.lesswrong.com/posts/vJFdjigzmcXMhNTsx/simulators" },
+    { title: "A Generalist AI Agent in 3D Virtual Environments", author: "janus et al.", url: "https://generalist-agent-in-3d-world.github.io/" },
+    { title: "What Failure Looks Like", author: "Paul Christiano", url: "https://www.alignmentforum.org/posts/HBxe6wdjxK239zajf/what-failure-looks-like" },
+    { title: "The Scaling Hypothesis", author: "Gwern", url: "https://gwern.net/scaling-hypothesis" },
+    { title: "Against Tulip Subsidies", author: "Scott Alexander", url: "https://slatestarcodex.com/2015/06/06/against-tulip-subsidies/" },
+    { title: "Inadequate Equilibria", author: "Eliezer Yudkowsky", url: "https://equilibriabook.com/toc/" },
+    { title: "Consciousness as a Conflationary Alliance Term", author: "Luke Muehlhauser", url: "https://www.lesswrong.com/posts/ZuGCPg4BPtx6YsB2M/consciousness-as-a-conflationary-alliance-term" },
+    { title: "Is Power-Seeking AI an Existential Risk?", author: "Joe Carlsmith", url: "https://arxiv.org/abs/2206.13353" }
 ];
 
 const podcasts = [
     { name: "Dwarkesh Podcast", url: "https://www.dwarkeshpatel.com/podcast" },
     { name: "The Lunar Society", url: "https://www.youtube.com/@TheLunarSociety" },
     { name: "80,000 Hours", url: "https://80000hours.org/podcast/" },
-    // Add more podcasts here
+    { name: "AXRP", url: "https://axrp.net/" },
+    { name: "The Inside View", url: "https://theinsideview.ai/" },
+    { name: "Bankless", url: "https://www.bankless.com/" }
 ];
 
 const youtubeChannels = [
     { name: "3Blue1Brown", url: "https://www.youtube.com/@3blue1brown" },
     { name: "Computerphile", url: "https://www.youtube.com/@Computerphile" },
-    // Add more YouTube channels here
+    { name: "Robert Miles", url: "https://www.youtube.com/@RobertMilesAI" },
+    { name: "Machine Learning Street Talk", url: "https://www.youtube.com/@MachineLearningStreetTalk" }
 ];
