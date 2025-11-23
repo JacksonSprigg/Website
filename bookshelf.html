@@ -13,16 +13,10 @@
     <section>
         <br>
         <h1 class="heading-with-lines">Bookshelf</h1>
-        <p style="max-width: 700px; margin: 20px auto; font-size: 14px; text-align: left; padding: 0 20px;">
-            For up-to-date currently-reading and want-to-read lists, check my
-            <a href="https://www.goodreads.com/review/list/171423136-jackson-sprigg" target="_blank">Goodreads</a>.
-            If you think I'd enjoy something based on what you see here,
-            <a href="mailto:jacksonsprigg@gmail.com">reach out</a>.
-        </p>
-        <p style="max-width: 700px; margin: 10px auto; font-size: 13px; text-align: left; padding: 0 20px; opacity: 0.8;">
+        <p style="max-width: 700px; margin: 10px auto; font-size: 13px; text-align: left; padding: 0 20px;">
             Every book I read, physical or digital, is read with highlighter and pen at hand.
             What you see here isn't exhaustive — I've opened far more books than I've finished or catalogued.
-            Think of this as a curated shelf: the books I'd be proud to display in my own home for guests to browse.
+            Think of this as a curated shelf: the books I'd be happy to display in my own house for guests to browse.
         </p>
         <p style="max-width: 700px; margin: 10px auto 30px; font-size: 12px; opacity: 0.6; text-align: left; padding: 0 20px;">
             Last updated: <span id="last-updated"></span>
@@ -43,9 +37,8 @@
         <section class="bookshelf-section">
             <div class="content-wrapper">
                 <h2>Currently Reading</h2>
-                <p style="font-size: 12px; opacity: 0.7; margin-bottom: 20px; max-width: 600px;">
-                    I read many books concurrently, especially nonfiction. If a topic bores me on a given day, I can switch to something else.
-                    These are the books currently scattered in convenient places around my life — on my desk, nightstand, or downloaded on my phone.
+                <p style="font-size: 12px; margin-bottom: 20px; max-width: 600px;">
+                    I read many books concurrently, especially nonfiction. If I get bored with the topic for the day, I can open a chapter in a different book. These are books I have laying in convenient places or downloaded on my phone.
                 </p>
                 <div id="currently-reading-grid" class="books-grid"></div>
             </div>
@@ -62,12 +55,13 @@
                         <button class="filter-btn" data-filter="nonfiction" onclick="setFilter('nonfiction')">Non-Fiction</button>
                     </div>
                 </div>
-                <p style="font-size: 12px; opacity: 0.7; margin-bottom: 25px; max-width: 650px;">
-                    Ratings reflect the impact each work has had on me personally. Books I read when younger often score higher — not because they were objectively better, but because the ratio of novel insights to pages was higher at that stage of my intellectual development.
+                <p style="font-size: 12px; margin-bottom: 25px; max-width: 650px;">
+                    Ratings are a function of impact reading this work has had on me. Because of this, books I read when I was younger tend to have an easier time with insights per density than recent reads.
                 </p>
                 <div id="shelves-container"></div>
             </div>
         </section>
+    </div>
 
     <!-- Other Media Tab Content -->
     <div id="media-tab" class="main-tab-content">
