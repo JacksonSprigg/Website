@@ -321,14 +321,6 @@ function renderMediaLists() {
             podcasts.map(podcast => `<li><a href="${podcast.url}" target="_blank">${podcast.name}</a></li>`).join('') +
             '</ul>';
     }
-
-    // Render YouTube
-    const youtubeContainer = document.getElementById('youtube-list');
-    if (youtubeContainer && typeof youtubeChannels !== 'undefined') {
-        youtubeContainer.innerHTML = '<ul class="media-links">' +
-            youtubeChannels.map(channel => `<li><a href="${channel.url}" target="_blank">${channel.name}</a></li>`).join('') +
-            '</ul>';
-    }
 }
 
 function renderDNF() {

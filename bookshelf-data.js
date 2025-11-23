@@ -169,10 +169,3 @@ const podcasts = [
     { name: "The Inside View", url: "https://theinsideview.ai/" },
     { name: "Bankless", url: "https://www.bankless.com/" }
 ];
-
-const youtubeChannels = [
-    { name: "3Blue1Brown", url: "https://www.youtube.com/@3blue1brown" },
-    { name: "Computerphile", url: "https://www.youtube.com/@Computerphile" },
-    { name: "Robert Miles", url: "https://www.youtube.com/@RobertMilesAI" },
-    { name: "Machine Learning Street Talk", url: "https://www.youtube.com/@MachineLearningStreetTalk" }
-];
