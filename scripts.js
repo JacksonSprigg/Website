@@ -64,26 +64,6 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 /* ============================================================================
-   SCROLL ANIMATIONS
-   ============================================================================ */
-
-document.addEventListener("DOMContentLoaded", () => {
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('active');
-            }
-        });
-    }, {
-        threshold: 0.15 // Trigger animation when 15% of element is visible
-    });
-
-    // Observe elements for scroll animations
-    const targets = document.querySelectorAll('.list-outer-container, .content-inner, .hero, .social-icons');
-    targets.forEach(target => observer.observe(target));
-});
-
-/* ============================================================================
    NAVIGATION HELPERS
    ============================================================================ */
 
