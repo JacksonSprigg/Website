@@ -14,9 +14,9 @@
         <br>
         <h1 class="heading-with-lines">Bookshelf</h1>
         <p style="max-width: 700px; margin: 10px auto; font-size: 13px; text-align: left; padding: 0 20px;">
-            Every book I read, physical or digital, is read with highlighter and pen at hand.
-            What you see here isn't exhaustive — I've opened far more books than I've finished or catalogued.
-            Think of this as a curated shelf: the books I'd be happy to display in my own house for guests to browse.
+            Every book I read, physical or digital, is read with highlighter and pencil at hand.
+            This is not an exhaustive bookshelf, rather, think of it as akin to one's public-facing, home library. 
+            If you have any recommendations, please let me know! (I would like to learn more about economics)
         </p>
         <p style="max-width: 700px; margin: 10px auto 30px; font-size: 12px; opacity: 0.6; text-align: left; padding: 0 20px;">
             Last updated: <span id="last-updated"></span>
@@ -38,8 +38,8 @@
             <div class="content-wrapper">
                 <h2>Currently Reading</h2>
                 <p style="font-size: 12px; opacity: 0.7; margin-bottom: 20px; max-width: 600px;">
-                    I read many books concurrently, especially nonfiction. If I get bored with the topic for the day, I can open a chapter in a different book. These are books I have laying in convenient places or downloaded on my phone.
-                </p>
+                    I always end up with many books open concurrently.
+                    I like that inevitable boredom of one topic need not be a discouragement from reading itself, but simply from the book at hand, for that moment.
                 <div id="currently-reading-grid" class="books-grid"></div>
             </div>
         </section>
@@ -48,7 +48,7 @@
         <section class="bookshelf-section">
             <div class="content-wrapper">
                 <div class="shelf-header">
-                    <h2>The Shelf</h2>
+                    <h2>Shelf</h2>
                     <div class="filter-buttons">
                         <button class="filter-btn active" data-filter="all" onclick="setFilter('all')">All</button>
                         <button class="filter-btn" data-filter="fiction" onclick="setFilter('fiction')">Fiction</button>
@@ -56,55 +56,27 @@
                     </div>
                 </div>
                 <p style="font-size: 12px; opacity: 0.7; margin-top: 5px; margin-bottom: 25px; max-width: 650px;">
-                    Ratings are a function of impact reading this work has had on me. Because of this, books I read when I was younger tend to have an easier time with insights per density than recent reads.
+                ---
                 </p>
                 <div id="shelves-container"></div>
             </div>
         </section>
     </div>
 
-    <!-- Other Media Tab Content -->
+    <!--
+     Other Media Tab Content    -->
     <div id="media-tab" class="main-tab-content">
         <section class="content">
+            <p style="text-align: center;">This list has not yet been compiled!</p>
+            <!--
             <div class="media-subtabs">
                 <button class="media-subtab-btn active" data-mediatab="blogs" onclick="showMediaSubTab('blogs')">Blogs</button>
                 <button class="media-subtab-btn" data-mediatab="podcasts" onclick="showMediaSubTab('podcasts')">Podcasts</button>
             </div>
+            -->
         </section>
-
-        <!-- Blogs Content -->
-        <div id="blogs-tab" class="media-subtab-content active">
-            <section class="media-content-section">
-                <div class="content-wrapper">
-                    <h3>Blogs</h3>
-                    <p style="font-size: 12px; opacity: 0.7; margin-bottom: 20px; max-width: 650px;">
-                        Blogs I visit regularly when looking for something to read.
-                    </p>
-                    <div id="blogs-list" class="media-list"></div>
-
-                    <h3 style="margin-top: 40px;">Favorite Posts</h3>
-                    <p style="font-size: 12px; opacity: 0.7; margin-bottom: 20px; max-width: 650px;">
-                        Essays and blog posts that have stuck with me.
-                    </p>
-                    <div id="favorite-posts-list" class="media-list"></div>
-                </div>
-            </section>
-        </div>
-
-        <!-- Podcasts Content -->
-        <div id="podcasts-tab" class="media-subtab-content">
-            <section class="media-content-section">
-                <div class="content-wrapper">
-                    <h3>Podcasts</h3>
-                    <p style="font-size: 12px; opacity: 0.7; margin-bottom: 20px; max-width: 650px;">
-                        Podcasts I listen to regularly.
-                    </p>
-                    <div id="podcasts-list" class="media-list"></div>
-                </div>
-            </section>
-        </div>
-
     </div>
+ 
 
     <section class="social-icons"></section>
 
