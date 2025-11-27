@@ -52,6 +52,8 @@ const books = [
     { title: "Apology", author: "Plato", rating: 8, type: "nonfiction", isbn13: "9780865163485" },
     { title: "Discourses and Selected Writings", author: "Epictetus", rating: 8, type: "nonfiction", isbn13: "9780140449464" },
     { title: "What Do You Care What Other People Think?", author: "Richard P. Feynman", rating: 7, type: "nonfiction", isbn13: "9780393355642" },
+    { title: "Man and His Symbols", author: "C.G. Jung", rating: 6, type: "nonfiction", isbn13: "9780440351832" },
+
 
     { title: "Slaughterhouse-Five", author: "Kurt Vonnegut Jr.", rating: 7, type: "fiction", isbn13: "slaughterhousefive" },
     { title: "The Call of Cthulu and Other Stories", author: "H.P. Lovecraft", rating: 7, type: "fiction", isbn13: "9780141182346" },
@@ -134,29 +136,3 @@ const dnfBooks = [
 // Last updated date - change this when you update the bookshelf
 const lastUpdated = "August 2025";
 
-// Media links
-const blogs = [
-    { name: "Gwern.net", url: "https://gwern.net" },
-    { name: "Astral Codex Ten", url: "https://www.astralcodexten.com" },
-    { name: "LessWrong", url: "https://www.lesswrong.com" },
-    // Add more blogs here
-];
-
-const favoritePosts = [
-    { title: "Meditations on Moloch", author: "Scott Alexander", url: "https://slatestarcodex.com/2014/07/30/meditations-on-moloch/" },
-    { title: "The Sequences", author: "Eliezer Yudkowsky", url: "https://www.lesswrong.com/rationality" },
-    // Add more favorite posts here
-];
-
-const podcasts = [
-    { name: "Dwarkesh Podcast", url: "https://www.dwarkeshpatel.com/podcast" },
-    { name: "The Lunar Society", url: "https://www.youtube.com/@TheLunarSociety" },
-    { name: "80,000 Hours", url: "https://80000hours.org/podcast/" },
-    // Add more podcasts here
-];
-
-const youtubeChannels = [
-    { name: "3Blue1Brown", url: "https://www.youtube.com/@3blue1brown" },
-    { name: "Computerphile", url: "https://www.youtube.com/@Computerphile" },
-    // Add more YouTube channels here
-];

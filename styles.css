@@ -672,13 +672,13 @@ footer a:hover {
 
 .content-wrapper h2 {
     font-size: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     text-align: left;
 }
 
 .content-wrapper h3 {
     font-size: 18px;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     text-align: left;
 }
 
@@ -687,7 +687,7 @@ footer a:hover {
     display: flex;
     justify-content: center;
     gap: 15px;
-    margin: 30px 0;
+    margin: 15px 0;
 }
 
 .main-tab-btn {
@@ -725,7 +725,7 @@ footer a:hover {
     display: flex;
     justify-content: center;
     gap: 10px;
-    margin: 20px 0 40px;
+    margin: 10px 0 20px;
 }
 
 .media-subtab-btn {
@@ -765,7 +765,7 @@ footer a:hover {
 /* Books Grid */
 .books-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(104px, 1fr));
     gap: 25px;
     margin-bottom: 30px;
 }
@@ -868,6 +868,7 @@ footer a:hover {
 
 .filter-btn.active {
     background: var(--contrast);
+    color: #141413;
     opacity: 1;
 }
 
@@ -912,7 +913,7 @@ footer a:hover {
     }
 
     .books-grid {
-        grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(65px, 1fr));
         gap: 15px;
     }
 
