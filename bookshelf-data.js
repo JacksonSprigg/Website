@@ -38,6 +38,7 @@ const books = [
     { title: "On The Shortness Of Life", author: "Seneca", rating: 9, type: "nonfiction", isbn13: "9780143036326" },
     { title: "Surely You're Joking, Mr. Feynman!", author: "Richard P. Feynman", rating: 9, type: "nonfiction", isbn13: "9780393355624" },
 
+    { title: "Ecce Homo", author: "Friedrich Nietzsche", rating: 7, type: "nonfiction", isbn13: "9780140445152" },
     { title: "Crime and Punishment", author: "Fyodor Dostoevsky", rating: 9, type: "fiction", isbn13: "9780143058144" },
     { title: "The Death of Ivan Ilych", author: "Leo Tolstoy", rating: "8", type: "fiction", isbn13: "thedeathofivanilych" },
     { title: "The Stranger", author: "Albert Camus", rating: 8, type: "fiction", isbn13: "9780141182506" },
